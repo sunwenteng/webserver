@@ -1,0 +1,75 @@
+{
+  "name": "webserver",
+  "author": {
+    "name": "sunwenteng"
+  },
+  "main": "index.js",
+  "homepage": "http://172.16.0.84/webserver/webserver",
+  "version": "0.0.1",
+  "licenses": [
+    {
+      "type": "Apache License 2.0",
+      "url": "http://172.16.0.84/webserver/webserver/LICENSE.txt"
+    }
+  ],
+  "description": "webserver is a server based on node, redis and mysql",
+  "keywords": [
+    "node",
+    "redis",
+    "mysql",
+    "gameserver"
+  ],
+  "bugs": {
+    "url": "http://172.16.0.84/webserver/webserver/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://172.16.0.84/webserver/webserver.git"
+  },
+  "preferGlobal": true,
+  "bin": {},
+  "engines": {
+    "node": ">=0.12.0"
+  },
+  "dependencies": {
+    "async": "1.5.0",
+    "log4js": "0.6.29",
+    "mkdirp": "0.5.0",
+    "mysql": "2.9.0",
+    "protobufjs": "5.0.1",
+    "redis": "v0.4.1",
+    "hiredis": "0.4.1",
+    "express": "4.13.3",
+    "body-parser": "1.14.1",
+    "request": "2.67.0",
+    "tar": "^2.1.1",
+    "ncp": "^2.0.0"
+  },
+  "devDependencies": {
+    "grunt": "0.4.5",
+    "grunt-contrib-clean": "0.7.0",
+    "grunt-contrib-compress": "^0.13.0",
+    "grunt-contrib-copy": "0.8.2",
+    "grunt-contrib-uglify": "^0.9.1",
+    "grunt-git-describe": "^2.3.2",
+    "grunt-gitinfo": "^0.1.7",
+    "grunt-shell": "1.1.2",
+    "grunt-svninfo": "^0.1.5",
+    "grunt-ts": "4.1.0",
+    "pm2": "0.15.10",
+    "source-map-support": "0.4.0",
+    "load-grunt-tasks": "3.3.0",
+    "time-grunt": "1.2.2"
+  },
+  "scripts": {
+    "init": "sudo npm install grunt-cli -g"
+  },
+  "maintainers": [
+    {
+      "username": "sunwenteng",
+      "email": "sunwenteng@gamed9.com"
+    }
+  ],
+  "directories": {},
+  "readme": "ERROR: No README data found!"
+}

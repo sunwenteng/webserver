@@ -1,0 +1,160 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>游戏登录</title>
+    <meta property="qc:admins" content="217762440165744564536375" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="mobile-web-app-capable" content="yes"/>
+    <meta name="full-screen" content="true"/>
+    <meta name="screen-orientation" content="portrait"/>
+    <meta name="x5-fullscreen" content="true"/>
+    <meta name="360-fullscreen" content="true"/>
+    <meta name="description" content="熔火网络旗下的顽皮提供好玩的手机小游戏" />
+    <meta name="keywords" content="熔火 微游 手机 游戏" />
+    <meta http-equiv="pragma" content="no-cache"/>
+    <meta http-equiv="cache-control" content="no-cache"/>
+    <meta http-equiv="cache" content="no-cache"/>
+    <meta http-equiv="expires" content="0"/>
+    <style>
+        @charset "utf-8";
+        body {padding: 0px; margin: 0px; font-size:16px; -webkit-text-size-adjust:none;}
+        *{margin:0; padding:0; list-style-type:none; }
+        h1,h2,h3,h4,h5,h6{ font-weight:normal;}
+        a, a:hover{ text-decoration:none;}
+        img{ border:none;}
+        @media screen and (min-width: 240px) and (max-width:1080px) {
+            body{
+                width:100%;
+            }
+        }
+        @media screen and (min-width: 1081px) {
+            body{
+                width:50%;
+                margin:auto;
+            }
+        }
+        .copyright{
+            color:#999;
+            height:42px;
+            background:#f2f2f2;
+            text-align:center; line-height:42px;
+            font-size:15px;
+        }
+    </style>
+</head>
+<body style="background-color:#f6fafb;">
+<div style="width:100%;text-align:center;background-color:#70b537;color:#fff">
+    <p style="padding-top:0px">
+        <img style="width:20%" src="./img/200X200.jpg" alt="熔火" border="0">
+    </p>
+    <p style="padding-top:10px;padding-bottom:10px;">
+        本功能由上海熔火网络提供
+    </p>
+</div>
+<div style="text-align:center;">
+    <p id="wxLogin" style="margin-top:30px;" >
+        <a href="javascript:weixinLogin();">
+            <img width="80%" src="./img/game_wx_icon.png" alt="微信登录" border="0">
+        </a>
+    </p>
+    <p id="qqLogin" style="margin-top:10px;">
+        <a href="javascript:qqLogin();">
+            <img width="80%" src="./img/game_login_qq.png" alt="QQ登录" border="0">
+        </a>
+    </p>
+    <p id="wbLogin" style="margin-top:10px">
+        <a href="javascript:sinaLogin();">
+            <img width="80%" src="./img/game_wb_icon.png" alt="新浪登录" border="0">
+        </a>
+    </p>
+    <!-- <p id="ygLogin" style="margin-top:10px">
+        <a href="javascript:ygLogin();">
+            <img width="80%" src="./img/yg_my_logo.png" alt="使用熔火帐号登录" border="0">
+        </a>
+    </p> -->
+</div>
+<div style="position:fixed;bottom:2px;margin:0 auto;left:0;right:0" class="copyright">
+    <p style="text-align:center"><span style="color:#999999">Copyright©上海熔火网络科技有限公司</span></p>
+</div>
+<script type="text/javascript">
+    //获取url参数
+    function getURLVar(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        return r != null ? unescape(r[2]) : null;
+    }
+    if(getURLVar('url'))
+    {
+        var get_url = '?url='+getURLVar('url');
+        var wx_get_url = '&url='+getURLVar('url');
+    }
+    else
+    {
+        var get_url = '';
+        var wx_get_url = '';
+    }
+    //非微信环境隐藏微信登录按钮
+    window.onload = function(){
+        if (getURLVar("from_client") || getURLVar("from_app")) {
+            document.getElementById('wxLogin').style.display = '';
+        } else {
+            if(isWeiXin()){
+                document.getElementById('qqLogin').style.display = 'none';
+                document.getElementById('wbLogin').style.display = 'none';
+                document.getElementById('wxLogin').style.display = 'none';
+                weixinLogin();
+            }
+        }
+    };
+    //qq授权配置
+    var qqLoginAppid = "101245141";
+    var qqAuthURL = "http://www.moltentec.com/qq/callback.php"+get_url;
+    //新浪授权配置
+    var sinaClientid = "1550547628";
+    var sinaAuthURL = "http://www.moltentec.com/weibo/wb_callback.php"+get_url;
+    //微信授权配置
+    var weixinClientId = 'wx0da5025df21fe43a';
+    var weixinURL = 'http://www.moltentec.com/htgame/index.php?c=Wxlogin&m=ret'+wx_get_url;
+
+    // QQ授权登陆
+    function qqLogin() {
+        var gameid = getURLVar("gameid");
+        location.href = "https://graph.qq.com/oauth2.0/authorize?response_type=code&client_id=" + qqLoginAppid + "&state=" + gameid + "&redirect_uri=" + encodeURIComponent(qqAuthURL);
+    }
+
+    // 新浪微博授权登陆
+    function sinaLogin() {
+        var gameid = getURLVar("gameid");
+        location.href = "https://api.weibo.com/oauth2/authorize?client_id=" + sinaClientid + "&response_type=code&state=" + gameid + "&redirect_uri=" + encodeURIComponent(sinaAuthURL);
+    }
+
+    //微信登录
+    function weixinLogin() {
+        var url;
+        var gameid = getURLVar("gameid")?getURLVar("gameid"):1;
+        url = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=" + weixinClientId + "&redirect_uri=";
+        url += encodeURIComponent(weixinURL);
+        url += ("&response_type=code&scope=snsapi_userinfo&state=" + gameid + "#wechat_redirect");
+        location.href = url;
+    }
+
+    //使用自定义帐号登录
+    function ygLogin() {
+        var params = window.location.search.substr(1);
+        location.href = "./reg/index.php" + (params ? "?" + params : "");
+    }
+
+    //判断是否为微信环境
+    function isWeiXin() {
+        if (navigator.userAgent) {
+            return (navigator.userAgent.toLowerCase().match(/MicroMessenger/i) == "micromessenger");
+        }
+        return true;
+    }
+</script>
+</body>
+</html>
+

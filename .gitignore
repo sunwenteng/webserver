@@ -1,0 +1,14 @@
+# directory
+.idea/
+node_modules/
+src/config/untrack/
+bin/
+release/
+archive/
+
+# files
+*.log
+*.log.*
+.tscache
+src/.baseDir.ts
+src/config/data/*.json

@@ -1,0 +1,2880 @@
+package Protocol.S2C;
+//
+message LOGIN_SC_LOGIN_RESULT
+{
+	optional 	int32 	cmd_id 		= 1 [default = 15000 ];
+	required	int32	result		= 2;	// (0=成功 1=帐号不存在 2=密码错误 3=系统错误)
+    required    int32   cdk         = 3;    // 0 不需要cdk(不需要 或 已经验证) 1需要cdk
+}
+
+message LOGIN_SC_SERVER_LIST
+{
+	message STRUCT_SERVER_INFO
+	{
+		required	int32	server_id 	= 1;	// 服务器ID
+		required	string	server_name	= 2;	// 服务器名称
+		required	int32	can_login	= 3;	// 可否登录
+		required	int32	status		= 4;	// 0=普通 1=新区 2=火爆 3=维护
+		optional	int32	level		= 5[default = 0];
+	}
+	optional 	int32 				cmd_id 			= 1 [default = 15001 ];
+	repeated	STRUCT_SERVER_INFO	servers			= 2;
+	required	string				notice			= 3;	// 登录公告
+	required	int32				last_login_id 	= 4;	// 最后登陆的游戏服ID
+}
+
+message LOGIN_SC_CHOOSE_RESULT
+{
+	//result的返回值
+	//E_CHOOSE_SERVER_RESULT_OK		 = 0,
+	//E_CHOOSE_SERVER_RESULT_NOT_FOUND = 1,
+	//E_CHOOSE_SERVER_RESULT_VERSION	 = 2,
+	//E_CHOOSE_SERVER_RESULT_FORBID	 = 3,//账号封禁
+	//E_CHOOSE_SERVER_RESULT_ERROR	 = 4,
+	//E_CHOOSE_SERVER_RESULT_NOT_ACCESSABLE = 5
+	
+	optional 	int32 	cmd_id 		= 1 [default = 15002 ];
+	required	int32	result		= 2;
+	// if result = 0
+	optional	string	ip			= 3;
+	optional	int32	port		= 4;
+	optional	int32	role_id		= 5;
+	optional	string	res_server_addr	= 6;	// 资源服地址
+	optional	string	res_version	= 7;		// 资源版本
+	// if result = 2
+	optional	string	version		= 8;
+	optional	string	update_url	= 9;
+}
+
+message LOGIN_SC_REGISTER_RESULT
+{
+	optional 	int32 	cmd_id 		= 1 [default = 15003 ];
+	required	int32	result		= 2;	// 0=成功 1=用户名已存在 2=用户名或密码不符合要求
+}
+message LOGIN_SC_MODIFY_PASSWD_RESULT
+{
+	enum EModifyPassWDResult
+	{
+		E_MODIFY_PASSWD_RESULT_SUC		= 0;
+		E_MODIFY_PASSWD_RESULT_NOT_AUTH	= 1;
+		E_MODIFY_PASSWD_RESULT_FAILED	= 2;
+		
+	}
+	optional	int32					cmd_id		= 1[default = 15004];
+	required	EModifyPassWDResult		result		= 2;
+}
+
+message LOGIN_SC_PTR_GET_INFO_RESULT
+{
+  /* 得到通行证信息结果
+     [uint8] result 
+     if result = 0
+     [uint32] autoGmId 
+     [uint32] accountId 
+     [string] serverIpOrigin 
+     [string] uid (设备uid)
+     [string] account (帐号)
+     [string] pwdMd5 (密码Md5)
+     [string] mail (邮箱)
+     [uint16] platformId (平台ID)
+     [string] device (设备名)
+     [string] deviceType
+     (设备型号)
+     [string] openUdid 
+     [string]
+     apple_udid 
+   */
+    optional    uint32   cmd_id              =1 [default = 15005];
+    required    uint32   result              =2 ;
+    required    uint32   auto_gm_id          =3 ;
+    required    uint32   account_id          =4 ;
+    required    string  server_ip_origin    =5 ;
+    required    string  uid                 =6 ;
+    required    string  account             =7 ;
+    required    string  pwd_md5             =8 ;
+    required    uint32  platformId          =10 ;
+    required    string  device              =11 ;
+    required    string  deviceType          =12 ;
+    required    string  open_uidi           =13 ;
+    required    string  apple_udid          =14 ;
+}
+
+message LOGIN_SC_PTR_REGISTER_RESULT
+{
+  /* 得到PTR账户注册结果
+     [uint8] result 
+     if result = 0
+     [uint32] autoGmId 
+     [uint32] roleIdOri 
+     [uint32] roleId 
+     [string] account 
+     [string] passwd 
+     [string] ip 
+   */
+    optional    uint32   cmd_id      =1 [default = 15006];
+    required    uint32   result      =2;
+    required    uint32   auto_gm_id  =3;
+    required    uint32   role_id_ori =4;
+    required    uint32   role_id     =5;
+    required    string  account     =6;
+    required    string  passwd      =7;
+    required    string  ip          =8;
+}
+
+message LOGIN_SC_CDK_RESULT
+{
+    optional    int32   cmd_id      =1 [default = 15007];
+    required    int32   result      =2; //1激活码错误 2激活码已经使用 3验证通过
+}
+
+
+message SC_ERROR_CODE
+{
+	optional 	int32 	cmd_id 		= 1 [default = 20000 ];
+	required	int32	code		= 2;
+}
+
+message SC_INIT_BEGIN
+{
+	optional 	int32 	cmd_id 		= 1 [default = 20001 ];
+	
+	//ProgressType
+	//Waiting create Account	= 0	
+	//After Create Account		= 1
+	
+	required	bool	reconnect	= 2;	// 是否重连
+	required	int32	progress	= 3;	// 
+	required	int32	server_time	= 4;	// 当前服务器时间
+	required	int32	gmtoff		= 5;	// 时区信息 Seconds east of UTC
+	required	string	zone		= 6;	// timezone abbr
+	required	bool	new_player	= 7;	// 是否新角色
+}
+
+message SC_INIT_COMPLETE
+{
+	optional 	int32 	cmd_id 		= 1 [default = 20002 ];
+}
+
+message SC_OFFLINE
+{
+	optional 	int32 	cmd_id 		= 1 [default = 20003 ];
+	required	int32	reason		= 2;					
+	//0：服务器关闭或授权失败等强制下线
+	//1：其他设备重复登录
+}
+
+message SC_GM_COMMAND_RESULT
+{
+	optional 	int32 	cmd_id 		= 1 [default = 20004 ];
+	required	string	result		= 2;
+}
+
+message SC_TIME_UPDATE
+{
+	optional 	int32 	cmd_id 		= 1 [default = 20005 ];
+	required	int32	server_time	= 2;	// 当前服务器时间
+	required	int32	gmtoff		= 3;	// 时区信息 Seconds east of UTC
+	required	string	zone		= 4;	// timezone abbr
+}
+message SC_ACCOUNT_PROGRESS_UPDATE
+{
+	optional	int32	cmd_id		= 1[default = 20006];
+	required	int32	progress	= 2;//账号进度
+}
+message SC_MESSAGE_BEFORE_AUTH
+{
+	optional	int32	cmd_id		= 1 [default = 20007];
+}
+message SC_FUNCTION_LOCK_UPDATE_AND_ADD
+{
+//登录的是送发送全部 之后再更改的时候增量更新
+	optional	int32	cmd_id		= 1 [default = 20008];
+	repeated	int32	lock_nums	= 2;
+}
+message SC_FUNCTION_UNLOCK
+{
+//更改的时候增量更新
+	optional	int32	cmd_id		= 1 [default = 20009];
+	repeated	int32	lock_nums	= 2;
+}
+message SC_RELAY_TYPE_CLOSE_UPDATE_AND_ADD
+{
+//登录的是送发送全部 之后再更改的时候增量更新
+	optional	int32	cmd_id		= 1 [default = 20010];
+	repeated	int32	relay_types	= 2;
+	//	1:日常
+	//	2:深渊
+	//	3:野外
+}
+message SC_RELAY_TYPE_OPEN
+{
+
+//更改的时候增量更新
+	optional	int32	cmd_id		= 1 [default = 20011];
+	repeated	int32	relay_types	= 2;
+	//	1:日常
+	//	2:深渊
+	//	3:野外
+}
+message SC_ROLE_UPDATE
+{
+	optional 	int32 	cmd_id 		= 1 [default = 20020 ];
+	optional	string	name		= 2 [default = "" ];
+	optional	int32	level		= 3 [default = -1 ];
+	optional	int64	exp			= 4 [default = -1 ];
+	optional	int64	gold		= 5 [default = -1 ];
+	optional	int32	diamond		= 6 [default = -1 ];
+	optional	int32	stamina		= 7 [default = -1 ];
+	optional	int32	energy		= 8 [default = -1 ];
+	optional	int32	gm_auth		= 9 [default = -1 ];
+	optional	int32	soul		= 10[default = -1 ];
+	optional	int32	equip_dust	= 11[default = -1 ];
+	optional	int32	travel_coin	= 12[default = -1 ];
+	optional	int32	arena_coin	= 13[default = -1 ];
+	optional	int32	hallow_dust	= 14[default = -1 ];
+	optional	int32	vip_lv		= 15[default = -1 ];
+	optional	int32	diamond_pay	= 16[default = -1 ];
+	optional	int32	vip_exp		= 17[default = -1 ];
+}
+//不使用
+message SC_NAME_CREATE_RESULT	
+{
+	enum ResultType
+	{
+		SUCCESS		= 0;	// 成功
+		TOO_SHORT	= 1;	// 名字太短
+		TOO_LONG	= 2;	// 名字太长
+		DUPLICATE	= 3;	// 名字重复
+		INVALID		= 4;	// 名字有非法字符
+	}
+	
+	optional 	int32 		cmd_id 		= 1 [default = 20021 ];
+	required	ResultType	res			= 2;
+}
+message SC_TIMER_RESET
+{
+	optional 	int32	 	cmd_id 							= 1 [default = 20022 ];
+	optional	int32		stamina_last_refresh_time		= 2[default = -1];
+	optional	int32		energy_last_refresh_time		= 3[default = -1];
+}
+message SC_CREATE_ACCOUNT_RESULT	
+{
+	enum ResultType
+	{
+		SUCCESS		= 0;	// 成功
+		TOO_SHORT	= 1;	// 名字太短
+		TOO_LONG	= 2;	// 名字太长
+		DUPLICATE	= 3;	// 名字重复
+		INVALID		= 4;	// 名字有非法字符
+	}
+	
+	optional 	int32 		cmd_id 		= 1 [default = 20023 ];
+	required	ResultType	res			= 2;
+}
+message SC_GET_RANDOM_NAME_RESULT
+{
+	optional	int32		cmd_id		= 1[default =20024];
+	required	string		name		= 2;
+}
+message SC_SYSTEM_OPTION_UPDATE_AND_ADD
+{
+	optional	int32		cmd_id		= 1[default = 20025];
+	optional	int32		music		= 2[default = -1]; // 1: on , 0:off
+	optional	int32		voice		= 3[default = -1]; // 1: on , 0:off
+}
+message SC_CHANGE_NAME_RESULT
+{
+	enum ResultType
+	{
+		SUCCESS		= 0;	// 成功
+		TOO_SHORT	= 1;	// 名字太短
+		TOO_LONG	= 2;	// 名字太长
+		DUPLICATE	= 3;	// 名字重复
+		INVALID		= 4;	// 名字有非法字符
+	}
+	optional	int32		cmd_id			= 1[default = 20026];
+	required	ResultType	res			= 2;
+}
+message STRUCT_TALISMAN_INFO
+{
+	message STRUCT_COAT
+	{
+		required	int32		idx					= 1; //from 0 -
+		required	int32		id					= 2;
+		required	int32		up_lv				= 3;
+		required	int32		star_lv				= 4;
+		required	int32		exp					= 5;
+	}
+	required	int32			id					= 1;
+	required	int32			hero_uid			= 2;
+	required	int32			upgrade				= 3;	// 强化等级
+	required	int32			adv					= 4;	// 阶数
+	repeated	STRUCT_COAT		coats				= 5;
+}
+//属性
+message STRUCT_PROP
+{
+		required	int32	id = 1;
+		required	int32	value = 2;
+}	
+message STRUCT_REWARD
+{
+	message STRUCT_REWARD_ITEM
+	{
+		required	int32	id			= 1;
+		required	int32	qty			= 2;
+	}
+	
+	message STRUCT_REWARD_HERO
+	{
+		required	int32	id			= 1;
+	}
+	
+	message	STRUCT_REWARD_EQUIP
+	{
+		required	int32	id			= 1;
+	}
+	message	STRUCT_REWARD_HALLOW
+	{
+		required	int32	id			= 1;
+		optional	int32	qty			= 2[default = 1];
+	}
+	message STRUCT_REWARD_GEM
+	{
+		required	int32	id			= 1;
+		required	int32	qty			= 2;
+	}
+	message STRUCT_REWARD_TAL
+	{
+		required	int32	id			= 1;
+	}
+	message STRUCT_REWARD_WING
+	{
+		required	int32	id			= 1;
+	}
+	message STRUCT_REWARD_FASHION
+	{
+		required	int32	id			= 1;
+	}
+	message STRUCT_REWARD_TITLE
+	{
+		required	int32	id			= 1;
+	}
+	optional	int64					role_exp		= 1 [default = -1 ];
+	optional	int64					gold			= 2 [default = -1 ];
+	optional	int32					diamond			= 3 [default = -1 ];
+	repeated	STRUCT_REWARD_ITEM		items			= 4;
+	repeated	STRUCT_REWARD_HERO		heroes			= 5;
+	repeated	STRUCT_REWARD_EQUIP		equips			= 6;
+	optional	int32					stamina			= 7 [default = -1 ];
+	optional	int32					energy			= 8 [default = -1 ];
+	repeated	STRUCT_REWARD_GEM		gems			= 9; 
+	repeated 	STRUCT_REWARD_TAL		tals			= 10;
+	optional	int32					soul			= 11[default = -1 ];//分解英雄获得
+	optional	int32					equip_dust		= 12[default = -1 ];//分解装备获得
+	optional	int32					travel_coin		= 13[default = -1 ];//试炼币
+	optional	int32					daily_point		= 14[default = -1 ];//日常任务活跃度
+	optional	int32					arena_coin		= 15[default = -1 ];//竞技场代币
+	repeated	STRUCT_REWARD_HALLOW	hallows			= 16;
+	optional	int32					hallow_dust		= 17[default = -1 ];//圣石
+	optional	int32					crit_times		= 18[default = -1 ];//暴击次数
+	repeated	STRUCT_REWARD_WING		wings			= 19;	
+	optional	int32					club_donate		= 20[default = -1 ];//玩家的个人捐献
+	optional	int32					club_qual		= 21[default = -1 ];//玩家的个人资历
+	optional	int64					club_gold		= 22[default = -1 ];//公会货币
+	optional	int32					club_growth		= 23[default = -1 ];
+	optional	int32					donate_progress = 24[default = -1 ];
+	optional	int32					achieve_point	= 25[default = -1 ];//成就点数
+	repeated	STRUCT_REWARD_FASHION	fashions		= 26;
+	repeated	STRUCT_REWARD_TITLE		titles			= 27;
+	optional	int32					vip_exp			= 28[default = -1];
+}
+message SC_GUIDE_UPDATE_AND_ADD
+{
+	optional 	int32 				cmd_id 				= 1 [default = 20027 ];
+	repeated	int32				complete_guide_id	= 2;//series Id
+	optional	int32				guiding_id			= 3[default = -1];//弃用
+	optional	int32				guiding_step		= 4[default = -1];// step or guide_id
+	repeated	int32				special_numbers		= 5;
+	optional	int32				is_complete_first_fight = 6[default = -1];// 0:not 1:has
+}
+message SC_GUIDE_SET_STEP_RESULT
+{
+	optional	int32				cmd_id				= 1 [default = 20028];
+}
+message SC_GIFT_CODE_RESULT
+{
+    enum Result_t
+    {
+        E_GET_REWARD_SUCCESS    = 0;//领取成功
+        E_CODE_INVALID          = 1;//礼品码错误
+        E_CODE_USED             = 2;//礼品码已经被使用
+        E_CODE_USED_SAME_TPYE   = 3;//已经使用过多同类礼品码
+        E_CODE_EXPIRED          = 4;//礼品码过期
+        E_CODE_INVALID_SERVER   = 5;//该礼品码不能在本服使用
+        E_CDOE_INVALID_PLATFORM = 6;//该礼品码不能在本平台使用
+        E_CODE_INVALID_TYPE     = 7;//该码不是礼品码
+
+    }
+    optional    int32               cmd_id              = 1 [default = 20029];
+    required    Result_t            result_type         = 2 ;
+    required    STRUCT_REWARD       reward              = 3 ;
+}
+message SC_ITEM_ADD
+{
+	message STRUCT_ITEM_INFO
+	{
+		required	int32	uid 		= 1;	// 物品UID
+		required	int32	id			= 2;	// 物品ID
+		required	int32	qty			= 3;	// 物品数量
+	}
+	optional 	int32 				cmd_id 		= 1 [default = 20100 ];
+	repeated	STRUCT_ITEM_INFO	items		= 2;
+}
+
+message SC_ITEM_REMOVE
+{
+	optional 	int32 				cmd_id 		= 1 [default = 20101 ];
+	repeated	int32				uids		= 2;
+}
+
+message SC_ITEM_UPDATE
+{
+	optional 	int32 				cmd_id 		= 1 [default = 20102 ];
+	repeated	int32				uids		= 2;
+	repeated	int32				qtys		= 3;
+}
+message SC_USE_ITEM_RESULT
+{
+	optional 	int32 				cmd_id 		= 1 [default = 20103 ];
+	required	STRUCT_REWARD		rwd			= 2;
+}
+message SC_SELL_ITEM_RESULT
+{
+	optional 	int32 				cmd_id 		= 1 [default = 20104 ];
+	required	STRUCT_REWARD		rwd			= 2;
+}
+message SC_ITEM_COMBINE_RESULT	
+{
+	optional	int32				cmd_id		= 1 [default = 20105 ];
+	required	STRUCT_REWARD		reward		= 2;
+}
+message SC_HERO_INFO_ADD_UPDATE
+{
+	message STRUCT_SKILL_GROUP
+	{
+		repeated	int32					skill_level	= 1; 
+	}
+	message STRUCT_HERO_INFO
+	{
+		required	int32					uid								= 2;
+		optional	int32					id								= 3[default = -1];
+		optional	int32					adv								= 4[default = -1];	// 阶数
+		optional	int32					lv								= 5[default = -1];
+		optional	int32					star							= 6[default = -1];
+		repeated	int32					stones							= 7;
+		optional	int64					exp								= 8[default = -1];
+		optional	STRUCT_SKILL_GROUP		skill_groups					= 9;
+		optional	int32					selected_skill_group			= 10[default = -1];
+		optional	int32					protrait_id						= 11[default = -1];
+	}
+	optional 	int32 				cmd_id 		= 1 [default = 20200 ];
+	repeated	STRUCT_HERO_INFO	heroes		= 2;
+}
+message SC_HERO_REMOVE
+{
+	optional	int32				cmd_id		= 1 [default = 20201 ];
+	repeated	int32				uids			= 2; 
+}
+message SC_HERO_UPGRADE_RESULT
+{
+	optional 	int32 				cmd_id 			= 1 [default = 20202 ];
+	optional	int32				upgrade_time	= 2;
+	optional	int32				double_time		= 3;
+}
+message SC_HERO_DECOMPOSE_RESULT
+{
+	optional	int32				cmd_id		= 1 [default = 20203 ];
+	required	STRUCT_REWARD		reward		= 2;
+}
+message SC_HERO_REBORN_RESULT
+{
+	optional	int32				cmd_id		= 1 [default = 20204 ];
+	required	STRUCT_REWARD		reward		= 2;
+}
+message SC_HERO_COMBINE_RESULT
+{
+	optional	int32				cmd_id		= 1 [default = 20205 ];
+	required	STRUCT_REWARD		reward		= 2;
+}
+message SC_HERO_ADVANCE_RESULT
+{
+	optional 	int32 				cmd_id 		= 1 [default = 20206 ];
+}
+message SC_HERO_STAR_EMBED_RESULT
+{
+	optional	int32				cmd_id		= 1	[default = 20207]; 
+}
+message SC_HERO_STAR_RESULT
+{
+	optional 	int32				cmd_id		= 1	[default = 20208];
+}
+message SC_HERO_SKILL_SELECT_GROUP_RESULT
+{
+	optional	int32				cmd_id		= 1 [default = 20209];
+}
+message SC_HERO_SKILL_UPGRADE_RESULT
+{
+	optional	int32				cmd_id		= 1 [default = 20210];
+}
+message SC_EQUIP_INFO_ADD_UPDATE
+{
+	message STRUCT_EQUIP_INFO
+	{
+		required	int32		uid				= 2;
+		required	int32		id				= 3;
+		required	int32		upgrade			= 4;	// 强化等级
+		required	int32		adv				= 5;	// 阶数
+		required	int32		main_prop_base	= 6;	// 废弃字段
+		required	int32		star			= 7;
+		required	int32		cost_gold		= 8;	//升级消耗的金币
+	}
+	optional 	int32 				cmd_id 		= 1 [default = 20250 ];
+	repeated	STRUCT_EQUIP_INFO	equips		= 2;
+}
+
+message SC_EQUIP_INFO_REMOVE
+{
+	optional 	int32 				cmd_id 		= 1 [default = 20251 ];
+	repeated	int32				uids		= 2;
+}
+
+message SC_EQUIP_STAR_UP_RESULT
+{
+	optional 	int32 				cmd_id 		= 1 [default = 20255 ];
+	required	bool				succ		= 2;
+	required	int32				star		= 3;
+	required	int32				change_star	= 4;//变化的星数
+}
+
+message SC_EQUIP_ADV_RESULT
+{
+	optional 	int32 				cmd_id 		= 1 [default = 20256 ];
+}
+message SC_EQUIP_DECOMPOSE_RESULT
+{
+	optional	int32				cmd_id		= 1[default = 20257];
+	required	STRUCT_REWARD		reward		= 2;
+}
+message SC_EQUIP_REBORN_RESULT
+{
+	optional	int32				cmd_id		= 1[default = 20258];
+	required	STRUCT_REWARD		reward		= 2;
+}
+message SC_EQUIP_FORGE_RESULT
+{	
+	optional	int32				cmd_id		= 1[default = 20259]; 
+	required	bool				succ		= 2;
+	required	int32				equip_id	= 3;
+}
+message SC_EQUIP_MOVE_STAR_RESULT
+{
+	optional	int32				cmd_id		= 1[default = 20260];
+	required	int32				target_star = 2;
+}
+
+message SC_EQUIP_UPGRADE_RESULT
+{
+	optional	int32				cmd_id		= 1[default = 20261]; 
+	required	int32				crit_times	= 2;
+	required	int32				up_times	= 3;
+}
+message SC_EQUIP_COMBINE_RESULT
+{
+	optional	int32				cmd_id		= 1[default = 20262];
+	optional	STRUCT_REWARD		reward		= 2;//暂时不用
+	optional	int32				equip_uid	= 3;
+}
+message SC_EQUIP_ONEKEY_UPGRADE_RESULT
+{
+	optional	int32				cmd_id		= 1[default = 20263];
+	required	int32				crit_times	= 2;
+}	
+message SC_HALLOW_INFO_ADD_UPDATE
+{
+	message STRUCT_HALLOW_PROP
+	{
+		required	int32			prop_type		= 1;//对应propconfig中的值
+		required	int32			value			= 2;			
+	}
+	message STRUCT_HALLOW_INFO
+	{
+		required	int32						uid				= 1;
+		required	int32						hallow_id 		= 2;
+		repeated	STRUCT_HALLOW_PROP			enchant_props	= 3;
+		repeated	STRUCT_HALLOW_PROP			replace_props	= 7;//表示可替换的属性（附魔之后未选择 保S留或取消） 
+		repeated	int32						lock_prop		= 4;//从0开始 enchant_props
+		required	int32						up_lv			= 5;
+		required	int32						adv_lv			= 6;
+		required	int32						exp				= 8;
+		required	int64						used_gold		= 9;
+	}
+	message STRUCT_EXP_HALLOW
+	{
+		required	int32			hallow_id	= 1;
+		required	int32			qty			= 2;
+	}
+	optional 	int32 				cmd_id 		= 1 [default = 20280 ];
+	repeated	STRUCT_HALLOW_INFO	hallows		= 2;
+	repeated	STRUCT_EXP_HALLOW	exp_hallows	= 3;
+}
+message SC_HALLOW_INFO_REMOVE
+{
+	optional 	int32 				cmd_id 		= 1 [default = 20281 ];
+	repeated	int32				uids		= 2;
+}
+
+message SC_HALLOW_ADV_RESULT
+{
+	optional	int32			cmd_id = 1[default = 20282];
+}
+message SC_HALLOW_ENCHANT_RESULT			//具体数值由SC_HALLOW_INFO_ADD_UPDATE推送
+{
+	optional	int32			cmd_id = 1[default = 20283];
+}
+message SC_HALLOW_ENCHANT_RESPONSE_RESULT			//具体数值由SC_HALLOW_INFO_ADD_UPDATE推送
+{
+	optional	int32			cmd_id = 1[default = 20284];
+}
+message SC_HALLOW_REBORN_RESULT
+{
+	optional	int32			cmd_id = 1[default = 20285];
+	required	STRUCT_REWARD	reward = 2;
+}
+message SC_HALLOW_DEC_RESULT
+{
+	optional	int32			cmd_id = 1[default = 20286];
+	required	STRUCT_REWARD	reward = 2;
+}
+message SC_HALLOW_UPGRADE_RESULT
+{
+	optional	int32			cmd_id = 1[default = 20287];
+}
+message SC_HALLOW_TRANSFER_RESULT
+{
+	optional	int32			cmd_id = 1[default =20288];
+}
+message SC_HALLOW_COMBINE_RESULT
+{
+	optional	int32			cmd_id = 1[default =20289];
+	required	STRUCT_REWARD	reward = 2;
+}
+message SC_HALLOW_REMOVE
+{
+	optional	int32			cmd_id	= 1 [default = 20290 ];
+	repeated	int32			uids 	= 2; 
+}
+message SC_TALISMAN_UPGRADE_RESULT
+{
+	optional 	int32 				cmd_id 		= 1 [default = 20300 ];
+	required	bool				succ		= 2;
+}
+message SC_TALISMAN_ADV_RESULT
+{
+	optional 	int32 				cmd_id 		= 1 [default = 20301 ];
+}
+message SC_TALISMAN_STAR_UP_RESULT
+{
+	optional 	int32 				cmd_id 		= 1 [default = 20303 ];
+}
+message SC_TALISMAN_INFO_ADD_UPDATE
+{
+	
+	optional 	int32 					cmd_id 		= 1 [default = 20304 ];
+	repeated	STRUCT_TALISMAN_INFO	talismans	= 2;
+}
+message SC_TALISMAN_COAT_UP_RESULT
+{
+	optional	int32					cmd_id		= 1[default = 20305];
+}
+message SC_TALISMAN_COAT_ONE_KEY_UP_RESULT
+{
+	optional	int32					cmd_id		= 1[default = 20306];
+}
+message SC_TALISMAN_COAT_STAR_UP_RESULT
+{
+	optional	int32					cmd_id		= 1[default = 20307];
+}
+message SC_BATTLE_SLOT_ADD_UPDATE
+{
+
+	message STRUCT_BATTLE_GEM
+	{
+		required	int32   idx	 	= 1;//从0开始 
+		required	int32	gem_id	= 2; 
+	}
+	message STRUCT_BATTLE_SLOT_EQUIP_INFO
+	{
+		required	int32				pos						= 1;	// 装备位
+		optional	int32				equip_uid				= 2[default = -1];
+		repeated	STRUCT_BATTLE_GEM	gems					= 3;	
+	}
+	message STRUCT_BATTLE_SLOT_INFO
+	{
+		required	int32								idx			= 1;	// 序号从1开始
+		required	int32								hero_uid	= 2;
+		repeated	STRUCT_BATTLE_SLOT_EQUIP_INFO 		equips		= 3;
+		optional	int32								hallow_uid	= 5[default = -1];
+	//	repeated	STRUCT_BATTLE_SLOT_TALISMAN_INFO	Talismans	= 4;
+	}
+	message STRUCT_BATTLE_YUANJUN_INFO
+	{
+		required	int32				idx		 = 1; //From 1
+		required	int32				hero_uid = 2;
+	}
+	message STRUCT_BATTLE_FASHION_INFO
+	{
+		required	int32				pos			= 1;
+		required	int32				fashion_id	= 2;
+	}
+	optional 	int32 								cmd_id 				= 1 [default = 20400 ];
+	repeated	STRUCT_BATTLE_SLOT_INFO				slots				= 2;
+	repeated	STRUCT_BATTLE_YUANJUN_INFO			yuanjuns			= 3;
+	optional	int32								wing_id				= 4[default = -1];
+	repeated	STRUCT_BATTLE_FASHION_INFO			fashions			= 5;
+	optional	int32								title_id			= 6[default = -1];
+	optional	int32								is_display_fashion	= 7[default = -1];  // 1: display 0:not	
+	optional	int32								is_display_wing		= 8[default = -1];  // 1: display 0:not	
+}
+
+message SC_STAGE_INFO_ADD_UPDATE
+{
+	message STRUCT_STAGE_INFO
+	{
+		required	int32				stage_id			= 1;
+		required	int32				complete			= 2;
+		required	int32				highest_star		= 3;
+		required	int32				have_refill_times	= 4;	//当日已经重置过了几次
+	}
+	message STRUCT_STAGE_MAP_INFO
+	{
+		required	int32				map_id			= 1;
+		repeated	int32				empty_chest		= 2;//已经开过的宝箱 从0开始算起
+	}
+	optional	int32					cmd_id				= 1 [default = 20501];
+	repeated	STRUCT_STAGE_INFO		stage				= 2;
+	repeated	STRUCT_STAGE_MAP_INFO	stage_map			= 3;
+	required	int32					next_refresh_time 	= 4;
+}
+message SC_DAILY_STAGE_INFO_ADD_UPDATE
+{
+	message STRUCT_STAGE_INFO
+	{
+		required	int32				stage_id			= 1;
+		required	int32				highest_star		= 3;
+	}
+	message STRUCT_STAGE_TYPE_INFO
+	{
+		required	int32				stage_type			= 1;
+		required	int32				complete_times		= 2;//此类型完成了几次
+	}
+	optional	int32					cmd_id				= 1 [default = 20502];
+	repeated	STRUCT_STAGE_INFO		stage				= 2;
+	repeated	STRUCT_STAGE_TYPE_INFO	type_info			= 3;//只会发送挑战过的类型
+	optional	int32					next_refresh_time 	= 4[default = -1];
+}
+message SC_STAGE_GOLD_BEFORE
+{
+	optional 	int32				cmd_id		= 1 [default = 20600];
+	required	int64				gold		= 2;//gold=0意味着出现问题 
+}
+message SC_STAGE_VERIFY_RESULT
+{
+	optional	int32				cmd_id		= 1[default = 20601];
+	required	bool				is_win		= 2;	//战斗胜利
+	required	int32				star		= 3;
+	required	STRUCT_REWARD		reward		= 4;
+}
+message SC_STAGE_FAILE_RESULT
+{
+	optional	int32				cmd_id		= 1[default = 20602];
+	required	bool				succ		= 2;	//是否成功
+	required	STRUCT_REWARD		reward		= 3;
+}
+message SC_STAGE_START_RESULT
+{
+	optional	int32					cmd_id			= 1[default = 20603];
+	required	bool					is_avaliable	= 2;
+	required	int32					token			= 3;
+	required	STRUCT_BATTLE_INFO		battle_info		= 4;
+}
+message SC_STAGE_QUICK_COMPLETE_RESULT
+{
+	optional	int32			cmd_id			= 1[default = 20604];
+	required	STRUCT_REWARD	reward			= 2;
+}
+message SC_STAGE_OPEN_CHEST_RESULT
+{
+	optional	int32	cmd_id					= 1[default = 20605];
+	required	STRUCT_REWARD	reward			= 2;
+}
+//补充满关卡
+message SC_STAGE_REFILL_RESULT	
+{
+	optional 	int32	cmd_id			= 1[default =20606];
+}
+message SC_DAILY_STAGE_VERIFY_RESULT
+{
+	optional	int32				cmd_id		= 1[default = 20607];
+	required	bool				is_win		= 2;	//战斗胜利
+	optional	int32				star		= 3;
+	optional	STRUCT_REWARD		reward		= 4;
+}
+message SC_DAILY_STAGE_IS_AVALIABLE_RESULT
+{
+	optional	int32				cmd_id			= 1[default = 20608];
+	required	bool				is_avaliable	= 2;
+}
+message SC_DAILY_STAGE_QUICK_COMPLETE_RESULT
+{
+	optional	int32				cmd_id			= 1[default = 20609];
+	required	STRUCT_REWARD		reward			= 2;
+}
+
+message SC_BATTLE_MULTI_INIT
+{
+	optional	int32					cmd_id			= 1[default = 20650];
+	optional	int32					team_id			= 2;
+	required	STRUCT_BATTLE_INFO		battle_info		= 3;
+	optional	string					battle_scene	= 4;
+	repeated 	SC_BATTLE_MULTI_UPDATE	battle_updates	= 5;
+}
+
+message SC_BATTLE_MULTI_SYNC_TIME_RES
+{
+	optional	int32		cmd_id			= 1[default = 20651];
+	optional	float		serverTs		= 2;
+	optional	int32		idx				= 3;			
+}
+
+message SC_BATTLE_MULTI_START
+{
+	optional	int32		cmd_id			= 1[default = 20652];
+	optional	float		ts				= 2;
+	optional	float		battleTs		= 3;
+}
+
+message SC_BATTLE_MULTI_AMEND_TIME
+{
+	optional	int32		cmd_id			= 1[default = 20653];
+	optional	float		offset			= 2;
+}
+
+message SC_BATTLE_MULTI_UPDATE
+{
+	optional	int32 	cmd_id 		= 1 [default = 20660 ];
+	required	float	ts			= 2;
+	required	int32	command		= 3;
+	repeated	int32   uids       	= 4;
+	repeated	int32   argsInt   	= 10;
+	repeated	float	argsFloat	= 11;
+	repeated	string  argsString	= 12;
+	optional  	STRUCT_BATTLE_PLAYER_INFO	Player_Info	   = 13;
+}
+
+message SC_BATTLE_MULTI_RESULT
+{
+	optional	int32 	cmd_id 		= 1 [default = 20661 ];
+	required	int32	win_side	= 2;
+	required	int32	star		= 3;
+	repeated	int32   argsInt   	= 10;
+	repeated	float	argsFloat	= 11;
+	repeated	string  argsString	= 12;
+}
+
+message SC_GEM_ADD
+{
+	message STRUCT_GEM_INFO
+	{
+		required	int32	uid 		= 1;	// 宝石UID
+		required	int32	id			= 2;	// 宝石ID
+		required	int32	qty			= 3;	// 宝石数量
+	}
+	optional 	int32 				cmd_id 		= 1 [default = 20700 ];
+	repeated	STRUCT_GEM_INFO		gems		= 2;
+}
+message SC_GEM_REMOVE
+{
+	optional 	int32 				cmd_id 		= 1 [default = 20701 ];
+	repeated	int32				uids		= 2;
+}
+message SC_GEM_UPDATE
+{
+	optional 	int32 				cmd_id 		= 1 [default = 20702 ];
+	repeated	int32				uids		= 2;
+	repeated	int32				qtys		= 3;
+}
+message SC_GEM_COMBINE_RESULT
+{
+	optional	int32				cmd_id		= 1 [default = 20703 ];
+	required	STRUCT_REWARD		reward		= 2;
+	required	bool				is_cri		= 3;
+}
+message SC_GEM_UPGRADE_RESULT
+{
+	optional	int32				cmd_id		= 1 [default = 20704 ];
+	required	STRUCT_REWARD		reward		= 2;
+	required	bool				is_cri		= 3;
+}
+message SC_SELL_GEM_RESULT
+{
+	optional 	int32 				cmd_id 		= 1 [default = 20705 ];
+	required	STRUCT_REWARD		rwd			= 2;
+}
+message SC_OPERATION_DAILY_SIGN_RESULT
+{
+	optional	int32				cmd_id		= 1[default = 20800];
+	required	STRUCT_REWARD		reward		= 2;
+}
+message SC_OPERATION_DAILY_SIGN_TOTAL_RESULT
+{
+	optional	int32				cmd_id		= 1[default = 20801];
+	required	STRUCT_REWARD		reward		= 2;
+}
+message SC_OPERATION_DAILY_SIGN_UPDATE
+{
+	optional 	int32		cmd_id			= 1[default =20802];
+	required	int32		signed_days		= 2;
+	required	int32		last_sign		= 3;
+	required	int32		diamond_times	= 4;
+	repeated	int32		empty_chest		= 5;//已经开过的宝箱 从0开始算起
+}
+message SC_OPERATION_DIANJIN_UPDATE
+{
+	optional	int32		cmd_id				= 1[default = 20803];
+	optional	int32		next_refresh_times	= 2[default = -1];
+	required	int32		dianjin_times		= 3;//已点金次数					
+}
+message SC_OPERATION_DIANJIN_RESULT			
+{
+	optional	int32				cmd_id		= 1[default = 20804];
+	repeated	STRUCT_REWARD		reward		= 2;
+	optional	int32				times		= 3[default = 1];
+}
+message SC_DAILY_INFO_UPDATE			
+{
+	optional	int32				cmd_id				= 1[default = 20805];
+	optional	int32				next_refresh_time	= 2[default = -1];
+	optional	int32				stamina				= 3[default = -1];
+	optional	int32				energy				= 4[default = -1];
+}
+//暂不使用
+message SC_OPERATION_REFRESH_ALL_RESULT	
+{
+	optional	int32		cmd_id			= 1[default = 20880];
+}
+message STRUCT_MAIL_INFO
+{
+		required	int64			id				= 2;
+		required	int32			type			= 3;
+		required	int32			recvId			= 4;	// 
+		optional	int32			sendId			= 5[default= 1];	// 
+		required	int32			sendTime		= 6;	//
+		required	string			sendName		= 7;
+		required	string			strTitle		= 8;
+		required	string			strContent		= 9;
+		required	STRUCT_REWARD	reward			= 10;
+}
+message SC_MAIL_INFO_ADD_UPDATE
+{
+	
+	optional 	int32 				cmd_id 		= 1 [default = 20901 ];
+	repeated	STRUCT_MAIL_INFO	mails		= 2;
+}
+message SC_MAIL_REMOVE
+{
+	optional	int32				cmd_id		= 1 [default = 20902 ];
+	repeated	int64				mails_id	= 2;
+}
+message SC_MAIL_GET_REWARD_RESULT
+{
+	optional	int32				cmd_id		= 1 [default = 20903 ];
+	required	STRUCT_REWARD		reward		= 2;
+}
+message SC_MAIL_REMOVE_RESULT
+{
+	optional	int32				cmd_id		= 1 [default = 20904 ];
+
+}
+/////
+message SC_QUEST_ADD_UPDATE
+{
+	message STRUCT_QUEST_INFO
+	{
+		required	int32						config_id		= 1;
+		required	int32						quest_id		= 2;
+		repeated	int32						values			= 3;
+		required	int32						complete_time	= 4;
+		required	bool						is_got_reward	= 5;
+	}
+	message STRUCT_QUEST_CLASS_INFO
+	{
+		required	int32				quest_type		= 1;
+		required	int32				complete_quest	= 2;	//已经完成的任务数量
+		required	int32				quest_max		= 3[default = -1];//任务总数
+	}
+	optional	int32					cmd_id						= 1 [default = 21000];
+	repeated	STRUCT_QUEST_INFO		quests						= 2;
+	optional	int32					daily_quest_refresh_time	= 3	[default = 0];
+	optional	int32					daily_point					= 4 [default = -1];
+	optional	int32					achievement_point			= 5 [default = -1];
+	repeated	STRUCT_QUEST_CLASS_INFO	quest_class_info			= 6;
+	repeated	int32					recent_achievements			= 7;//近期成就
+	
+}
+message SC_QUEST_GET_REWARD_RESULT
+{
+	optional	int32				cmd_id		= 1 [default =21001];	
+	required	STRUCT_REWARD		reward		= 3;
+}
+message SC_NIUDAN_DRAW_RESULT
+{
+	optional	int32				cmd_id		= 1 [default = 21100];
+	repeated	STRUCT_REWARD		reward		= 2;
+}
+message SC_NIUDAN_ADD_AND_UPDATE
+{
+	message STRUCT_NIUDAN_INFO
+	{
+		required	int32			id						= 1;
+		required	int32			free_draw_times			= 2;
+		required	int32			next_avalible_time		= 4;
+		optional	int32			next_special_qualtiy	= 5[default = -1];
+		optional	int32			next_special_times		= 6[default = -1];
+	}
+	optional	int32				cmd_id				= 1 [default = 21101];
+	repeated	STRUCT_NIUDAN_INFO	niudans				= 2;
+	optional	int32				next_refresh_time	= 3 [default = -1];
+}
+message SC_SHOP_ADD_AND_UPDATE
+{
+	message STRUCT_SHOP_POSITION_INFO
+	{
+		required	int32	position		= 1;	//From [1 to n]
+		required	int32	item_type		= 2;	//类型对应shop表中的类型
+		required	int32	item_id			= 4;
+		required	int32	item_qty		= 5;	//每买一次给几个
+		required	int32	cost_id			= 6;
+		required	int32	cost_qty		= 7;
+		optional	int32	remaining		= 8[default = -1];//还能买几次
+		required	int32	limit			= 9;	//上限
+		optional	int32	ori_cost_id		= 10[default = -1];
+		optional	int32	ori_cost_price	= 11[default = -1];
+		optional	int32	buy_condition	= 12[default = -1];//1 玩家等级 2 玩家Vip等级 3公会商店等级 4竞技场排名
+		optional	int32	buy_cond_num	= 13[default = -1];
+		optional	string  info			= 14[default ="" ];//传递必要的文字信息 比如“公会等级10 打9折 ”
+		optional	int32	is_eff			= 15[default = -1];	
+	}
+	message STRUCT_SHOP_INFO
+	{
+		required	int32							id				= 1;
+		optional	int32							next_fresh_time	= 2[default = -1];
+		repeated	STRUCT_SHOP_POSITION_INFO		posistions		= 3;
+		optional	int32							reset_times		= 4[default = -1];//已刷新次数
+		optional	int32							off				= 5[default = -1];//几折 需要除以10000
+		optional	int32							level			= 6[default = -1];//等级
+		
+	}
+	optional	int32				cmd_id		= 1[default =21200];
+	repeated	STRUCT_SHOP_INFO	shops		= 2;
+}
+message SC_SHOP_PLAYER_REFRESH_RESULT
+{
+	optional	int32		cmd_id	= 1[default = 21201];
+	required	bool		succ 	= 2;
+}
+message SC_SHOP_BUY_ITEM_RESULT
+{
+	optional	int32				cmd_id 	= 1[default = 21202];
+	required	STRUCT_REWARD		rewards		= 2;		
+}
+message SC_COMMON_SHOP_ADD_AND_UPDATE
+{
+	message STRUCT_COMMON_SHOP_ENTRY_INFO
+	{
+		required	int32	id				= 1;//对应表中的Id
+		required	int32	buy_times		= 2;	
+	}
+	optional	int32							cmd_id			= 1[default = 21203];
+	optional	int32							next_fresh_time	= 2[default = -1];
+	repeated	STRUCT_COMMON_SHOP_ENTRY_INFO	entry			= 3;
+}
+message SC_COMMON_SHOP_BUY_ITEM_RESULT
+{
+	optional	int32				cmd_id 		= 1[default = 21204];
+	required	STRUCT_REWARD		rewards		= 2;		
+}
+
+
+message SC_VIP_SHOP_PAY_RESULT	//Gm充值回复 或者 渠道充值回执
+{
+	optional	int32			cmd_id		= 1[default = 21206];
+	optional	int32			id			= 2;//商品id
+	required	STRUCT_REWARD	reward		= 3;
+}
+message SC_VIP_SHOP_IS_AVALIABLE_RESULT
+{
+	optional	int32			cmd_id		 = 1[default = 21207];
+	required	bool			is_avaliable = 2;
+}
+message SC_VIP_INFO_UPDATE_AND_ADD
+{
+	message STRUCT_VIP_ITEM
+	{
+		required	int32		item_id					= 1;//对应vipshop中的itemid
+		optional	int32		expired_time			= 2[default = -1];//过期时间戳
+		optional	int32		last_got_reward_time	= 3[default = -1];//上次领取奖励的时间
+	}
+	optional	int32				cmd_id				= 1[default = 21208];
+	repeated	STRUCT_VIP_ITEM		vip_items			= 2;
+	repeated	int32				bought_items_id		= 3;//已经购买过的物品Id 用来检测是否触发首次赠送
+	repeated	int32				got_vip_gift_pack	= 4;//已领取vip礼包
+}
+message SC_VIP_GET_DAILY_CARD_RESULT
+{
+	optional	int32			cmd_id	= 1[default =21209];
+	required	STRUCT_REWARD	reward	= 2;
+}
+message SC_VIP_GIFT_GET_RESULT
+{
+	optional	int32			cmd_id	= 1[default = 21210];
+	required	int32			gift_id	= 2;
+	required	STRUCT_REWARD	reward	= 3;
+}
+message SC_VIP_SHOP_UPDATE
+{
+	message STRUCT_VIP_SHOP_ITEM
+	{
+
+		required	int32		id					= 1;
+		required	string		name				= 2;
+		required	int32		type 				= 3;// 1:卡 每日领取奖励  2: 资源
+		required	int32		price				= 4;
+		required	string		image				= 5;
+		required	int32		order 				= 6;//暂时只有一个类型	
+		required 	int32		normal_diamonds		= 7;//购买后立刻获得
+		required	int32		day_diamonds		= 8;//每天赠送多少钻石
+		required	int32		days				= 9;//持续天数
+		required	int32		first_diamonds		= 10;//第一次购买赠送
+		required	int32		gift_diamonds		= 11;//附赠
+		required	int32		vip_exp				= 12;
+	}
+	optional	int32					cmd_id				= 1[default = 21211];
+	repeated	STRUCT_VIP_SHOP_ITEM	items				= 2;
+	optional	int32					version				= 3[default = -1];//版本号 购买物品时需发送核对 如不同 服务器会刷新商店
+}
+message SC_SHOP_REFRESH_RESULT
+{
+	optional	int32			cmd_id				= 1[default=21212];
+}
+message STRUCT_TRAVEL_EVENT
+{
+
+	required	int32		event_id	= 1;//事件的id
+	required	int32		event_type	= 2;//对应event表中的类型
+	//当event类型为神秘商店时，eventid代表商店的id
+	//当event为随机boss时，eventid 为bossid
+	
+	//先留着 等有了相关的event再添加
+}
+message SC_TRAVEL_ADD_AND_UPDATE
+{	
+	message STRUCT_STAR_COLLECTION
+	{
+		required	int32			type = 1;	// 0 = Item ; 1 = event
+		required	int32			id	 = 2;
+	}
+	message STRUCT_MAP_INFO
+	{
+		required	int32			map_id		 = 1;
+		repeated	int32			empty_chests = 2;//已经开过的宝箱 从0开始算起
+	}
+	message STRUCT_TRAVEL_INFO
+	{
+		required	int32					stage_id		= 1;
+		optional	int32					current_boss_id = 2[default=-1];//=0表示已经通关
+		optional	int32					angry_point		= 3[default=-1];
+		repeated	STRUCT_STAR_COLLECTION	collections		= 5;//弃用
+		optional	STRUCT_TRAVEL_EVENT		event			= 6;//没有进行答复的event
+		optional	int32					collection		= 7[default=-1];//收集了哪些东西
+	}
+	message STRUCT_RANDOM_BOSS
+	{
+		required	int32			boss_uid	= 3;
+		required	int32			boss_id 	= 1;
+		required	int32			boss_level	= 2;
+	}
+	optional	int32					cmd_id				= 1 [default = 21300];
+	repeated	STRUCT_TRAVEL_INFO		travels				= 2;
+	repeated	STRUCT_MAP_INFO			maps				= 3;
+	repeated	STRUCT_RANDOM_BOSS		boss_list			= 4;
+	optional	int32					next_reset_time		= 5 [default = -1];
+	optional	int32					current_boss_top	= 6	[default = -1];
+	optional	int32					history_boss_top	= 7 [default = -1];
+}
+message SC_TRAVEL_TRY_RESULT
+{
+	optional	int32				cmd_id		= 1[default = 21301];
+	required	STRUCT_TRAVEL_EVENT	event		= 2;
+	required	STRUCT_REWARD		reward		= 3;
+	
+}
+message SC_TRAVEL_OPEN_CHEST_RESULT
+{
+	optional	int32				cmd_id		= 1[default = 21302];
+	required	STRUCT_REWARD		reward		= 2;
+}
+message SC_TRAVEL_EVENT_RESPONSE_RESULT
+{
+	optional	int32				cmd_id		= 1[default = 21303];
+	required	STRUCT_REWARD		reward		= 2;
+}
+message SC_TRAVEL_CHALLENGE_BOSS_RESULT
+{
+	optional	int32				cmd_id		= 1[default = 21304];
+	required	bool				is_win		= 2;	//战斗胜利
+	required	STRUCT_REWARD		reward		= 3;
+}
+message SC_TRAVEL_RANDOM_BOSS_RESULT
+{
+	optional	int32				cmd_id		= 1[default = 21305];
+	required	bool				is_win		= 2;	//战斗胜利
+	required	STRUCT_REWARD		reward		= 3;
+}
+message SC_TRAVEL_RESET_RANDOM_BOSS_RESULT
+{
+	optional	int32				cmd_id		= 1[default = 21306];
+	required	bool 				is_succ		= 2;//是否成功重置
+}
+message SC_TRAVEL_COLECTION_NOTIFY
+{
+	message STRUCT_COLLECTION
+	{
+		required	int32			type = 1;// 0 = event ; 1 = partner
+		required	int32			id	 = 2;
+	}
+	optional	int32				cmd_id		= 1 [default = 21307];
+	repeated	STRUCT_COLLECTION	collections = 2;
+}
+message STRUCT_AUTO_TRAVEL_RECORD
+{
+	required	STRUCT_REWARD		reward = 1;
+}
+//登陆的时候或者刚开始挂机的时候发送
+message SC_AUTO_TRAVEL_UPDATE
+{
+	message STRUCT_AUTO_TRAVEL
+	{
+		required	int32							auto_travel_area_id	= 2;
+		required	int32							start_time			= 3;
+		required	int32							hours				= 4;//所选择的时长
+		required	int32							next_send_award_time= 5;//下次发奖励的时间
+		repeated	STRUCT_AUTO_TRAVEL_RECORD		records				= 6;//弃用
+		required	STRUCT_REWARD					rewards				= 7;
+	}
+	optional	int32							cmd_id				= 1[default = 21308];
+	repeated	STRUCT_AUTO_TRAVEL				auto_travel			= 2;
+}
+//每次询问的时候发送 更新下次发送奖励的时间 以及 距离上次询问后多出的记录
+message SC_AUTO_TRAVEL_ADD
+{
+	optional	int32							cmd_id				= 1[default = 21309];
+	required	int32							auto_travel_area_id	= 2;
+	required	int32							next_send_award_time= 3;
+	repeated	STRUCT_AUTO_TRAVEL_RECORD		records				= 4;//增量  弃用
+	required	STRUCT_REWARD					rewards				= 5;//总奖励每次全推	
+}
+message SC_AUTO_TRAVEL_GET_RESULT
+{
+	optional	int32				cmd_id				= 1[default = 21310];
+	required	int32				auto_travel_area_id	= 2;
+	required	STRUCT_REWARD		reward				= 3;
+}
+message STRUCT_PLAYER_SNAPSHOT
+{
+	required	int32	role_id		= 1;
+	optional	string	name		= 2[default = ""];
+	optional	int32	level		= 3[default = -1];	
+	optional	int32	vip_lv		= 4[default = -1];
+	optional	int32	hero_id		= 5[default = -1];
+	optional	int64	combat_point= 6[default = -1];
+	optional	string	club_name 	= 7[default = ""];
+	optional	int32	club_id		= 8[default = -1];
+	optional	int32	color		= 9[default = -1];
+	optional	int32	server_id	= 10[default = -1];
+	optional	int32	token		= 11[default = -1];
+}
+message STRUCT_PLAYER_DETAILS
+{
+	message STRUCT_HERO_PROP
+	{
+		message STRUCT_PROP_VALUE
+		{
+			required	int32				prop_num	= 1;
+			required	int32				prop_value	= 2;
+		}
+		required	int32					idx			= 1;
+		repeated	STRUCT_PROP_VALUE		propvalues	= 2;				
+	}
+	required	STRUCT_PLAYER_SNAPSHOT				player		= 3;
+	required 	SC_BATTLE_SLOT_ADD_UPDATE			battle_slot = 4;
+	required 	SC_HERO_INFO_ADD_UPDATE				heros 		= 5;
+	required	SC_EQUIP_INFO_ADD_UPDATE			equips		= 6;
+	required	SC_HALLOW_INFO_ADD_UPDATE			hallows		= 7;
+	repeated	STRUCT_HERO_PROP					hero_props	= 8;
+	
+	//剩余东西以后再加
+}
+message STRUCT_RANK_PLAYER_SNAPSHOT
+{
+	message STRUCT_HERO_INFO
+	{
+		required	int32		hero_id		= 	1;
+		required	int32		star_lv		=	2;//暂定显示starlv，以后若要显示其他再做修改
+	}
+	required	STRUCT_PLAYER_SNAPSHOT		player		=   3;
+	required	int32						rank		= 	4;	//显示相关的分数 例如：等级排行为等级，通关星数排行榜显示星数
+	repeated	STRUCT_HERO_INFO			heros		=	5;	///上阵英雄，第一个为主角
+}
+message STRUCT_RANK_CLUB_SNAP_SHOT
+{
+	required	STRUCT_CLUB_SNAP_SHOT		club	= 1;
+	required	int32						rank	= 2;//显示相关的分数 例如：等级排行为等级，通关星数排行榜显示星数
+}
+message SC_RANK_GET_TOP_LEVEL_RESULT
+{
+	optional	int32								cmd_id	= 1 [default = 21400];
+	repeated	STRUCT_RANK_PLAYER_SNAPSHOT			players = 2;
+	required	int32								top		= 3; // 用户自己的排名 0表示未上榜
+	required	int32								rank	= 4;//用户在此榜单的值
+	optional	int32								rank_id	= 5[default = 101];
+}
+message SC_RANK_GET_TOP_STAGE_RESULT
+{
+	optional	int32								cmd_id	= 1 [default = 21401];
+	repeated	STRUCT_RANK_PLAYER_SNAPSHOT			players = 2;
+	required	int32								top		= 3; //用户自己的排名 0表示未上榜
+	required	int32								rank	= 4;//用户在此榜单的值
+	optional	int32								rank_id	= 5[default = 201];
+}
+message SC_RANK_GET_TOP_ARENA_RESULT
+{
+	optional	int32								cmd_id	= 1 [default = 21402];
+	repeated	STRUCT_RANK_PLAYER_SNAPSHOT			players = 2;
+	required	int32								top		= 3; //用户自己的排名 0表示未上榜
+	required	int32								rank	= 4;//用户在此榜单的值
+	optional	int32								rank_id	= 5[default = 301];
+}
+message SC_RANK_GET_TOP_RANDOM_BOSS_RESULT
+{
+	optional	int32								cmd_id	= 1 [default = 21403];
+	repeated	STRUCT_RANK_PLAYER_SNAPSHOT			players = 2;
+	required	int32								top		= 3; //用户自己的排名 0表示未上榜
+	required	int32								rank	= 4;//用户在此榜单的值
+	optional	int32								rank_id	= 5[default = 202];
+}
+message SC_RANK_GET_TOP_ACHIEVEMENT_RESULT			
+{
+	optional	int32								cmd_id	= 1 [default = 21404];
+	repeated	STRUCT_RANK_PLAYER_SNAPSHOT			players = 2;
+	required	int32								top		= 3; //用户自己的排名 0表示未上榜
+	required	int32								rank	= 4;//用户在此榜单的值
+	optional	int32								rank_id	= 5[default = 103];
+}
+message SC_RANK_GET_TOP_SHENMO_RESULT			
+{
+	optional	int32								cmd_id	= 1 [default = 21405];
+	repeated	STRUCT_RANK_PLAYER_SNAPSHOT			players = 2;
+	required	int32								top		= 3; //用户自己的排名 0表示未上榜
+	required	int32								rank	= 4;//用户在此榜单的值
+	optional	int32								rank_id	= 5[default = 302];
+}
+message SC_RANK_GET_TOP_CLUB_RESULT
+{
+	optional	int32								cmd_id	= 1 [default = 21406];
+	repeated	STRUCT_RANK_CLUB_SNAP_SHOT			clubs	= 2;
+	required	int32								top		= 3;//用户自己的排名 0表示未上榜
+	required	int32								rank	= 4;//用户在此榜单的值
+	optional	int32								rank_id	= 5[default = 401];
+}
+message SC_RANK_GET_TOP_CLUB_BY_COMBAT_POINT_RESULT
+{
+	optional	int32								cmd_id	= 1 [default = 21407];
+	repeated	STRUCT_RANK_CLUB_SNAP_SHOT			clubs	= 2;
+	required	int32								top		= 3;//用户自己的排名 0表示未上榜
+	required	int32								rank	= 4;//用户在此榜单的值
+	optional	int32								rank_id	= 5[default = 402];
+}
+message SC_RANK_GET_TOP_COMBAT_POINT_RESULT			
+{
+	optional	int32								cmd_id	= 1 [default = 21408];
+	repeated	STRUCT_RANK_PLAYER_SNAPSHOT			players = 2;
+	required	int32								top		= 3; //用户自己的排名 0表示未上榜
+	required	int32								rank	= 4;//用户在此榜单的值
+	optional	int32								rank_id	= 5[default = 102];
+}
+message SC_GET_PLAYER_DETAIL_RESULT
+{
+	optional	int32								cmd_id	= 1 [default = 21421];
+	required	STRUCT_PLAYER_DETAILS				player	= 2;
+}	
+message SC_GET_PLAYER_SNAPSHOT_RESULT
+{
+	optional	int32								cmd_id	= 1[default = 21422];
+	required	STRUCT_PLAYER_SNAPSHOT				snapshot= 2;
+}
+message STRUCT_BATTLE_RECORD
+{
+	required	int32						uid			  = 1;
+}
+
+message STRUCT_ARENA_PLAYER_SNAPSHOT
+{
+	required	STRUCT_PLAYER_SNAPSHOT		player	 	  =	1;//对手基本信息
+	required	int32						opp_combat_pt = 2;//对手战力
+	required	int32						win_times	  = 3;//胜利次数
+}
+message SC_ARENA_UPDATE_AND_ADD
+{
+	message STRUCT_ARENA_RECORD
+	{
+		required	int32							uid			  = 1;
+		required	int32							battle_id 	  = 2;//根据battleId向服务器请求具体的录像
+		required	bool							is_winner	  = 3;// true = win, false = lose;
+		required	bool							is_attacker	  = 4;// true 主动攻击 false 被攻击
+		required	int32							pre_rank	  = 5;
+		required	int32							new_rank	  = 6;
+		required	int32							time		  = 7;
+		required	STRUCT_ARENA_PLAYER_SNAPSHOT	opponent	  = 8;//对手信息
+		///
+		//剩下的之后加
+	}
+	optional	int32				cmd_id				= 1[default = 21500];	
+	optional	int32				attack_times		= 2[default = -1];	//已经挑战了几次
+	optional	int32				chance_bought		= 3[default = -1];	//已购买次数
+	optional	int32				next_chance_reset	= 4[default = -1];	//挑战次数重置时间戳
+	optional	int32				top_rank			= 5[default = -1];	//历史最高排名
+	optional	int32				current_rank		= 6[default = -1];
+	optional	int32				next_chance_time	= 7[default = -1];	//下次可挑战的时间 若为零表示没有cd
+	repeated	STRUCT_ARENA_RECORD	arena_records		= 8;
+	optional	int32				win_times			= 9[default = -1];	//胜利次数
+	optional	bool				is_first			= 10[default = false];//true:一次没打过
+	//////////////////////////////////
+	repeated	int32				read_record_ids		= 11;//已经阅读过的ids
+}
+//具体战报通过 SC_ARENA_UPDATE_AND_ADD 发送
+message SC_ARENA_ATTACK_RESULT	
+{
+	optional	int32			cmd_id				= 1[default = 21501];
+	required	bool 			result			  	= 2;// true = win, false = lose;
+	required	int32			arena_record_uid	= 3;//			
+	required	STRUCT_REWARD	reward				= 4;//
+	required	int32			pre_rank			= 5;//
+	required	int32			cur_rank			= 6;//
+}
+message STRUCT_PLAYER_HERO_SNAPSHOT
+{
+	required	int32		hero_id		= 	1;
+	required	int32		star_lv		=	2;//暂定显示starlv，以后若要显示其他再做修改
+}
+message SC_ARENA_LIST_RESULT
+{
+	
+	message	STRUCT_ARENA_LIST
+	{
+		required	STRUCT_ARENA_PLAYER_SNAPSHOT	opponent			= 1;
+		required	int32							rank				= 2;
+		repeated	STRUCT_PLAYER_HERO_SNAPSHOT			heros				= 3;
+	}
+	optional	int32							cmd_id		= 1[default = 21502];
+	repeated	STRUCT_ARENA_LIST				opponents	= 2;
+}
+message SC_ARENA_RECHARGE_FIGHT_TIMES_RESULT
+{
+	optional	int32	cmd_id			= 1[default =21503];
+}
+message SC_ARENA_CLEAR_CD_RESULT
+{
+	optional	int32	cmd_id			= 1[default =21504];
+}
+message SC_ARENA_READ_RECORD_RESULT
+{
+	optional	int32	cmd_id			= 1[default = 21505];
+}
+message STRUCT_CHAT_MESSAGE
+{
+	required	int32					send_time	 = 1;
+	required	int32					sender_type  = 2; //1 = 玩家,2 = 系统
+	optional	STRUCT_PLAYER_SNAPSHOT	player		 = 3; //如果类型是玩家, 则player为玩家的基本信息
+	
+	optional	int32					receiver_id  = 10 [default = -1]; //如果receiver_id > 0 代表收件人是玩家
+	optional	STRUCT_PLAYER_SNAPSHOT	receiver	 = 11; //如果receiver_id > 0, 则receiver为玩家的基本信息
+	
+	
+	required	int32					type		 = 5;//1 文字 2 语音 3 邀请链接
+	//发送文字时发送
+	optional	string					text 		 = 4 [default = ""];
+	//发送语音时发送
+	optional	string					voice_txt	 = 6 [default = ""];
+	optional	bytes					voice_byte	 = 7 [default = ""];//弃用
+	optional	int32					voice_cnt	 = 8 [default = -1];//弃用
+	optional	int32					voice_freq	 = 9 [default = -1];//弃用
+	optional	int32					voice_token  = 12[default = -1];//声音编号
+	//发送邀请时发送
+	optional	string					room_id		 = 13[default = ""];
+	///剩余东西以后加
+}
+message STRUCT_CHAT_VOICE
+{
+	required	int32					voice_token  = 1[default = -1];//声音编号
+	required	bytes					voice_byte	 = 2[default = ""];//弃用
+	required	int32					voice_cnt	 = 3[default = -1];//弃用
+	required	int32					voice_freq	 = 4[default = -1];//弃用
+}
+message SC_CHAT_UPDATE_AND_ADD
+{
+	optional	int32					cmd_id					= 1 [default = 21600];
+	optional	int32					chat_chanel				= 2 [default = 1];//聊天频道: 1 = 私聊, 2 = 大厅, 3 = 公会， 
+	repeated	STRUCT_CHAT_MESSAGE		messages				= 3;
+	repeated	STRUCT_CHAT_VOICE		voices					= 4;
+}
+//收到消息后发送确认
+message SC_CHAT_SEND_MESSAGE_RESULT	
+{
+	optional	int32					cmd_id					= 1 [default = 21601];		
+}
+message SC_CHAT_JOIN_CHANEL
+{
+	//此回执用来确定是否已加入 某动态频道
+	optional	int32					cmd_id					= 1 [default = 21602];
+	required	int32					chat_chanel				= 2; //聊天频道: 1 = 私聊, 2 = 大厅, 3 = 公会，4附近的人 PS:暂时只支持 附近
+	required	int32					chanel_id				= 3;// 客户端自己决定加入哪个一个 "附近"
+}
+message SC_CHAT_STATUS
+{
+	optional	int32					cmd_id					= 1[default = 21603];
+	required	int32					status					= 2;//0:正常 1:禁言
+}
+message SC_CHAT_LAST_READ_TIME
+{
+	message STRUCT_CHATCHANEL_AND_TIME
+	{
+		required	int32	chanel_type	 	= 1;
+		required	int32	last_read_time 	= 2;
+		optional	int32	chanel_id		= 3 [default = 0];
+	}
+	optional	int32							cmd_id					= 1[default = 21604];
+	repeated	STRUCT_CHATCHANEL_AND_TIME		infos					= 2;
+}
+message SC_CHAT_GET_CHANEL_ID_RESULT
+{
+	optional	int32							cmd_id					= 1[default = 21605];
+	required	int32							chanel_id				= 2;
+}
+message SC_CHAT_LEAVE_CHANEL
+{
+	//此回执用来确定是否已离开 某动态频道
+	optional	int32					cmd_id					= 1 [default = 21606];
+	required	int32					chat_chanel				= 2; //聊天频道: 1 = 私聊, 2 = 大厅, 3 = 公会，4附近的人 PS:暂时只支持 附近
+}
+message SC_SHENMO_UPDATE
+{
+	optional	int32	cmd_id			= 1 [default = 21700];
+	required	int32	top_level		= 2;
+	required	int32	current_level	= 3;//当前已通关的最高关卡 初始为0
+	required	int32	dead_times		= 4;//失败次数 当前死亡一次后则不能继续
+	required	int32	next_refreshtime= 5;
+	required	int32	buy_times		= 6;
+	required	int32	is_able_reset	= 7;// 1:able 0:disable
+}
+message SC_SHENMO_QUICK_COMPLETE_RESULT
+{
+	optional	int32			cmd_id			= 1 [default = 21701];
+	required	STRUCT_REWARD	reward			= 2;
+}
+message SC_SHENMO_VIP_QUICK_COMPLETE_RESULT
+{
+	optional	int32					cmd_id				= 1 [default = 21702];
+	required	STRUCT_REWARD			rewards				= 2;
+}
+message SC_SHENMO_VERIFY_BATTLE_RESULT
+{
+	optional	int32			cmd_id			= 1 [default = 21703];
+	required	bool			is_win			= 2;
+	optional	STRUCT_REWARD	reward			= 3;
+	required	int32			star			= 4;
+}
+message SC_SHENMO_IS_AVAILABLE_RESULT
+{
+	optional	int32			cmd_id			= 1 [default = 21704];
+	required	bool			is_available	= 2;
+}
+message SC_WINGS_INFO_ADD_UPDATE
+{
+	message STRUCT_WINGS_INFO
+	{
+		required	int32			id					= 1;
+		required	int32			star_lv				= 2;
+	}
+	optional 	int32 				cmd_id 				= 1 [default = 21800 ];
+	repeated	STRUCT_WINGS_INFO	wings				= 2;
+	optional	int32				zhufu_value			= 3 [default = -1];
+	optional	int32				adv_lv				= 4 [default = -1];
+	optional	int32				next_refresh_time	= 5 [default = -1];
+}
+message SC_WING_ADV_RESULT
+{
+	optional	int32			cmd_id	= 1[default = 21801];
+	required	STRUCT_REWARD	reward 	= 2;		//是否暴击包含在reward里面
+}
+message SC_WING_STAR_UP_RESULT
+{
+	optional	int32		cmd_id	= 1[default = 21802];
+}
+message SC_WING_COMBINE_RESULT
+{
+	optional	int32			cmd_id	= 1[default = 21803];
+	required	STRUCT_REWARD	reward 	= 2;
+}
+message SC_FASHION_INFO_ADD_UPDATE
+{
+	message STRUCT_FASHION_INFO
+	{
+		required	int32			fashion_id		= 1;
+		//
+	}
+	optional	int32					cmd_id				= 1[default = 21810];
+	repeated	STRUCT_FASHION_INFO		fashions			= 2;
+	optional	int32					zhufu_value			= 3[default = -1];
+	optional	int32					adv_lv				= 4[default = -1];
+	optional	int32					next_refresh_time	= 5[default = -1];		
+}
+message SC_FASHION_ADV_RESULT
+{
+	optional	int32				cmd_id		= 1[default = 21811];
+	required	STRUCT_REWARD		reward		= 2;//是否暴击包含在reward里面
+}
+message SC_FASHION_COMBINE_RESULT
+{
+	optional	int32			cmd_id	= 1[default = 21812];
+	required	STRUCT_REWARD	reward 	= 2;
+}
+
+message SC_CREATE_CLUB_RESULT	
+{
+	enum ResultType
+	{
+		SUCCESS		= 0;	// 成功
+		TOO_SHORT	= 1;	// 名字太短
+		TOO_LONG	= 2;	// 名字太长
+		DUPLICATE	= 3;	// 名字重复
+		INVALID		= 4;	// 名字有非法字符
+	}
+	optional 	int32 		cmd_id 		= 1 [default = 21900 ];
+	required	ResultType	res			= 2;
+}
+//点开公会面板便能看到的东西 
+message SC_MY_CLUB_DETAIL_UPDATE_AND_ADD		
+{
+	message STRUCT_MEMBER
+	{
+		required	STRUCT_PLAYER_SNAPSHOT	player				= 1;
+		optional	int32					title				= 2[default = -1];// 1 = 平民， 2 = 长老， 3 = 副会长 ， 4 = 会长
+		optional	int32					donate				= 3[default = -1];//贡献度
+		optional	int32					is_give_stamina		= 4[default = -1];//1：可以 0：不可以 是否能给他送体力   注意 这里仅表示今日能否给他送体力 并未与自己最大赠送体力数做判断
+		optional	int32					is_rec_stamina		= 5[default = -1];//1：可以 0：不可以 是否有体力未收取    注意 这里仅表示现在是否有体力未收取 并未与自己最大接受体力数做判断
+		optional	int32					logut_time			= 6[default = -1];//上次登出时间， 0 表示当前在线
+		optional	int32					qualification		= 7[default = -1];//资历
+		//剩下以后再加
+	}
+	message STRUCT_TAN_HE
+	{
+		optional	int32					start_time			= 1[default = -1]; //为0时代表没有弹劾
+		optional	int32					leader_id			= 2[default = -1];
+		repeated	int32					support_id			= 3;
+	}
+	optional	int32				cmd_id				= 1 [default = 21901];
+	optional	bool				is_update_all		= 2 [default = false];//是否全部刷新
+	optional	string				club_name			= 3 [default = ""];
+	optional	int32				level				= 4 [default = -1];
+	repeated	STRUCT_MEMBER		members				= 5;
+	optional	string				notice				= 6 [default = ""];//公告		
+	optional	int32				next_refresh_time 	= 7 [default = -1];//下次刷新时间 
+	optional	STRUCT_TAN_HE		tanhe				= 8;
+	optional	int32				growth				= 9 [default = -1];
+	optional	int32				min_lv				= 10[default = -1];//加入者的最小需求等级
+	optional	bool				is_verification		= 11;//申请是否需要验证 true=需要 false=直接加入
+	optional	int32				icon				= 12[default = -1];
+	optional	int32				donate_progress		= 13[default = -1];//公会捐献进度
+	optional	int32				club_gold			= 14[default = -1];
+	optional	int32				top					= 15[default = -1];
+	optional	string				leader_name 		= 16[default = ""];
+	optional	int32				have_donate_number	= 20[default = -1];//全公会已捐赠人数
+	
+	optional	int32				donate				= 17[default = -1];//玩家的贡献度 
+	optional	int32				qualification		= 18[default = -1];//玩家的资历
+	optional	int32				title				= 19[default = -1];
+	
+
+}
+message SC_MY_CLUB_SELF_INFO_UPDATE
+{
+	message STRUCT_CLUB_SKILL
+	{
+		required	int32			skill_id			= 1;
+		required	int32			skill_lv			= 2;
+	}
+	message STRUCT_CLUB_BOX
+	{
+		required	int32			idx					= 1;//from 1
+		required	bool			is_empty			= 2;// true: empty
+	}
+	//离开公会以后不清空的信息
+	optional	int32				cmd_id				= 1 [default = 21902];
+	optional	int32				give_stamina		= 2 [default = -1];//已送出体力
+	optional	int32				rec_stamina			= 3 [default = -1];//已收到体力
+	optional	int32				next_refresh_time 	= 4 [default = -1];//下次刷新时间 暂时只与赠送体力有关
+	optional	int32				club_id				= 5 [default = -1];//0代表没有公会
+	optional	int32				is_able_donate		= 6	[default = -1];// 1 = able; 0 = disable 
+	optional	int32				leave_time			= 7 [default = -1];//离开工会的时间
+	repeated	int32				empty_donate_box	= 8;//弃用
+	repeated	STRUCT_CLUB_SKILL	skills				= 9;
+	optional	int32				complete_stage_time = 10[default = -1];
+	repeated	STRUCT_CLUB_BOX		donate_box			= 11;
+	optional	string				club_name			= 12[default = ""];
+	optional	int32				donate_idx			= 13[default = -1];//对应uniondonate表中的Id
+}
+//弃用
+message SC_MY_CLUB_MEMBER_REMOVE	
+{
+	optional	int32				cmd_id				= 1[default = 21903];
+	repeated	int32				members				= 2;//内容为被移除的playerid
+}
+//暂时 排行榜使用
+message STRUCT_CLUB_SNAP_SHOT 
+{
+	required	int32		club_id		= 1;
+	required	string		club_name 	= 2;
+	required	int32		combatpoint = 3;
+	required	int32		club_level 	= 4;
+	required	string		leader_name = 5;
+	required	int32		icon		= 6;
+}
+
+//暂时在加入公会界面使用
+message STRUCT_CLUB_INFO	
+{
+	required	int32		club_id			= 1;
+	required	string		club_name		= 2;
+	required	int32		rank			= 3;//公会排名 分页查看时需发送
+	required	int32		is_applied		= 4;//是否已经申请	
+	required	string		notice			= 5;//
+	required	int32		icon			= 6;
+	required	int32		max_member		= 7;//最大人数
+	required	int32		current_member	= 8;//现有人数
+	required	string		leader_name		= 9;
+	required	int32		club_level		= 10;
+	required	bool 		is_need_verify	= 11;//是否需要审核
+	required	int32		min_lv			= 12;//可申请的最低等级 
+}
+
+
+message SC_CLUB_SEARCH_BY_NAME_RESULT
+{
+	optional	int32				cmd_id		= 1[default = 21904];
+	repeated 	STRUCT_CLUB_INFO	clubs		= 2;
+}
+message SC_CLUB_OBSERVE_RESULT
+{
+	optional	int32				cmd_id		= 1[default = 21905];
+	repeated	STRUCT_CLUB_INFO	clubs		= 2; 
+}
+message SC_CLUB_APPLY_RESULT
+{
+	enum ResultType
+	{
+		SUCCESS			= 0;	// 成功
+		HAVE_APPLIED	= 1;	// 已申请过
+		NOT_QUALIFIED	= 2;	// 没有资格
+		HAVE_CLUB		= 3;	// 已经有公会
+		FULL			= 4;	// 公会已满
+		NOT_FOUND		= 5;	// 公会没有找到
+		LV_NOT_ENOUGH	= 6;	// 等级不足
+	}
+	optional	int32				cmd_id		= 1[default = 21906];
+	required	ResultType			result 		= 2;	
+	required	int32				club_id		= 3;
+}
+
+message SC_CLUB_APPLICATION_UPDATE_AND_ADD
+{
+	message STRUCT_APPLICATION
+	{
+		required	STRUCT_PLAYER_SNAPSHOT	player		= 1;
+		required	int32					apply_time  = 2; 	
+	}
+	optional	int32				cmd_id			= 1[default = 21907];	
+	repeated	STRUCT_APPLICATION	applications	= 2;
+}
+message SC_CLUB_APPLICATION_REMOVE
+{
+	optional	int32				cmd_id			= 1[default = 21908];
+	repeated	int32				role_id			= 2;
+}
+message SC_CLUB_APPLICATION_RESPONSE_RESULT
+{
+	optional	int32				cmd_id		= 1[default = 21909];
+	required	int32				result   	= 2[default= 0]; // 0: suc, 1: application not found, 2: have join other club
+}
+message SC_CLUB_GIVE_STAMINA_RESULT
+{
+	optional	int32				cmd_id		= 1[default = 21910];
+	optional	int32				result  	= 2[default = 1];//1:suc, -1:failed 该玩家不存在
+}
+message SC_CLUB_GET_STAMINA_RESULT
+{
+	optional	int32				cmd_id		= 1[default = 21911];
+	required	STRUCT_REWARD		reward		= 2;
+}
+message SC_CLUB_SET_NOTICE_RESULT
+{
+	optional	int32				cmd_id		= 1[default = 21912];
+	required	string				notice		= 2;
+}
+message SC_CLUB_DONATE_RESULT
+{
+	optional	int32				cmd_id		= 1[default = 21913];
+	required	STRUCT_REWARD		reward		= 2;
+}
+message SC_CLUB_OPEN_DONATE_SCHEDULE_BOX
+{	
+	optional	int32				cmd_id		= 1[default = 21914];
+	required	STRUCT_REWARD		reward		= 2;
+}
+message SC_CLUB_SETTING_RESULT
+{
+	optional	int32		cmd_id		= 1[default = 21915];
+	required	int32		icon		= 2;
+	required	int32		min_lv		= 3;//最低申请等级
+	required	bool		is_verify	= 4;//true 需要审核申请 false 不需要审核 直接加入		
+}
+message SC_CLUB_LEAVE_RESULT
+{
+	optional	int32		cmd_id		= 1[default = 21916];
+}
+message SC_CLUB_SET_TITLE_RESULT
+{
+	optional	int32		cmd_id		= 1[default = 21917];
+}
+message SC_CLUB_BUILDING_LEVEL_UP_RESULT
+{
+	optional	int32		cmd_id		= 1[default = 21918]; 
+}
+message SC_CLUB_KICK_RESULT
+{
+	optional	int32		cmd_id		= 1[default = 21919];
+	required	bool		suc			= 2;
+}
+
+message SC_MY_CLUB_BUILDING_UPDATE_AND_ADD
+{
+	message STRUCT_CLUB_BUILDING
+	{
+		required	int32		id 			= 1;
+		optional	int32		start_time	= 2[default = -1];
+		optional	int32		level		= 3[default = -1];
+	}
+	optional	int32					cmd_id		= 1[default = 21920];
+	repeated	STRUCT_CLUB_BUILDING	buildings	= 2;
+}
+message SC_CLUB_OFFICE_MISSION_UPDATE_AND_ADD
+{
+	message STRUCT_MISSION
+	{
+		required	int32				idx				= 1;//from 0
+		required	int32				mission_id		= 2;
+		required	int32				compelte_num	= 3;
+		required	int32				star			= 4;
+	}
+	message STRUCT_BOX
+	{
+		required	int32				idx				= 1;
+		required	bool				is_empty		= 2;// true:empty
+	}	
+	optional	int32					cmd_id					= 1[default = 21921];
+	repeated	STRUCT_MISSION			missions				= 2;
+	repeated	STRUCT_BOX				box						= 3;
+	optional	int32					complete_mission_num 	= 4[default = -1];
+	optional	int32					star					= 5[default = -1];
+}
+message SC_CLUB_OFFICE_OPEN_BOX_RESULT
+{
+	optional	int32					cmd_id			= 1[default = 21922];
+	required	STRUCT_REWARD			reward			= 2;
+}
+message SC_CLUB_OFFICE_REFRESH_MISSION_RESULT
+{
+	optional	int32					cmd_id			= 1 [default = 21923];
+}
+message SC_CLUB_OFFICE_ALL_FIVE_STAR_RESULT
+{
+	optional	int32					cmd_id			= 1[default = 21924];
+}
+message SC_CLUB_OFFICE_MISSION_GET_REWARD_RESULT
+{
+	optional	int32					cmd_id			= 1[default = 21925];
+	required	STRUCT_REWARD			reward			= 2;
+}
+message SC_CLUB_OFFICE_MISSION_DONATE_RESULT
+{
+	optional	int32					cmd_id			= 1[default = 21926];
+	required	STRUCT_REWARD			reward			= 2;
+}
+message SC_CLUB_SKILL_UP_RESULT
+{
+	optional	int32					cmd_id			= 1[default = 21930];
+}
+message SC_CLUB_LOG_UPDATE
+{
+	message STRUCT_CLUB_LOG
+	{
+		required	int32					time				= 1;
+		required	string					context				= 2;
+	}
+	optional	int32					cmd_id			= 1[default = 21931];
+	repeated	STRUCT_CLUB_LOG			logs			= 2;
+}
+message SC_CLUB_REMOVE_PLAYER
+{
+	optional	int32					cmd_id			= 1[default = 21932];
+	required	int32					role_id			= 2;
+}
+message SC_CLUB_STAGE_AWARD_APPLICATION_UPDATE
+{
+	message STRUCT_APPLY_INFO
+	{
+		required	int32				award_type	= 1;
+		required	int32				award_id	= 2;
+		required	int32				inventory	= 3;
+		required	int32				apply_qty	= 4;
+	}
+	optional	int32					cmd_id			= 1[default = 21940];
+	required	int32					stage_id		= 2;
+	repeated	STRUCT_APPLY_INFO		apply_infos		= 3;
+	required	int32					my_apply_type 	= 4;//0 : no application
+	required	int32					my_apply_id		= 5;
+	required	bool					is_got_award	= 6;//是否已经分配到奖励
+}
+message SC_CLUB_STAGE_INFO
+{
+	message STRUCT_STAGE
+	{
+		required	int32				stage_id			= 1;
+		required	int32				stage_progress		= 2;
+		optional	int32				last_refresh_time	= 3[default = -1];
+	}
+	optional	int32					cmd_id			= 1[default = 21941];
+	required	int32					top_stage_id	= 2;//最高可以打哪一关
+	repeated	STRUCT_STAGE			stages			= 3;
+}
+message SC_CLUB_STAGE_AWARD_APPLICATION_LIST_DETAIL
+{
+	message STRUCT_PLAYER
+	{
+		required	STRUCT_PLAYER_SNAPSHOT		player	= 1;
+		required	int32						damage	= 2;
+	}
+	optional	int32					cmd_id			= 1[default = 21942];
+	required	int32					stage_id		= 2;
+	required	int32					award_type		= 3;
+	required	int32					award_id		= 4;
+	repeated	STRUCT_PLAYER			players			= 5;
+}
+message SC_BATTLE_TEST_STAGE
+{
+	optional	int32					cmd_id			= 1[default = 44444];
+	required	STRUCT_BATTLE_TEAM_INFO	battle_info		= 2;
+}
+message STRUCT_BATTLE_INFO
+{
+	required  int32						stage_id			= 1;
+  	required  ENUM_RoomType 			room_type           = 2;        // 房间类型
+  	//  optional  int32						battle_data_iD      = 3;        // 关卡数据id
+    repeated  STRUCT_BATTLE_TEAM_INFO	teams  				= 4;        // Team
+}
+
+message STRUCT_BATTLE_PLAYER_INFO
+{
+	message STRUCT_BATTLE_PLAYER_INIT_INFO
+	{
+		message STRUCT_CHEST
+		{
+			required	int32		chest_wave		= 1;
+			required	int32		chest_id		= 2;
+			required	int32		open_qty		= 3;//打开过的数量
+		}
+		message STRUCT_ITEM
+		{
+			required	int32		item_id		= 1;
+			required	int32		have_qty	= 2;
+		}
+		optional	int32				hp				= 1[default = -1];
+		optional	int32				total_diamonds	= 2[default = -1];
+		optional	int64				total_gold		= 3[default = -1];
+		repeated	STRUCT_CHEST		opened_chests	= 4;
+		repeated	STRUCT_ITEM			have_items		= 5;
+		
+		/////..... 暂时就5个
+	}
+	
+	message STRUCT_EQUIP_INFO
+	{
+		required	int32		idx 	 = 1;
+		required	int32		equip_id = 2;
+	}
+	message STRUCT_FASHION
+	{
+		required	int32		pos		= 1;
+		required	int32		id		= 2;
+	}
+
+	required	string								name		= 1;
+	required	string								club_name	= 2;
+	repeated	STRUCT_EQUIP_INFO					equips		= 3;
+	repeated	STRUCT_FASHION						fasions		= 4;
+	required	int32								title		= 5;
+	required	int32								wing		= 6;
+	optional  	STRUCT_BATTLE_PLAYER_INIT_INFO		init_info	= 7;//战斗服务器初始化时所需要的信息 前端暂时不需要
+	required	int32								color		= 8;//品质
+	required	int32								hero_id		= 9;
+	required	int32								career_idx	= 10;
+	
+	required	int32								is_fashion_on = 11;//0:off 1:on
+	required	int32								club_id		= 12;
+	required	int32								role_id		= 13;
+	required	int32								token		= 14;
+}
+
+message STRUCT_BATTLE_TEAM_INFO
+{
+    optional  string 							AIResPath      = 1[default = ""];
+    required  int32 							Side           = 2;        // 所属的一方(1,2,3...)
+    repeated  STRUCT_SOLDIER_INFO 				Soldiers       = 3;        // 初始英雄
+    repeated  STRUCT_BATTLE_WAVE_INFO 			Waves     	   = 4;        // 波次信息
+    optional  int32								TeamId		   = 5[default= -1];
+    optional  STRUCT_BATTLE_PLAYER_INFO			Player_Info	   = 6;//
+}
+
+message STRUCT_BATTLE_WAVE_INFO
+{
+    repeated  STRUCT_SOLDIER_INFO Soldiers        = 1;      // 波次怪物  原来叫monster 因为模板原因全部改成soldier
+}
+
+message STRUCT_SOLDIER_INFO
+{
+	message STRUCT_TALENT_BUFF
+	{
+		required	int32	buff_id	= 1;
+		optional	int32	level	= 2[default = 1];
+	}
+	message STRUCT_MATE_SKILL
+	{
+		required	int32	skill_id = 1;
+		optional	int32	level	 = 2[default = -1];
+		required	int32	SlotIdx	 = 3;
+	}
+    optional  string  AIResPath          	  	   = 1[default = ""];
+    required  int32   DataID              		   = 2;              // 对应基础数据表中的id
+    optional  string  ModelPath            		   = 3[default = ""];
+    optional  int32   Career                  	   = 4[default = 0];
+
+    required  STRUCT_PROPERTY_INFO Pro_D      	   = 5;              
+    required  STRUCT_PROPERTY_INFO Pro_P     	   = 6;              
+    ///////////////////
+    optional   int32   Level                  	   = 7[default = 0];
+    //////////////////////
+    optional   int32   SkillSPLv                   = 8[default = 0];
+    optional   int32   SkillCD1Lv                  = 9[default = 0];
+    optional   int32   SkillCD2Lv                  = 10[default = 0];
+    optional   int32   SkillPassive                = 11[default = 0];
+    optional   int32   SlotIdx				   	   = 12[default = -1];
+    optional   int32   uid						   = 13[default = 0];
+    
+	optional   string  NormalAtkId				   = 17[default = ""];
+    optional   int32   SkillSPId                   = 18[default = 0];
+    optional   int32   SkillCD1Id                  = 19[default = 0];
+    optional   int32   SkillCD2Id                  = 20[default = 0];
+    optional   int32   SkillPassiveId              = 21[default = 0];
+    
+    ///////////////
+    optional   int32   StarLv					   = 22[default = 0];
+   	optional	int32				portrait_id	   = 23[default = 0];
+    ////
+    optional   STRUCT_SOLDIER_INFO 	after_transform	= 14; //   弃用
+    ///////////////
+    repeated   STRUCT_TALENT_BUFF	talent_buffs   = 15;
+    //////////////
+   	optional	STRUCT_MATE_SKILL	mate_skill		= 16;
+   	///////////////
+}
+
+message STRUCT_PROPERTY_INFO
+{
+    optional   int32   Hp                      = 1[default = 0];
+    optional   int32   Sp                      = 2[default = 0];
+    optional   int32   Atk                     = 3[default = 0];
+    optional   int32   MDef                    = 4[default = 0];
+    optional   int32   PDef                    = 5[default = 0];
+    optional   int32   MSpeed                  = 6[default = 0];
+    optional   int32   ASpeed                  = 7[default = 0];
+    optional   int32   AtkInterval             = 8[default = 0];
+    optional   int32   ViewDis                 = 9[default = 0];
+    optional   int32   AntiPush                = 10[default = 0];
+    optional   int32   Hit                     = 11[default = 0];
+    optional   int32   Miss                    = 12[default = 0];
+    optional   int32   Cri                     = 13[default = 0];
+    optional   int32   AntiCri                 = 14[default = 0];
+    optional   int32   BenchHp                 = 15[default = 0];
+    optional   int32   BenchSp                 = 16[default = 0];
+    optional   int32   CriDmg                  = 17[default = 0];
+    optional   int32   Dmg					   = 18[default = 0];
+    optional   int32   PDmg					   = 19[default = 0];
+    optional   int32   MDmg					   = 20[default = 0];
+    optional   int32   NDmg					   = 21[default = 0];
+    optional   int32   SDmg					   = 22[default = 0];
+    optional   int32   EDmg					   = 23[default = 0];
+    optional   int32   Guard				   = 24[default = 0];
+    optional   int32   AntiDmg				   = 25[default = 0];
+    optional   int32   AntiPDmg			       = 26[default = 0];
+    optional   int32   AntiMDmg			       = 27[default = 0];
+    optional   int32   AntiNDmg			       = 28[default = 0];
+    optional   int32   AntiSDmg			       = 29[default = 0];
+    optional   int32   Heal			           = 30[default = 0];
+    optional   int32   BeHeal			       = 31[default = 0];
+}
+
+
+enum ENUM_RoomType
+{
+	NORMAL_STAGE_ROOM		= 1;
+	DAILY_STAGE_ROOM		= 2;
+	UNION_STAGE_ROOM 		= 3;
+	WILD_ROOM 				= 4;
+	ARENA_ROOM 				= 5;
+	SHENMO_ROOM 			= 6;
+	TRAVEL_BOSS_ROOM 		= 7;
+	TRAVEL_RANDOM_BOSS_ROOM = 8;
+	DEPTH_BOSS_ROOM			= 9;
+	NORMAL_STAGE_CHANNEL	= 1001;
+	DAILY_STAGE_CHANNEL		= 1002;
+	UNION_STAGE_CHANNEL		= 1003;
+	WILD_CHANEL				= 1004;
+	DEPTH_BOSS_CHANNEL		= 1005;
+}
+
+message STRUCT_ROOM_OPTION
+{
+	optional	int32	room_type	= 1[default = -1];
+	optional	int32	room_id		= 2[default = -1];
+	optional	int32	scene_id	= 3[default = -1];
+	optional	int32	max_players	= 4[default = -1];
+	optional	int32	min_players	= 5[default = -1];	
+	required	int32	battle_id	= 6[default = -1];//返回房间信息的时候 带着返回给GameServer
+	//////
+	repeated	int32	values		= 7;	
+}
+
+message STRUCT_PLAYER_STAGE_INFO
+{
+	required	int32				role_id		= 1;
+	optional	bool 				is_complete	= 2;
+	optional	int32				start_time	= 3[default = -1];
+	optional	int32				token		= 4[default = -1];	
+	optional	int32				health		= 5[default = -1];
+	optional	int32				damage		= 6[default = -1];
+	optional	STRUCT_MISSION_INFO	mission_info= 7;//个人任务
+}
+message STRUCT_MISSION_INFO
+{
+// type 为任务类型, 
+// value1 :stageId 物品类型等
+// value2：一般为具体Id 如怪物Id
+	required	int32			type		= 1;
+	optional	int32			value1		= 2[default = -1];//可由relayserver来填
+	required	int32			value2		= 3;//
+	required	int32			number		= 4;//percent or qty
+}
+//结果战报或进行中的游戏实时更新 比如同步boss血量、 同步任务等
+message STRUCT_BATTLE_STAGE_INFO 
+{
+	repeated	STRUCT_PLAYER_STAGE_INFO	role_infos	= 1;
+	optional	int32						is_complete = 2;
+	optional	int32						is_win		= 3[default = -1]; // -1: lose, 1:win, 1:due;
+	optional	STRUCT_MISSION_INFO			mission_info= 4;//公共任务 
+	optional	int32						star 		= 5;
+	////club stage
+	optional	int32						percent		= 6[default = -1]; // 1-100
+	////
+	optional	int32						dead_hero	= 7[default = -1]; // test for compute star
+	////
+	optional	int32						boss_hp		= 8[default = -1];
+}
+message STRUCT_ROOM_INFO
+{
+	//房间Id 一般表达形式为 X-XX-XXXXXX “-”用来分割子房间。 
+	//例如: 1-10101-2	表示 组队副本-10101关卡-2号房间
+	optional	string					room_id		= 1[default = ""];
+	optional	int32					room_type	= 2[default = -1];//房间类型	暂时未定
+	optional	int32					scene_id	= 3[default = -1];
+	optional	string					label		= 4[default = ""];//房间名
+	optional	int32					max_num		= 5[default = -1];//最大人数
+	optional	int32					current_num	= 6[default = -1];//现在已有人数
+	optional	int32					leader		= 7[default = -1];//创建者 如果有的话
+	repeated	STRUCT_PLAYER_SNAPSHOT	players		= 8;
+	//子房间信息	
+	//例如 当roomId 为 1-10101 时
+	//rooms 为 组队副本-10101关卡 下的所有房间信息
+	repeated	string					child_rooms	= 9;
+}
+
+message SC_ROOM_UPDATE_INFO
+{
+	optional	int32				cmd_id		= 1[default = 26000];
+	repeated	STRUCT_ROOM_INFO	room_info	= 2;
+}
+
+//房间内可见信息
+message SC_ROOM_DETAILS_UPDATE_AND_ADD
+{
+	message STRUCT_SLOT_INFO
+	{
+		required STRUCT_PLAYER_SNAPSHOT 	player			 = 1;
+		required int32						side			 = 2;
+		optional bool						is_ready		 = 3[default = true];
+	}
+	optional	int32				cmd_id	 	= 1[default = 26001];
+	required	string				room_id		= 2;
+	repeated	STRUCT_SLOT_INFO	slots		= 3;
+	optional	STRUCT_ROOM_INFO	room_info	= 4;//第一次会推送全部信息
+}
+
+message SC_ROOM_REMOVE_ROLE
+{
+	optional	int32				cmd_id		= 1[default = 26002];
+	required	string				room_id		= 2;
+	repeated	int32				role_ids	= 3;
+}
+
+message SC_ROOM_JOIN_RESULT
+{
+	enum JoinRoomResult
+	{
+		SUCCESS			= 0;
+		FULL			= 1;
+		NOT_QUALIFIED	= 2;
+		SCERET_INCORRECT= 3;
+		NOT_EXSIT		= 4;
+		ALREADY_JOIN	= 5;
+		UNABLE			= 6;//该玩家暂时不能加入其他房间(一般房间已在战斗中)
+		
+	}
+	optional	int32				cmd_id		= 1[default = 26003];
+	required	string				room_id		= 2;
+	required	JoinRoomResult		join_result = 3;
+	
+}
+//通知玩家已离开房间
+message SC_ROOM_LEAVE
+{
+	enum LeaveReason
+	{
+		SELF		= 0;
+		DISMISS		= 1;
+		KICK		= 2;
+		TIMEOUT		= 3;
+		GAMESERVER	= 4;	
+	}
+	optional	int32		cmd_id			= 1[default = 26004];
+	required	LeaveReason reason			= 2;
+	required	string		room_id			= 3;
+}
+//发送给玩家的邀请
+message SC_ROOM_INVITATION
+{
+	optional	int32				cmd_id		 = 1[default = 26005];
+	//客户端通过 room_id来加入房间
+	//其他必要显示信息将在 room中给出
+	//由room_type来区分是什么类型的邀请 owner显示是谁邀请
+	required	STRUCT_ROOM_INFO	room		 = 2;
+	optional	string				inviter_name = 3[default =""];
+	
+	repeated	int32				args_int	 = 4;
+	repeated	string				args_string	 = 5;
+}
+message SC_ROOM_CREATE_RESULT
+{
+	optional	int32				cmd_id		= 1[default = 26006];
+	required	string				room_id		= 2;
+	//具体房间信息会由另外一条协议推送	如果创建失败会通过error_code 协议通知
+}
+//发送给玩家的邀请
+message SC_ROOM_PRIVATE_INVITATION_REPONSE
+{
+	optional	int32					cmd_id		 = 1[default = 26007];
+	required	string					room_id		 = 2;
+	required	STRUCT_PLAYER_SNAPSHOT	role_info	 = 3;
+	required	int32					response	 = 4;//0: refuse, 1:accpet
+	repeated	int32					role_id		 = 5;	//客户端无视此条
+}
+message SC_ROOM_CLOSE
+{
+	enum CloseReason
+	{
+		LEADER_LEAVE		= 0;
+		ERROR				= 1;
+		EMPTY				= 2;
+		COMPLETE			= 3;
+		TIME_OUT			= 4;
+		SERVER				= 5;
+	}
+	optional	int32				cmd_id		= 1[default = 26020];	
+	required	string				room_id		= 2;
+	optional	CloseReason			close_reason= 3[default = ERROR];
+}
+message SC_ROOM_RECOMMEND_LIST
+{
+	message STRUCT_RECOMMEND_ROLE
+	{
+		required 	STRUCT_PLAYER_SNAPSHOT	role_info = 1;
+		optional	int32					server_id = 2[default = 0];//0 代表本服
+	}
+	optional	int32					cmd_id		= 1[default = 26021];
+	repeated	STRUCT_RECOMMEND_ROLE	roles		= 2;
+}
+//玩家邀请别人后的回包
+message SC_ROOM_INVITE_RESPONSE
+{
+	optional	int32				cmd_id 	= 1 [default = 26022];
+	repeated	int32				invited = 2; 
+}
+message SC_ROOM_SEARCH_BY_PALYER_NAME_RESULT
+{
+	optional	int32				cmd_id 		= 1 [default = 26023];
+	repeated	int32				role_id		= 2;//客户端无视
+	optional	string	 			room_id		= 3[default =""];//如果找到则会有
+}
+message SC_ROOM_QUICK_GAME_RESULT
+{
+	optional	int32				cmd_id 		= 1 [default = 26024];
+	repeated	int32				role_id		= 2;//客户端无视
+	optional	string	 			room_id		= 3[default =""];//如果找到则会有
+}
+message SC_ROOM_GET_INFO_RESULT
+{
+	optional	int32				cmd_id 		= 1 [default = 26025];
+	optional	int32				is_found	= 2 [default = 0];// 1:found, 0:not found
+	repeated	int32				role_id		= 3;	//客户端无视
+}
+//当战斗服已满时提示
+message SC_ROOM_BATTLE_SERVER_FULL_NOTIFY
+{
+	optional	int32				cmd_id		= 1 [default = 26026];
+	//未来可能加入其它信息，例如排队信息等
+}
+message SC_ONLINE_BATTLE_GET_AWARD
+{
+	enum EAward_Source
+	{
+		E_AWARD_SOURCE_CHEST = 1;
+		E_AWARD_SOURCE_KILL_BOSS	= 2;
+	}
+	optional	int32				cmd_id			= 1 [default = 26050];
+	required	STRUCT_REWARD		reward			= 2;
+	optional	EAward_Source		source_type		= 3;
+	optional	int32				source_id		= 4[default = 0];
+	optional	string				source_location = 5[default = ""];
+	
+	
+}
+message SC_AREA_ROLE_INFO_UPDATE_AND_ADD
+{
+	message STRUCT_EQUIP_INFO
+	{
+		required	int32		idx 	 = 1;
+		required	int32		equip_id = 2;
+	}
+	message STRUCT_FASHION
+	{
+		required	int32		pos		= 1;
+		required	int32		id		= 2;
+	}
+	message STRUCT_ROLE_HERO
+	{
+		optional	int32				hero_id				= 1[default =-1];
+		optional	int32				career				= 2[default =-1];
+	}
+	message STRUCT_AREA_ROLE_INFO
+	{
+		required	int32				role_id				= 1;
+		optional	string				name 				= 2[default = ""];
+		repeated	STRUCT_EQUIP_INFO	equips				= 3;
+		optional	int32				area 				= 4[default = -1];// 0 代表离开主城
+		optional	int32				location_x			= 5[default = -1];
+		optional	int32				location_y			= 6[default = -1];
+		optional	int32				title_id			= 7[default = -1];
+		optional	string				club_name			= 8[default = ""];
+		optional	int32				wing				= 9[default = -1];	
+		repeated	STRUCT_FASHION		fashions			= 10;
+		optional	int32				is_display_wing 	= 11[default = -1];//1: display, 0: not
+		optional	int32				is_display_fashion	= 12[default = -1];//1: display, 0: not
+		optional	STRUCT_ROLE_HERO	role_hero			= 13;
+		optional	int32				vip_lv				= 14[default = -1];
+		optional	int32				target_npc			= 15[default = -1];//0代表没有目标 不然为目标npcId
+		optional	int32				color				= 16[default = -1];
+	}
+	optional	int32					cmd_id	= 1[default = 27000];
+	repeated	STRUCT_AREA_ROLE_INFO	roles	= 2;
+}
+message SC_AREA_INIT
+{
+	optional	int32			cmd_id		= 1[default = 27001];
+	required	int32			area_id		= 2;
+	required	int32			location_x	= 3;
+	required	int32			location_y	= 4;
+}
+message STRUCT_WILD_INFO
+{
+	message STRUCT_WILD_QUEST
+	{
+		required		int32				idx				= 1;//from 0 -
+		optional		int32				mission_id		= 2[default=-1];
+		optional		int32				mission_req_id	= 3[default=-1];
+		optional		int32				complete_qty	= 4[default=-1];
+		optional		int32				need_qty		= 5[default=-1];
+		optional		int32				is_empty		= 6[default=-1]; // 1: 已经开过
+	}
+	required	int32					wild_id		= 1;
+	repeated	STRUCT_WILD_QUEST		quests		= 2;
+	optional	int32					quest_total	= 3[default = -1];	//一共有几个任务
+	////如果是限时活动则会有下面的数据
+	optional	int32					close_time	= 4[default = -1];
+	optional	string					icon		= 5[default =""];
+	optional	string					title		= 6[default =""];
+}
+
+message SC_WILD_UPDATE_AND_ADD
+{
+	optional	int32					cmd_id		= 1[default = 27100];
+	repeated	int32					role_id		= 2;	//客户端无视此条
+	repeated	STRUCT_WILD_INFO		wild_info	= 3;
+}
+message SC_WILD_OPEN_BOX_RESULT
+{
+	optional	int32					cmd_id		= 1[default = 27101];
+	required	int32					role_id		= 2;//客户端无视此条
+	required	int32					wild_id		= 3;
+	required	int32					mission_idx	= 4;
+	required	STRUCT_REWARD			reward		= 5;		
+	required	int32					box_id		= 6;		
+}
+
+message SC_BATTLE_SERVER_INFO
+{
+	optional	int32					cmd_id		= 1[default = 27102];
+	repeated	int32					role_id		= 2;//客户端无视此条
+	required	string					server_ip	= 3;
+	required	int32					server_port	= 4;
+	required	int32					team_id		= 5;
+}
+message SC_WILD_BOSS_INFO_UPDATE
+{
+	message STRUCT_BOSS_INFO
+	{
+		required	int32				boss_obj_id 		= 1;
+		required	int32				boss_group_id		= 2;
+		required 	int32				boss_lv				= 3;
+		required 	int32				current_hp			= 4;
+		optional	int32				total_hp			= 5[default = -1];
+		required	int32				refresh_type		= 6;
+		////////////////////////////if type = 3 定时
+		optional	int32				next_respawn_time	= 7[default = -1]; // if dead
+		////////////////////////////if type = 5 杀怪刷新
+		optional	int32				kill_obj_id			= 8[default = -1]; // if dead
+		optional	int32				kill_obj_need_qty	= 9[default = -1]; // if dead
+		optional	int32				kill_obj_current_qty= 10[default = -1]; // if dead
+		optional	int32				boss_respawn_times	= 11[default = -1];//boss respawn了几次
+		optional	int32				total_respawn_times	= 12[default = -1];//boss最多复活几次
+		
+	}
+	optional	int32					cmd_id		= 1[default =  27103];
+	repeated	int32					role_id		= 2;//客户端无视此条
+	repeated	STRUCT_BOSS_INFO		boss_info	= 3;
+}
+message SC_WILD_CURRENT_MISSION_UPDATE
+{
+	optional	int32					cmd_id		= 1[default = 27104];
+	required	STRUCT_WILD_INFO		wild		= 2;
+}
+//在玩家加入野战时 处于死亡状态时发送
+message SC_WILD_JOIN_ROOM_ERROR	
+{
+	optional	int32					cmd_id		= 1[default = 27105];
+	repeated	int32					role_id		= 2;//客户端无视此条
+	required	int32					respawn_time= 3; // 复活的时间
+}
+message SC_BROAD_CAST
+{
+	optional	int32					cmd_id			= 1[default = 27120];
+	required	string					context			= 2;
+	required	int32					priority		= 3;//优先级
+	required	int32					is_self			= 4;//是否是自己 0:不是 1:是
+	required	int32					times			= 5;//播几遍
+	optional	int32					is_immediate	= 6[default = -1];//弃用
+	required	int32					limit			= 7;
+	///////////////////////////////////////////////////////
+	optional	int32					broad_num		= 8[default=-1];
+	optional	int32					var1			= 9[default=-1];
+	
+}
+message SC_PHOTO_UPDATE_AND_ADD
+{
+	message	STRUCT_PHOTOS
+	{	
+		required	int32				type		= 1;
+		repeated	int32				ids			= 2;
+	}
+	optional	int32					cmd_id		= 1[default = 27140];
+	repeated	STRUCT_PHOTOS			photos		= 2;
+}
+message SC_TITLE_UPDATE_AND_ADD
+{
+	message STRUCT_TITLE
+	{
+		required	int32				title_id	= 1;
+		required	int32				expired_time= 2;//	过期时间 0代表永不过期		
+	}
+	optional	int32					cmd_id		= 1[default = 27160];
+	repeated	STRUCT_TITLE			titles		= 2;
+}
+message SC_TITLE_REMOVE
+{
+	optional	int32					cmd_id		= 1[default = 27161];
+	repeated	int32					title_id	= 2;
+}
+
+//获得的奖励有可能需要选择
+message STRUCT_MAY_SELECT_AWARD
+{
+	optional	int32		idx					= 1[default = -1];//如果需要选择的话 用这个idx
+	required	int32		award_type			= 2;//物品 装备 翅膀  等
+	required	int32		award_id			= 3;
+	required	int32		qty					= 4;	
+	optional	int32		select_group		= 5[default = 0];// 0 =  不需要选择 , >= 1 选择组 同一组只能选择一个
+}
+message STRUCT_ACTIVITY_BUY
+{
+	message STRUCT_NEED_ITEM
+	{
+		required	int32		type			= 1;
+		required	int32		id				= 2;
+		required	int32		qty				= 3;
+	}
+	optional	string							buy_id				= 1;//弃用
+	optional	int32							type				= 2[default = -1];//1:兑换 2：半价抢购
+	repeated	STRUCT_MAY_SELECT_AWARD			awards				= 3;
+	optional	int32							buy_times			= 4[default = -1];//买了几次
+	optional	int32							limit_times			= 5[default = -1];//可以买几次
+	repeated	STRUCT_NEED_ITEM				need_items			= 6;//当类型为兑换时，此列表为需要的物品 ;当类型为半价抢购时，列表第一个为现在价格 第二个为原价 
+	optional	string							description			= 7[default = ""];
+	optional	int32							global_limit_times	= 8[default = -1];
+	optional	int32							global_buy_times	= 9[default = -1];
+	optional	string							off					= 10[default =""];//打折
+}
+message STRUCT_ACTIVITY_QUEST
+{
+	required	string						quest_id			= 1;//弃用
+	optional	string						description			= 2[default = ""];
+	repeated	STRUCT_MAY_SELECT_AWARD		awards				= 3;
+	optional	int32						target_qty			= 4[default = -1];//目标需要多少
+	optional	int32						current_qty			= 5[default = -1];//当前进度
+	optional	int32						is_get_reward		= 6[default = -1];// 0: not got. 1: got
+	optional	int32						is_schedule			= 7[default = -1];// 0 :not 1:yes
+	//////未完待续
+	
+	/////
+}
+message STRUCT_ACTIVITY_CLICK
+{
+	required	string						click_id			= 1;//弃用
+	optional	string						description			= 2[default = ""];
+	repeated	STRUCT_MAY_SELECT_AWARD		awards				= 3;
+	optional	int32						start_time			= 4[default = -1];
+	optional	int32						end_time			= 5[default = -1];
+	optional	int32						click_times			= 6[default = -1];
+	optional	int32						limit_times			= 7[default = -1];//最多点击几次
+	optional	int32						cooldown			= 8[default = -1];//暂时没用
+	optional	int32						last_click_time		= 9[default = -1];//上次点击时间	暂时没用
+	//////未完待续
+	
+	/////
+}
+message STRUCT_ACTIVITY_ROW
+{
+	enum EActivityRowType
+	{
+		ACTIVITY_ROW_QUEST = 1;
+		ACTIVITY_ROW_BUY   = 2;
+		ACTIVITY_ROW_CLICK = 3;
+	}
+	enum EActivityRowLimit
+	{
+		ACTIVITY_ROW_LIMIT_LV	  = 1;
+		ACTIVITY_ROW_LIMIT_VIP_LV = 2;
+	}
+	message STRUCT_LIMIT
+	{
+		required	EActivityRowLimit	type	= 1;
+		required	int32				value	= 2;
+	}
+	required EActivityRowType			row_type			= 1;
+	required int32						row_id				= 2;			
+	optional STRUCT_ACTIVITY_QUEST		quest				= 3;
+	optional STRUCT_ACTIVITY_BUY		buy					= 4;
+	optional STRUCT_ACTIVITY_CLICK		click				= 5;
+	repeated STRUCT_LIMIT				limits				= 6;
+}
+message STRUCT_ACTIVITY_CATEGORY_PAGE
+{
+	required	int32					category_page_id	= 1;
+	repeated	STRUCT_ACTIVITY_ROW		rows				= 2;
+	///
+	optional	string					title				= 3[default = ""];
+}
+message STRUCT_ACTIVITY_DAY_PAGE
+{
+	required	int32							day_page_id			= 1;
+	repeated	STRUCT_ACTIVITY_CATEGORY_PAGE	category_pages		= 2;
+	repeated	STRUCT_ACTIVITY_ROW				rows				= 3;
+	required	int32							start_time			= 4;
+	required	int32							end_time			= 5;
+	/////
+	optional	string							title				= 6[default = ""];
+	////
+}
+message STRUCT_ACTIVITY_CHEST
+{
+	message STRUCT_AWARD
+	{
+		required	int32					item_type				= 1;
+		required	int32					item_id					= 2;
+		required	int32					item_qty				= 3;
+	}
+	message STRUCT_CHEST
+	{
+		required	int32					idx					= 1;
+		optional	int32					need_quests_qty		= 2[default = -1];//需要完成几个任务
+		repeated	STRUCT_AWARD			awards				= 3;
+		optional	int32					is_empty			= 4[default = -1];//是否为空 0:有东西 1：空
+	}
+	optional	int32						complete_quests	= 1[default = -1];//总共完成了多少任务
+	repeated	STRUCT_CHEST				chests			= 2;
+}
+message STRUCT_NORAML_ACTIVITY
+{
+	enum EActivityType
+	{
+		Normal_Activity	= 1;//一般活动 本层中只有Rows
+		Seven_Day_Activity = 2;//七日活动 本层中只有DayPages
+	}
+	//如果活动只有个别变量需要额外传输 
+	//则通过activiitytype 和 args_int args_string 来解析
+	//如果结构有很大差别 则新建一个activity结构
+	required	int32							activity_id		= 1;
+	optional	EActivityType					activity_type	= 2;//弃用
+	optional	int32							start_time		= 3[default = -1];
+	optional	int32							end_time		= 4[default = -1];
+	optional	int32							reward_end_time	= 5[default = -1];
+	repeated	STRUCT_ACTIVITY_DAY_PAGE		day_pages		= 6;
+	repeated	STRUCT_ACTIVITY_CATEGORY_PAGE	category_pages	= 7;
+	repeated	STRUCT_ACTIVITY_ROW				rows			= 8;
+	optional	STRUCT_ACTIVITY_CHEST			chest			= 9;//宝箱			
+	///////
+	repeated	int32							args_int		= 10;
+	repeated	string							args_string		= 11;
+	//////
+	optional	string							title			= 12[default = ""];
+	///photo, words,icon....
+	optional	string							icon			= 13[default = ""];
+	optional	string							banner_title	= 14[default = ""];
+	optional	string							banner_icon		= 15[default = ""];	
+	optional	string							content			= 17[default = ""];
+	//template_id 代表模板编号 1：7Days , 2:fund,  100：普通活动
+	optional	int32							template_id		= 16[default = -1];
+	repeated	int32							template_args_int = 18;
+	repeated	string							template_args_str = 19;
+	optional	string							entry_icon		= 20[default = ""];
+	optional	string							entry_name		= 21[default = ""];
+	optional	int32							rank			= 22[default = -1];
+	
+	optional	int32							activity_sign	= 23[default = -1];//1:have 0:no 告知客户端本日是否已充值 如果其他模板有类似需求 也使用此变量
+}
+//arg_int 
+//Id=2 fund：args_int[0]:已购买人数 		args_int[1]:0 尚未购买 args_int[2] 需要达到vip多少级可以购买 args_int[3] 购买所需要钻石 ;购买时发送 CS_ACTIVITY_CLICK: click_id填activity_id
+//										args_int[1]:1 已经购买 args_int[2] 以获取钻石数量	args_int[3]还能获取
+										
+//用于 只有兑换 任务 点击的活动
+message SC_ACTIVITY_UPDATE
+{
+	optional	int32							cmd_id			= 1[default = 27200];
+	repeated	STRUCT_NORAML_ACTIVITY			normal_activity	= 2;
+	optional	int32							open_day		= 3[default = -1];
+}
+message SC_ACTIVITY_GET_QUEST_AWARD_RESULT
+{
+	optional	int32						cmd_id	= 1[default = 27201];
+	required	STRUCT_REWARD				reward	= 2;
+}
+message SC_ACTIVITY_CLICK_RESULT
+{
+	optional	int32						cmd_id	= 1[default = 27202];
+	required	STRUCT_REWARD				reward	= 2;
+}
+message SC_ACTIVITY_BUY_RESULT
+{
+	optional	int32						cmd_id	= 1[default = 27203];
+	required	STRUCT_REWARD				reward	= 2;
+}
+message SC_ACTIVITY_OPEN_CHEST_RESULT
+{
+	optional	int32						cmd_id	= 1[default = 27204];
+	required	STRUCT_REWARD				reward	= 2;
+}
+message SC_ACTIVITY_NOTIFY
+{
+	optional	int32					cmd_id		   = 1[default = 27205];
+	repeated	int32					dirty_activity = 2;//需要刷新的活动ID 收到以后直接发回即可
+	optional	int32					is_immediately = 3[default = 1];//等于1时立刻刷新， 等于0时推荐点进来以后刷新
+}
+message SC_ACTIVITY_DELETE
+{
+	optional	int32					cmd_id		= 1[default = 27206];
+	required	int32					activity_id	= 2;
+}
+message SC_MAIN_MISSION_UPDATE
+{
+	optional	int32						cmd_id			= 1[default = 27220];
+	required	int32						mission_id		= 2;
+	optional	int32						progress		= 3[default = -1];
+	optional	int32						complete_time	= 4[default = -1];
+	optional	int32						is_got_reward	= 5[default = -1]; //0: 未领取 1：已领取     注：一般情况下 不会发生已领取的情况，除非没有后续任务					
+}
+//如果后续任务也是完成的 则一并领取
+message SC_MAIN_MISSION_GET_REWARD_RESULT
+{
+	optional	int32						cmd_id			= 1[default = 27221];
+	required	STRUCT_REWARD				rewards			= 2; } message SC_DEPTH_BOSS_UPDATE_AND_ADD
+{
+	optional	int32					cmd_id				= 1[default = 27240];
+	optional	int32					complete_times		= 2[default = -1];
+	optional	int32					next_refresh_time	= 3[default = -1];
+	repeated	int32					passed_boss_id		= 4;
+}
+message SC_DEPTH_BOSS_VERIFY_RESULT
+{
+	optional	int32				cmd_id	= 1[default= 27241];
+	required	int32				boss_id	= 2;
+	optional	STRUCT_REWARD		reward	= 3;
+	required	int32				is_win	= 4;//0:lose , 1:win 2:draw
+}
+message SC_FLOP_CARDS_UPDATE
+{
+	optional	int32				cmd_id	 		= 1[default = 27260];
+	required	int32				card_num 		= 2;
+	repeated	int32				cost_diamonds	= 4;
+	repeated	STRUCT_REWARD		rewards			= 5;
+	//此为翻牌奖励通用协议
+	//card_num代表一共有几张牌
+	//cost_diamonds 为翻牌所需要消耗的钻石 
+	
+	//一般奖励为四张牌， 其中第一张不需要消耗钻石 以此为例:
+	//card_num =4;
+	//cost_diamonds = {0,10,20,30}	
+}
+message SC_FLOP_CARDS_RESULT
+{
+	optional	int32				cmd_id		= 1[default = 27261];
+	required	int32				idx			= 2;//与c2s发过来的idx对应
+	required	STRUCT_REWARD		reward		= 3;
+	
+}
+
+message SC_FRIEND_INVITE
+{
+    optional    int32       cmd_id           = 1[default = 27262];
+    required    int32       requester_id     = 2;
+    required    bytes       requester_name   = 3;
+}
+
+message SC_REFRESH_FRIEND_INFO
+{
+    optional    int32       cmd_id          = 1[default = 27263];
+}
+
+message SC_GET_FRIEND_INFO_RESULT
+{
+    optional    int32                   cmd_id          = 1[default = 27264];
+    repeated    int32                   friends         = 2; //已经是的好友
+    repeated    int32                   friends_req     = 3; //邀请的好友列表
+    repeated    int32                   friends_be_req  = 4; //被邀请的好友列表
+}
+
+message SC_ACTIVITY_FLIP_CARD_UPDATE
+{
+    message STRUCT_CARD
+    {
+        required    int32               pos              = 1;
+        required    int32               item_id          = 2;
+    }
+    optional    int32                   cmd_id           = 1[default = 27265];
+    repeated    int32                   pool_items_id    = 2; //本次奖池
+    repeated    STRUCT_CARD           	cards            = 3; //当前翻开的牌
+    required    int32                   daily_free_times = 4; //当天剩余免费翻牌次数
+    required    int32                   next_reset_time  = 5; //下次刷新时间
+}
+message SC_GROW_AIM_UPDATE_AND_ADD
+{
+	message STRUCT_GROW_AIM
+	{
+		required	int32				id				= 1;
+		required	int32				is_active		= 2;//是否已经激活 0：未激活 1：激活
+		repeated	int32				bought_item_idx	= 3;//已经购买的商品Idx 从0开始
+	}
+	optional	int32					cmd_id			= 1[default = 27290];
+	repeated	STRUCT_GROW_AIM			grow_aims		= 2;
+}
+message SC_GROW_AIM_ACTIVE_RESULT
+{
+	optional	int32					cmd_id			= 1[default = 27291];
+}
+message SC_GROW_AIM_BUY_ITEM_RESULT
+{
+	optional	int32					cmd_id			= 1[default=  27292];
+	required	STRUCT_REWARD			rewards			= 2;
+}
+// test
+message SC_ECHO_REPLY
+{
+	
+	optional 	int32 	cmd_id 		= 1 [default = 201 ];
+	required 	string 	msg 		= 2;
+}

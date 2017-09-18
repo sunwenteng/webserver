@@ -1,0 +1,161 @@
+package cmd;
+
+message Error {
+    required uint32 code = 1;
+    optional string param = 2;
+}
+
+message Reward {
+    message RewardMeta {
+        required uint32 id = 1;
+        required uint32 cnt = 2;
+        required uint32 type = 3;
+    }
+
+    repeated RewardMeta rewards = 1;
+}
+
+message Equip {
+    required uint32 id = 1;
+    required uint32 cnt = 2;
+}
+
+message Tech {
+    required uint32 id = 1;
+    required uint32 lvl = 2;
+}
+
+message Skill {
+    required uint32 id = 1;
+    required uint32 lvl = 2;
+}
+
+message Hero {
+    optional uint32 id = 1;
+    optional uint32 combat = 2;
+    optional uint32 lvl = 3;
+    optional uint32 agility = 4;
+    optional uint32 defence = 5;
+    optional uint32 dodge = 6;
+    optional uint32 power = 7;
+    map<uint32, uint32> equips = 8;
+    repeated Skill skills = 9;
+    optional uint32 type = 10; // 1 = add, 2 = update, 3 = del
+}
+
+message RoleSummary {
+    required uint32 uid = 1;
+    required string nickname = 2;
+    required uint32 combat = 3;
+    required uint32 lvl = 4;
+    required uint32 valid = 5;
+}
+
+message Role {
+    message PVE {
+        optional uint32 monsterId = 1;
+    }
+
+    message PVP {
+        optional uint32 time = 1;
+        optional uint32 progress = 2;
+        repeated RoleSummary list = 3;
+    }
+
+    optional uint32 uid = 1;
+    optional string nickname = 2;
+    optional string headimgurl = 3;
+    optional uint32 diamond = 4;
+    optional uint32 exp = 5;
+    optional uint32 gold = 6;
+    optional uint32 level = 7;
+    optional uint32 roomLvl = 8;
+    map<uint32, Hero> heroes = 9;
+    map<uint32, Equip> equips = 10;
+    map<uint32, uint32> res = 11;
+    map<uint32, Tech> techs = 12;
+    repeated uint32 blueprints = 13;
+    optional PVE pve = 14;
+    optional PVP pvp = 15;
+    optional uint32 lastLoginTime = 16;
+    optional uint32 lastAliveTime = 17;
+    optional uint32 createTime = 18;
+}
+
+//--------------------------------login------------------------------
+message cs_login_login {
+    required string username = 1;
+    required string password = 2;
+}
+
+message sc_login_login {
+    optional Error error = 1;
+    required string token = 2;
+}
+
+// --------------------------------game------------------------------
+message cs_game_enter {
+    required string token = 1;
+}
+
+message sc_game_enter {
+    optional Error error = 1;
+    required Role role = 2;
+}
+
+message cs_game_pve {
+    required string token = 1;
+    repeated uint32 atkIds = 2;
+    required uint32 monsterId = 3;
+}
+
+message BattleReport {
+    message BattleTeam {
+        message BattleHero {
+            required uint32 uid = 1; //全部不重复
+            required uint32 id = 2; // config id
+            required uint32 type = 3; // 1=hero, 2=monster
+        }
+
+        required uint32 combat = 1;
+        required uint32 agility = 2;
+        required uint32 defence = 3;
+        required uint32 dodge = 4;
+        required uint32 power = 5;
+        repeated BattleHero heroes = 6;
+    }
+
+    message BattleRound {
+        required uint32 id = 1; // from 0
+        required uint32 heroUid = 2; // 战斗中分配的UID
+        required uint32 skillId = 3;
+        required uint32 damage = 4;
+        required uint32 heal = 5;
+        required bool bAvoid = 6;
+    }
+
+    repeated BattleTeam teams = 1;
+    repeated BattleRound rounds = 2;
+    required bool win = 3;
+}
+
+message sc_role_update {
+    optional Role role = 1;
+}
+
+message sc_game_pve {
+    optional Error error = 1;
+    optional BattleReport report = 2;
+    optional Reward reward = 3;
+}
+
+message cs_game_heartBeat {
+    required string token = 1;
+}
+
+message sc_game_heartBeat {
+}
+
+message testMap {
+    map<uint32, uint32> a = 1;
+}

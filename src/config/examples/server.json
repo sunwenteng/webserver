@@ -1,0 +1,83 @@
+{
+  "info": {
+    "weixinappid": "123123",
+    "weixinsecret": "123123"
+  },
+  "server": {
+    "loginserver": {
+      "id": 1,
+      "port": 5556,
+      "allowCrossdomain": true
+    },
+    "gameserver": {
+      "id": 1,
+      "port": 5555,
+      "allowCrossdomain": true,
+      "interceptors": {
+        "ctlName": [
+          "game"
+        ],
+        "userMonitor": {
+          "isNeedMonitorReq": false,
+          "isNeedStatOnline": false,
+          "maxReq": 200,
+          "perTime": 60
+        },
+        "checkLogin": {
+          "needSave": true,
+          "gameSaveTokenTime": 86400
+        }
+      }
+    }
+  },
+  "mysql": {
+    "worlddb": {
+      "hostname": "172.16.1.84",
+      "user": "root",
+      "password": "root",
+      "database": "web_world",
+      "connectionLimit": 10
+    },
+    "logindb": {
+      "hostname": "172.16.1.84",
+      "user": "root",
+      "password": "root",
+      "database": "web_login",
+      "connectionLimit": 10
+    }
+  },
+  "redis": {
+    "roleRedis": {
+      "port": 6379,
+      "host": "172.16.1.84",
+      "options": {
+        "connect_timeout": 36000000,
+        "retry_delay": 100
+      }
+    },
+    "accountTokenRedis": {
+      "port": 6380,
+      "host": "172.16.1.84",
+      "options": {
+        "connect_timeout": 36000000,
+        "retry_delay": 100
+      }
+    },
+    "gameTokenRedis": {
+      "port": 6381,
+      "host": "172.16.1.84",
+      "options": {
+        "connect_timeout": 36000000,
+        "retry_delay": 100
+      }
+    },
+    "monitorRedis": {
+      "port": 6382,
+      "host": "172.16.1.84",
+      "options": {
+        "connect_timeout": 36000000,
+        "retry_delay": 100
+      }
+    }
+  }
+}

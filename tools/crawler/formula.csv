@@ -1,0 +1,535 @@
+1001,apron,5,裁縫師(tailor),Cutting Table IV,650,cloak:2;raw leather:4;,快速,布甲(clothes),evoker's robe x 48 → apron,apronx60→monk cloak
+1002,basic tunic,1,裁縫師(tailor),cutting table i,90,raw leather:4;,快速,布甲(clothes),sandals x 12 → basic tunic,basic tunic x 20 → cloak
+1003,beast attire,9,裁縫師(tailor),good cutting table iii,3400,fabric:8;dyes:5;glass:4;,中,布甲(clothes),rich cloak x 48 → beast attire,beast attire x 68 → lord's robe
+1004,cleric's robe,11,店長(shopkeeper),spacious table v,4600,fabric:8;dyes:8;glass:2;,超長,布甲(clothes),成就：sewing 2(獲得15個裁縫師配方),cloak x 16 → treated cloak;cloak x 32 → leather coat
+1005,cloak,2,裁縫師(tailor),cutting table ii,170,fabric:2;raw leather:2;,快速,布甲(clothes),basic tunic x 20 → cloak,cloak x 16 → treated cloak;cloak x 32 → leather coat
+1006,cloak of concealment,8,裁縫師(tailor),good cutting table ii,16000,rich cloak:1;phoenix feather:1;,長,布甲(clothes),rich cloak x 32 → cloak of concealment,cosmic apparel x112 → vest of lies;cosmic apparel
+1007,conjurer's robe,4,裁縫師(tailor),cutting table iii,3800,dyes:1;fabric:4;faery's tear:1;,長,布甲(clothes),evoker's robe x 24 → conjurer's robe;conjurer's robe,cosmic apparel x112 → vest of lies;cosmic apparel
+1008,cosmic apparel,16,裁縫師(tailor),fine cutting table iv,29000,*rich cloak:2;crystals:5;fabric+:6;gems:4;dyes:8;,快速,布甲(clothes),elemental wonder x100 → cosmic apparel,cosmic apparel x112 → vest of lies
+1009,elemental wonder,15,裁縫師(tailor),fine cutting table iii,22000,*evoker's robe:2;*elemental pendant:1;dyes:6;gems:4;fabric:7;,長,布甲(clothes),sky mantle x88 → elemental wonder,elemental wonder x100 → cosmic apparel
+1010,evoker's robe,4,裁縫師(tailor),cutting table iii,495,dyes:1;fabric:4;,中,布甲(clothes),leather coat x 40 → evoker's robe,evoker's robe x 24 → conjurer's robe;evoker's robe x 48 → apron
+1011,grandmaster's robe,18,裁縫師(tailor),fine cutting table v,340000,*evoker's robe:5;crystals:10;fabric+:15;gems:10;dyes:10;golden silk:2;,快速,布甲(clothes),成就：craftsman 5(製作100;000物品);grandmaster's robe,guideon robe x32 → invisibility robe;guideon robe x48 → ifrit's flaming apparel;guideon robe x80 → sky mantle;guideon robe
+1012,guideon robe,11,裁縫師(tailor),good cutting table v,20000,*cleric's robe:2;fabric:4;dyes:6;mithril lumps:2;gems:2;glass:4;,短,布甲(clothes),*lord's robe x68 → guideon robe,guideon robe x32 → invisibility robe;guideon robe x48 → ifrit's flaming apparel;guideon robe x80 → sky mantle
+1013,ifrit's flaming apparel,13,裁縫師(tailor),fine cutting table i,210000,evoker's robe:3;golden silk:2;fireball scroll:5;mithril lumps:4;gems:4;dyes:8;,短,布甲(clothes),guideon robe x48 → ifrit's flaming apparel;ifrit's flaming apparel,0
+1014,invisibility robe,16,附魔師(enchanter),mystical cauldron v,280000,cloak of concealment:1;moon stone:2;,超長,布甲(clothes),guideon robe x32 → invisibility robe;invisibility robe,0
+1015,leather coat,3,裁縫師(tailor),cutting table iii,310,raw leather:3;fabric:3;,快速,布甲(clothes),cloak x 32 → leather coat,leather coat x 40 → evoker's robe
+1016,lord of darkness,19,裁縫師(tailor),fine cutting table v,300000,lord's robe:3;beast attire:10;amulet of darkness:2;demon horn:2;fabric:15;gems:12;,長,布甲(clothes),vest of lies x144 → lord of darkness;lord of darkness,lord's robe x 68 → guideon robe
+1017,lord's robe,10,裁縫師(tailor),good cutting table iv,5300,fabric:6;dyes:7;mithril lumps:1;gems:1;glass:5;,短,布甲(clothes),beast attire x 68 → lord's robe,lord's robe x 68 → guideon robe
+1018,monk cloak,5,裁縫師(tailor),cutting table iv,940,raw leather:5;elfwood sticks:2;iron ore:4;dyes:3;,短,布甲(clothes),apron x 60 → monk cloak,monk cloak x 48 → smith's apron
+1019,priest's robe,7,裁縫師(tailor),cutting table v,2100,fabric:5;dyes:5;glass:2;,超長,布甲(clothes),smith's apron x 48 → priest's robe,priest's robe x 72 → rich cloak
+1020,rich cloak,7,裁縫師(tailor),good cutting table ii,2800,fabric:8;dyes:5;glass:3;,短,布甲(clothes),priest's robe x 72 → rich cloak,rich cloak x 32 → cloak of concealment;rich cloak x 48 → beast attire
+1021,sky mantle,13,裁縫師(tailor),fine cutting table ii,15000,*priest's robe:2;fabric:6;dyes:6;gems:3;,短,布甲(clothes),guideon robe x80 → sky mantle,sky mantle x88 → elemental wonder
+1022,smith's apron,6,裁縫師(tailor),cutting table v,1200,apron:1;fabric:2;dyes:2;,快速,布甲(clothes),monk cloak x 48 → smith's apron,smith's apron x 48 → priest's robe
+1023,treated cloak,2,裁縫師(tailor),cutting table ii,1800,fabric:4;raw leather:4;acid:1;,短,布甲(clothes),cloak x 16 → treated cloak;treated cloak,0
+1024,vest of lies,17,裁縫師(tailor),fine cutting table v,220000,beast attire:4;shadow essence:1;fabric:10;gems:2;dyes:8;,超長,布甲(clothes),cosmic apparel x112 → vest of lies,vest of lies x144 → lord of darkness
+1025,arm guard,5,裁縫師(tailor),cutting table iv,600,raw leather:6;elfwood sticks:3;,中,護腕(bracers),vambrace x 48 → arm-guard,arm-guard x 48 → abyssal arm-guard;arm-guard x 64 → war vambrace;arm-guard
+1026,abyssal arm guard,4,裁縫師(tailor),cutting table iii,7500,raw leather:4;elfwood sticks:2;abyss shell:1;,長,護腕(bracers),arm-guard x 48 → abyssal arm-guard;abyssal arm-guard,0
+1027,elfwood vambrace,7,裁縫師(tailor),good cutting table ii,1400,*iron bracers:1;wood:5;elfwood sticks:4;ironwood:2;,短,護腕(bracers),war vambrace x 48 → elfwood vambrace,elfwood vambrace x 32 → stone hands
+1028,elven vambrace,10,店長(shopkeeper),spacious table v,18000,elfwood sticks:15;*elfwood vambrace:3;,短,護腕(bracers),成就：sewing 3(獲得30個裁縫師配方);elven vambrace,enabling vambrace x60 → gladiator's vambrace;enabling vambrace
+1029,enabling vambrace,15,裁縫師(tailor),fine cutting table iii,16000,*wrist-guard:2;raw leather:10;fabric:8;oil:8;gems:5;,長,護腕(bracers),stone hands x60 → enabling vambrace,enabling vambrace x60 → gladiator's vambrace
+1030,gladiator's vambrace,18,裁縫師(tailor),fine cutting table iv,430000,*vambrace:5;*ring of might:5;mithril lumps:8;oil:8;ironwood:8;roaring powder:3;,長,護腕(bracers),enabling vambrace x60 → gladiator's vambrace;gladiator's vambrace,0
+1031,iron bracers,1,店長(shopkeeper),work table i,40,iron ore:1;,快速,護腕(bracers),0,iron bracers *12 → small bow
+1032,stone hands,11,裁縫師(tailor),good cutting table v,7700,steel rods:4;ironwood:6;glass:7;wood:8;,中,護腕(bracers),elfwood vambrace x 32 → stone hands,stone hands *60 → enabling vambrace
+1033,vambrace,4,裁縫師(tailor),cutting table iii,250,raw leather:4;iron ore:5;,短,護腕(bracers),wrist-guard x 36 → vambrace,vambrace x 48 → arm-guard
+1034,war vambrace,6,裁縫師(tailor),cutting table v,840,raw leather:5;iron ore:6;dyes:3;,短,護腕(bracers),arm-guard x 64 → war vambrace,war vambrace x 48 → elfwood vambrace
+1035,wrist-guard,2,裁縫師(tailor),cutting table ii,65,wood:3;,快速,護腕(bracers),leather shoes x 16 → wrist-guard,wrist-guard x 36 → vambrace
+1036,blackbeard,16,附魔師(enchanter),luxurious table iv,160000,roaring powder:1;ironwood:8;mithril lumps:3;crystals:2;powder:8;,超長,火槍(guns),soul shooter x68 → blackbeard;blackbeard,blue lagoon x60 → soul shooter;blue lagoon
+1037,blue lagoon,17,發明家(tinkerer),luxurious table v,20000,elfwood sticks:8;ironwood:6;steel rods:5;powder:8;iron ore:8;,中,火槍(guns),quickdraw pistol x32 → blue lagoon,blue lagoon x60 → soul shooter
+1038,dragon,5,發明家(tinkerer),work table v,275,wood:4;iron ore:2;,中,火槍(guns),musket x20 → *dragon,*dragon x32 → fiery dragon;*dragon x52 → *musketeer's rifle
+1039,escopette,8,發明家(tinkerer),spacious table iii,1600,wood:4;elfwood sticks:2;steel rods:1;powder:2;,短,火槍(guns),*sniper rifle x72 → escopette,escopette x60 → *lightning bolt
+1040,everlasting pistol,19,發明家(tinkerer),luxurious table v,320000,lightning bolt:3;dragon scale:1;mithril lumps:4;crystals:2;powder:6;elfwood sticks:8;,長,火槍(guns),green dragon x100 → everlasting pistol,everlasting pistol x120 → hand-of-god
+1041,fiery dragon,4,發明家(tinkerer),spacious table i,7900,*dragon:1;volcanic rock:1;,中,火槍(guns),*dragon x32 → fiery dragon;fiery dragon,0
+1042,gold dragon,14,發明家(tinkerer),luxurious table ii,10000,*dragon:1;ironwood:6;steel rods:3;powder:6;,中,火槍(guns),*lightning bolt x48 → gold dragon,gold dragon x48 → quickdraw pistol
+1043,green dragon,16,發明家(tinkerer),luxurious table iv,37000,*dragon:3;ironwood:10;mithril lumps:7;powder:10;elfwood sticks:6;iron ore:8;,長,火槍(guns),soul shooter x96 → green dragon,green dragon x100 → everlasting pistol
+1044,hand-of-god,20,發明家(tinkerer),luxurious table v,630000,musketeer's rifle:15;holy talisman:2;divine leaf:1;ironwood:8;mithril lumps:5;powder:10;,超長,火槍(guns),everlasting pistol x120 → hand-of-god;hand-of-god,0
+1045,lightning bolt,9,發明家(tinkerer),spacious table iv,4700,elfwood sticks:3;ironwood:3;steel rods:2;powder:3;,中,火槍(guns),escopette x60 → *lightning bolt,*lightning bolt x48 → gold dragon
+1046,musket,3,發明家(tinkerer),work table iii,145,wood:2;iron ore:2;,短,火槍(guns),pistol x 12 → musket,musket x 20 → dragon
+1047,musketeer's rifle,5,發明家(tinkerer),work table v,475,wood:4;iron ore:2;powder:1;,短,火槍(guns),*dragon x52 → *musketeer's rifle,*musketeer's rifle x48 → *sniper rifle
+1048,pistol,1,發明家(tinkerer),work table ii,55,wood:1;iron ore:1;,快速,火槍(guns),0,pistol x 8 → darts;pistol x 12 → musket
+1049,quickdraw pistol,14,發明家(tinkerer),luxurious table ii,15000,*sharpshooter:1;ironwood:6;steel rods:4;powder:7;wood:8;,中,火槍(guns),gold dragon x48 → quickdraw pistol,quickdraw pistol x32 → blue lagoon
+1050,rising dragon,17,店長(shopkeeper),luxurious table v,560000,dragon scale:1;rising sun:1;mithril lumps:8;crystals:8;powder:8;,超長,火槍(guns),bishop's staff x130 → rising dragon;rising dragon,0
+1051,sharpshooter,5,店長(shopkeeper),spacious table i,2200,wood:5;elfwood sticks:4;powder:3;,中,火槍(guns),成就：inventor 2(獲得12個發明家配方),*sniper rifle x72 → escopette
+1052,sniper rifle,6,發明家(tinkerer),spacious table ii,1300,wood:5;elfwood sticks:2;iron ore:1;powder:2;,快速,火槍(guns),*musketeer's rifle x48 → *sniper rifle,*sniper rifle x72 → escopette
+1053,soul shooter,16,發明家(tinkerer),luxurious table iv,24000,*sniper rifle:3;ironwood:8;mithril lumps:1;crystals:1;powder:8;,中,火槍(guns),blue lagoon x60 → soul shooter,soul shooter x68 → blackbeard;soul shooter x96 → green dragon
+1054,assault axe,5,鐵匠(blacksmith),iron anvil iv,460,iron ore:6;elfwood sticks:2;,短,斧(axes),halberd x60→*assault axe,assault axe x32→pirate axe;assault axe x48→*stone axe
+1055,asunder,16,鐵匠(blacksmith),mithril anvil iv,15000,mithril lumps:5;steel rods:8;elfwood sticks:5;,超長,斧(axes),brier-axe x80 → asunder,asunder x92 → twinaxe
+1056,brier-axe,15,鐵匠(blacksmith),mithril anvil iii,13000,mithril lumps:5;crystals:3;ironwood:5;,中,斧(axes),vicious chopper x40 → brier-axe,brier-axe x80 → asunder
+1057,broad-axe,3,鐵匠(blacksmith),iron anvil ii,240,wood:4;iron ore:4;,中,斧(axes),*small axe x48→*broad axe,*broad axe x15→great broad-axe;*broad axe x48 → halberd
+1058,elfwood pole-axe,5,店長(shopkeeper),spacious table i,1700,steel rods:2;elfwood sticks:6;,快速,斧(axes),spiked mace x 35 → elfwood pole-axe,elfwood pole-axe x 55 → warrior's trident
+1059,enchanted labrys,13,附魔師(enchanter),luxurious table ii,130000,*pole-axe:5;steel rods:3;roaring powder:1;,短,斧(axes),war labrys x52 → enchanted labrys;enchanted labrys,0
+1060,frost axe,10,鐵匠(blacksmith),steel anvil iv,25000,*broad-axe:5;steel rods:4;eternal ice:1;,快速,斧(axes),sturdy pole-axe *40 → frost axe;frost axe,0
+1061,giant halberd,17,鐵匠(blacksmith),mithril anvil v,47000,*ranseur:8;*assault axe:5;steel rods:8;mithril lumps:5;ironwood:10;,長,斧(axes),twinaxe x100 → giant halberd,giant halberd x100 → planet cutter
+1062,great broad axe,3,鐵匠(blacksmith),iron anvil ii,2000,wood:5;iron ore:5;acid:1;,中,斧(axes),*broad axe x15→great broad-axe;great broad-axe,0
+1063,halberd,4,鐵匠(blacksmith),iron anvil ii,300,iron ore:6;elfwood sticks:1;,短,斧(axes),*broad axe x48→halberd,halberd x60→*assault axe
+1064,hand axe,1,鐵匠(blacksmith),iron anvil ii,150,wood:3;iron ore:3;,快速,斧(axes),dagger x16 → hand axe,hand axe x32→*small axe
+1065,pirate axe,6,鐵匠(blacksmith),iron anvil v,8300,*broad-axe:1;abyss shell:1;,短,斧(axes),assault axe x32→pirate axe;pirate axe,*pole-axe x60→*steel battle-axe
+1066,planet cutter,20,鐵匠(blacksmith),mithril anvil v,430000,*stone axe:5;*ring of might:10;rising sun:1;steel rods:25;mithril lumps:10;ironwood:8;,長,斧(axes),giant halberd x100 → planet cutter;planet cutter,*pole-axe x60→*steel battle-axe
+1067,pole-axe,7,鐵匠(blacksmith),steel anvil i,1400,steel rods:2;elfwood sticks:4;,長,斧(axes),*stone axe x60→*pole-axe,*pole-axe x60→*steel battle-axe
+1068,small axe,2,鐵匠(blacksmith),iron anvil ii,185,wood:3;iron ore:4;,快速,斧(axes),hand axe x32→*small axe,*small axe x48→*broad axe
+1069,sol axe,19,鐵匠(blacksmith),mithril anvil v,260000,steel battle-axe:2;mithril lumps:10;dragon scale:1;,中,斧(axes),成就：expert merchant(賺取10;000;000);sol axe,*steel battle-axe x64 → sturdy pole-axe
+1070,steel battle-axe,8,鐵匠(blacksmith),steel anvil iii,1900,steel rods:4;iron ore:6;,快速,斧(axes),*pole-axe x60 → *steel battle-axe,*steel battle-axe x64 → sturdy pole-axe
+1071,stone axe,6,鐵匠(blacksmith),steel anvil i,1000,steel rods:2;elfwood sticks:3;,短,斧(axes),assault axe x48→*stone axe,*stone axe x60→*pole-axe
+1072,stone cleaver,13,附魔師(enchanter),luxurious table ii,18000,steel rods:8;elfwood sticks:8;ironwood:8;,短,斧(axes),swift iron boots x140→stone cleaver;stone cleaver,sturdy pole-axe x40 → frost axe;sturdy pole-axe x68 → war labrys;sturdy pole-axe
+1073,sturdy pole-axe,9,鐵匠(blacksmith),steel anvil iii,4300,*stone axe:2;steel rods:2;,短,斧(axes),steel battle-axe x64 → sturdy pole-axe,sturdy pole-axe x40 → frost axe;sturdy pole-axe x68 → war labrys
+1074,twinaxe,16,鐵匠(blacksmith),mithril anvil iv,24000,*broad-axe:5;steel rods:8;ironwood:10;mithril lumps:4;,中,斧(axes),asunder x92 → twinaxe,twinaxe x100 → giant halberd
+1075,war labrys,11,鐵匠(blacksmith),steel anvil v,6200,*pole-axe:2;steel rods:3;,短,斧(axes),sturdy pole-axe x68 → war labrys,war labrys x52 → enchanted labrys;war labrys x80 → vicious chopper
+1076,vicious chopper,13,鐵匠(blacksmith),mithril anvil ii,9600,*ring of might:1;*small axe:4;mithril lumps:2;ironwood:4;gems:1;,短,斧(axes),war labrys x80 → vicious chopper,vicious chopper x40 → brier-axe
+1077,angelwing,16,鐵匠(blacksmith),mithril anvil iv,65000,*band of light:3;*steel blade:6;crystals:3;mithril lumps:3;gems:3;,長,匕首(daggers),*assassin's dagger x120 → angelwing,angelwing x128 → blackblade
+1078,assassin's dagger,14,鐵匠(blacksmith),mithril anvil ii,11000,*dagger:3;mithril lumps:5;iron ore:8;raw leather:6;gems:3;,長,匕首(daggers),*crimson heart x84 → assassin's dagger,assassin's dagger x60 → ebony dagger;assassin's dagger x120 → angelwing
+1079,bandit's dagger,3,鐵匠(blacksmith),iron anvil ii,155,iron ore:4;wood:1;,中,匕首(daggers),main-gauche x32 → bandit's dagger,bandit's dagger x24 → poison blade;bandit's dagger x48 → cutter
+1080,blackblade,20,鐵匠(blacksmith),mithril anvil v,480000,*assassin's dagger:3;demon blood:1;shadow essence:1;mithril lumps:5;gems:3;,超長,匕首(daggers),angelwing x128 → blackblade;blackblade,0
+1081,curver blade,17,附魔師(enchanter),luxurious table v,51000,mithril lumps:2;crystals:1;demon horn:1;,長,匕首(daggers),sacrificial blade x40 → curver blade;curver blade,cutter x48 → steel blade;cutter
+1082,cutter,4,鐵匠(blacksmith),iron anvil iii,285,iron ore:5;raw leather:2;,短,匕首(daggers),bandit's dagger x48 → cutter,cutter x48 → steel blade
+1083,crimson heart,13,鐵匠(blacksmith),mithril anvil i,8900,mithril lumps:5;gems:2;iron ore:8;raw leather:5;,超長,匕首(daggers),sacrificial blade x68 → crimson heart,crimson heart x84 → *assassin's dagger
+1084,dagger,1,鐵匠(blacksmith),iron anvil i,60,iron ore:2;,快速,匕首(daggers),成就：smithy 3(獲得30個鐵匠配方);*dragon heart,dagger x 16 → hand axe;dagger x 20 → main-gauche
+1085,dragon heart,15,店長(shopkeeper),luxurious table iii,200000,mithril lumps:5;gems:5;dragon scale:1;,超長,匕首(daggers),成就：smithy 3(獲得30個鐵匠配方);*dragon heart,0
+1086,ebony dagger,15,鐵匠(blacksmith),mithril anvil iii,130000,*crimson heart:2;*ebonystaff:8;roaring powder:1;,超長,匕首(daggers),*assassin's dagger x60 → ebony dagger;ebony dagger,0
+1087,fire dagger,6,鐵匠(blacksmith),iron anvil v,16000,dagger:5;volcanic rock:2;iron ore:8;steel rods:4;raw leather:4;,短,匕首(daggers),steel blade x28 → fire dagger;fire dagger,0
+1088,knife,1,店長(shopkeeper),work table i,45,iron ore:1;,快速,匕首(daggers),mailbreaker x48 → *kris,knife *12 → sharp spear
+1089,kris,8,鐵匠(blacksmith),steel anvil ii,2400,steel rods:4;crystals:1;,中,匕首(daggers),mailbreaker x48 → *kris,*kris x20 → toxic blade;*kris x60 → survival knife
+1090,mailbreaker,7,鐵匠(blacksmith),steel anvil i,1900,steel rods:3;iron ore:8;raw leather:6;,長,匕首(daggers),purse-opener x60 → mailbreaker,mailbreaker x48 → kris
+1091,main-gauche,2,鐵匠(blacksmith),iron anvil ii,85,iron ore:3;,快速,匕首(daggers),dagger x20 → main-gauche,main-gauche x32 → bandit's dagger
+1092,poison blade,5,鐵匠(blacksmith),iron anvil iv,4100,iron ore:3;acid:1;,長,匕首(daggers),bandit's dagger x24 → poison blade;poison blade,purse-opener x60 → mailbreaker;purse-opener
+1093,purse opener,6,鐵匠(blacksmith),iron anvil v,1500,steel blade:1;bandit's dagger:1;,中,匕首(daggers),steel blade x48 → purse-opener,purse-opener x60 → mailbreaker;purse-opener
+1094,sacrificial blade,9,鐵匠(blacksmith),steel anvil iii,5700,steel rods:5;crystals:3;,長,匕首(daggers),cutter x48 → steel blade,sacrificial blade x40 → curver blade;sacrificial blade x68 → *crimson heart
+1095,steel blade,5,鐵匠(blacksmith),iron anvil iv,1000,steel rods:3;,短,匕首(daggers),cutter x48 → steel blade,steel blade x28 → fire dagger;steel blade x48 → purse-opener
+1096,survival knife,8,鐵匠(blacksmith),steel anvil ii,3400,knife:1;steel rods:4;crystals:2;,中,匕首(daggers),kris * 60 → survival knife,survival knife * 48 → sacrificial blade
+1097,toxic blade,10,鐵匠(blacksmith),steel anvil iv,9900,*kris:1;acid:2;,長,匕首(daggers),*kris x20 → toxic blade;toxic blade,0
+1098,belial,20,鎧甲師(armorer),mithril anvil v,540000,demon plate:1;mithril lumps:4;shadow essence:1;demon horn:2;,短,重甲(heavy armor),成就：hoarder 5(當日總收入達1;000;000);belial,brigandine x 32 → chain mail;brigandine
+1099,brigandine,2,鎧甲師(armorer),iron anvil ii,190,iron ore:4;raw leather:3;,短,重甲(heavy armor),scale mail x 20 → brigandine,brigandine x 32 → chain mail
+1100,chain mail,3,鎧甲師(armorer),iron anvil iii,310,iron ore:6;raw leather:4;,快速,重甲(heavy armor),brigandine x 32 → chain mail,chain mail x 32 → light lorica;chain mail x 48 → lorica segmentata
+1101,demon plate,15,鎧甲師(armorer),mithril anvil iii,180000,half-plate:5;mithril lumps:4;shadow essence:1;,中,重甲(heavy armor),great armor x 40 → demon plate,0
+1102,dragon plate,20,鎧甲師(armorer),mithril anvil v,1010000,full plate:5;scale mail:15;amulet of evil protection:1;dragon scale:2;mithril lumps:10;crystals:5;,超長,重甲(heavy armor),sky dragoon armor x128 → dragon plate;dragon plate,0
+1103,flexible plate,7,鎧甲師(armorer),steel anvil ii,4600,steel rods:3;oil:6;raw leather:4;,短,重甲(heavy armor),iron plate armor x 60 → flexible plate,flexible plate x 60 → guard mail
+1104,full plate,11,鎧甲師(armorer),steel anvil v,8700,half-plate:1;steel rods:4;oil:5;iron ore:6;,中,重甲(heavy armor),guard mail x 60 → full plate,full plate *68 → great armor
+1105,guard mail,9,鎧甲師(armorer),steel anvil iii,5600,chain mail:2;steel rods:3;raw leather:5;oil:5;,中,重甲(heavy armor),flexible plate x 60 → guard mail,guard mail x 32 → plate of the moon;guard mail x 60 → full plate
+1106,great armor,12,鎧甲師(armorer),mithril anvil i,12000,mithril lumps:4;steel rods:5;raw leather:4;oil:7;,中,重甲(heavy armor),*full plate x68 → great armor,great armor x40 → demon plate;great armor x68 → lionheart
+1107,half-plate,5,鎧甲師(armorer),iron anvil iv,1800,steel rods:2;oil:2;raw leather:4;fabric:4;,短,重甲(heavy armor),lorica segmentata x 48 → half-plate,half-plate x 52 → iron plate armor
+1108,iron plate armor,6,鎧甲師(armorer),steel anvil i,3100,iron ore:8;steel rods:4;oil:3;raw leather:2;,短,重甲(heavy armor),half-plate x 52 → iron plate armor,iron plate armor x 60 → flexible plate
+1109,light lorica,4,鎧甲師(armorer),iron anvil iv,4300,iron ore:3;steel rods:2;faery's tear:1;,中,重甲(heavy armor),chain mail x 32 → light lorica;light lorica,lionheart x60 → rock armor;lionheart x112 → sky dragoon armor;lionheart
+1110,lionheart,16,鎧甲師(armorer),mithril anvil iv,21000,*pendant of safety:2;mithril lumps:6;steel rods:8;fabric:6;raw leather:5;oil:4;,中,重甲(heavy armor),great armor x68 → lionheart,lionheart x60 → rock armor;lionheart x112 → sky dragoon armor
+1111,lorica segmentata,4,鎧甲師(armorer),iron anvil iii,640,iron ore:4;steel rods:2;,短,重甲(heavy armor),chain mail x 48 → lorica segmentata,lorica segmentata x 48 → half-plate
+1112,plate of the moon,13,附魔師(enchanter),luxurious table iv,100000,half-plate:2;steel rods:5;moon stone:1;,長,重甲(heavy armor),guard mail x32 → plate of the moon;plate of the moon,0
+1113,plate of the renown,20,店長(shopkeeper),luxurious table v,540000,golden silk:1;divine leaf:1;mithril lumps:4;crystals:4;gems:4;,長,重甲(heavy armor),成就：wordly(到達100等);plate of the renown,0
+1114,rock armor,17,鎧甲師(armorer),mithril anvil v,86000,*stalagmite gloves:1;*stone hands:1;crystals:2;mithril lumps:3;,長,重甲(heavy armor),lionheart x60 → rock armor;rock armor,0
+1115,scale mail,1,鎧甲師(armorer),iron anvil i,110,iron ore:3;raw leather:2;,快速,重甲(heavy armor),lionheart x112 → sky dragoon armor,scale mail x 12 → iron gauntlets;scale mail x 20 → brigandine
+1116,sky dragoon armor,19,鎧甲師(armorer),mithril anvil v,310000,*scale mail:10;steel rods:10;mithril lumps:10;crystals:8;rising sun:1;,中,重甲(heavy armor),lionheart x112 → sky dragoon armor,sky dragoon armor x128 → dragon plate
+1117,berserker's sabatons,10,鎧甲師(armorer),steel anvil iv,19000,*warrior's sabaton:1;steel rods:6;fabric:8;crystals:3;mithril lumps:3;iron ore:8;,短,重靴(heavy boots),knight's sabatons x68 → berserker's sabatons,berserker's sabatons x96 → paladin's sabatons
+1118,dragoon's sabatons,20,鎧甲師(armorer),mithril anvil v,630000,fine sabaton:15;dragon scale:2;steel rods:10;mithril lumps:7;crystals:4;,長,重靴(heavy boots),paladin's sabatons x120 → dragoon's sabatons;dragoon's sabatons,0
+1119,fine sabaton,2,鎧甲師(armorer),iron anvil ii,470,iron ore:6;raw leather:4;fabric:2;,短,重靴(heavy boots),iron boots x 48 → fine sabaton,fine sabaton x 60 → soldier's sabatons
+1120,iron boots,1,鎧甲師(armorer),iron anvil i,210,iron ore:4;raw leather:4;,快速,重靴(heavy boots),iron gauntlets x 32 → iron boots,iron boots x 32 → spiked boots;iron boots x 48 → fine sabaton
+1121,knight's sabatons,9,鎧甲師(armorer),steel anvil iii,2900,steel rods:4;fabric:5;raw leather:8;,短,重靴(heavy boots),soldier's sabatons x 68 → knight's sabatons,knight's sabatons x 68 → berserker's sabatons
+1122,paladin's sabatons,14,鎧甲師(armorer),mithril anvil ii,30000,knight's sabatons:1;amulet of light:2;mithril lumps:6;steel rods:4;raw leather:3;fabric:10;,中,重靴(heavy boots),berserker's sabatons x96 → paladin's sabatons,paladin's sabatons x120 → dragoon's sabatons
+1123,spiked boots,4,鎧甲師(armorer),iron anvil iii,4500,iron ore:2;raw leather:2;volcanic rock:1;,短,重靴(heavy boots),iron boots x 32 → spiked boots;spiked boots,soldier's sabatons x 68 → knight's sabatons;soldier's sabatons
+1124,soldier's sabatons,7,鎧甲師(armorer),steel anvil ii,890,steel rods:2;fabric:2;raw leather:2;,短,重靴(heavy boots),fine sabaton x 60 → soldier's sabatons,soldier's sabatons x 68 → knight's sabatons
+1125,swift iron boots,10,附魔師(enchanter),spacious table v,7400,iron ore:10;raw leather:9;fabric:6;steel rods:6;,快速,重靴(heavy boots),antivenom x120 → swift iron boots,swift iron boots x140 → stone cleaver
+1126,warrior's sabaton,12,店長(shopkeeper),luxurious table i,4700,steel rods:8;raw leather:6;fabric:4;,短,重靴(heavy boots),成就：armor 2(獲得15個鎧甲師配方),0
+1127,ancient helmet,19,鎧甲師(armorer),mithril anvil v,300000,rising sun:1;steel rods:6;oil:8;mithril lumps:2;gems:2;,超長,重盔(heavy helmets),transmundane full helmet x96 → ancient helmet,ancient helmet x120 → wrathful face
+1128,blessed helm,9,鎧甲師(armorer),steel anvil ii,3500,iron ore:6;steel rods:4;oil:3;,中,重盔(heavy helmets),knight's hauberk x 64 → blessed helm,blessed helm x 68 → war mask
+1129,brass helmet,2,鎧甲師(armorer),iron anvil ii,190,iron ore:6;,快速,重盔(heavy helmets),metal cap x 20 → brass helmet,brass helmet x 32 → full helmet
+1130,fitting top,5,鎧甲師(armorer),iron anvil iv,780,iron ore:8;raw leather:10;,中,重盔(heavy helmets),full helmet x 32 → fitting top,fitting top x 40 → kabuto;fitting top x 60 → knight's hauberk
+1131,full helmet,4,鎧甲師(armorer),iron anvil iii,320,iron ore:8;,中,重盔(heavy helmets),brass helmet x 32 → full helmet,full helmet x 32 → fitting top
+1132,heavy helmet,6,店長(shopkeeper),spacious table ii,365,iron ore:8;,短,重盔(heavy helmets),成就：land owner 2(擴店4次),0
+1133,kabuto,7,鎧甲師(armorer),steel anvil ii,9300,full helmet:1;abyss shell:1;,短,重盔(heavy helmets),fitting top x 40 → kabuto;kabuto,knight's hauberk x 64 → blessed helm;knight's hauberk
+1134,knight's hauberk,6,鎧甲師(armorer),iron anvil v,1000,iron ore:5;steel rods:1;raw leather:3;fabric:2;dyes:2;,中,重盔(heavy helmets),fitting top x 60 → knight's hauberk,knight's hauberk x 64 → blessed helm
+1135,metal cap,1,鎧甲師(armorer),iron anvil i,105,iron ore:4;,快速,重盔(heavy helmets),iron gauntlets x 12 → metal cap,metal cap x 20 → brass helmet
+1136,paladin's helmet,15,附魔師(enchanter),luxurious table iii,31000,blessed helm:1;faery's tear:2;mithril lumps:3;crystals:1;,中,重盔(heavy helmets),steel hauberk x40 → paladin's helmet;paladin's helmet,0
+1137,steel hauberk,11,鎧甲師(armorer),steel anvil v,7900,*heavy helmet:1;iron ore:7;steel rods:5;oil:6;,中,重盔(heavy helmets),war mask x 68 → steel hauberk,steel hauberk x 40 → paladin's helmet;steel hauberk x 80 → transmundane full helmet
+1138,transmundane full helmet,16,鎧甲師(armorer),mithril anvil iv,16000,mithril lumps:4;iron ore:9;steel rods:4;oil:8;,長,重盔(heavy helmets),steel hauberk x80 → transmundane full helmet,transmundane full helmet x96 → ancient helmet
+1139,war mask,10,鎧甲師(armorer),steel anvil iv,5300,iron ore:6;steel rods:4;oil:5;,中,重盔(heavy helmets),blessed helm x 68 → war mask,war mask x 68 → steel hauberk
+1140,wrathful face,19,鎧甲師(armorer),mithril anvil v,350000,full helmet:10;war mask:6;dragon scale:1;mithril lumps:5;crystals:4;gems:2;,長,重盔(heavy helmets),ancient helmet x120 → wrathful face;wrathful face,0
+1141,bone helmet,3,皮甲師(leather-worker),cutting table iii,230,wood:4;raw leather:4;,快速,頭盔(helmets),*leather helmet x20 → *bone helmet,*bone helmet x32 → shiny helmet
+1142,captain's helmet,11,皮甲師(leather-worker),good cutting table v,6200,steel rods:6;raw leather:8;fabric:5;elfwood sticks:6;,短,頭盔(helmets),*gladiator's helmet x80 → *captain's helmet,captain's helmet x64 → grim reaper;captain's helmet x100 → elven commander
+1143,demon helmet,7,皮甲師(leather-worker),good cutting table ii,22000,elfwood sticks:4;iron ore:5;raw leather:3;demon horn:1;,短,頭盔(helmets),viking helmet x48 → demon helmet;demon helmet,0
+1144,elven commander,15,皮甲師(leather-worker),fine cutting table iii,42000,*captain's helmet:1;mithril lumps:5;crystals:5;raw leather:5;phoenix feather:1;,長,頭盔(helmets),*captain's helmet x100 → elven commander,elven commander x32 → opal helmet
+1145,evil shogun,19,皮甲師(leather-worker),fine cutting table iv,570000,soldier's helmet:5;shadow essence:2;evil scroll:2;mithril lumps:8;raw leather:8;ironwood:8;,長,頭盔(helmets),opal helmet x64 → evil shogun;evil shogun,0
+1146,gladiator's helmet,10,皮甲師(leather-worker),good cutting table iv,2400,steel rods:3;fabric:3;raw leather:6;elfwood sticks:3;,快速,頭盔(helmets),*soldier's helmet x84 → *gladiator's helmet,*gladiator's helmet x60 → mask of fear;*gladiator's helmet x80 → *captain's helmet
+1147,grim reaper,12,皮甲師(leather-worker),fine cutting table i,130000,*leather helmet:10;shadow essence:1;steel rods:5;dyes:5;,中,頭盔(helmets),captain's helmet x64 → grim reaper;grim reaper,0
+1148,leather helmet,1,皮甲師(leather-worker),cutting table i,140,wood:3;raw leather:3;,快速,頭盔(helmets),*soft gloves x12 → *leather helmet,*leather helmet x20 → *bone helmet
+1149,mask of fear,7,附魔師(enchanter),spacious table iii,100000,*bone helmet:5;*war mask:1;roaring powder:1;steel rods:5;raw leather:8;,短,頭盔(helmets),*gladiator's helmet x60 → mask of fear;mask of fear,0
+1150,opal helmet,17,皮甲師(leather-worker),fine cutting table v,380000,*gladiator's helmet:3;mithril lumps:5;gems:3;ironwood:3;divine leaf:1;,快速,頭盔(helmets),elven commander x32 → opal helmet,opal helmet x64 → evil shogun
+1151,shiny helmet,5,皮甲師(leather-worker),cutting table iv,280,wood:2;elfwood sticks:2;,快速,頭盔(helmets),*bone helmet x32 → shiny helmet,shiny helmet x48 → viking helmet
+1152,silver helmet,17,皮甲師(leather-worker),fine cutting table v,68000,mithril lumps:10;gems:10;*soldier's helmet:3;iron ore:10;raw leather:10;,中,頭盔(helmets),成就：land owner 5(擴店至最大);silver helmet,*soldier's helmet x84 → *gladiator's helmet
+1153,soldier's helmet,8,皮甲師(leather-worker),good cutting table ii,940,steel rods:2;elfwood sticks:1;fabric:2;,短,頭盔(helmets),viking helmet x64 → *soldier's helmet,*soldier's helmet x84 → *gladiator's helmet
+1154,viking helmet,6,皮甲師(leather-worker),good cutting table i,560,elfwood sticks:3;iron ore:2;raw leather:2;,短,頭盔(helmets),shiny helmet x48 → viking helmet,viking helmet x48 → demon helmet;viking helmet x64 → *soldier's helmet
+1155,abolishing mace,15,木匠(carpenter),quality sawbench iii,18000,soldier's mace:2;elfwood sticks:8;ironwood:8;steel rods:6;mithril lumps:3;gems:2;,中,錘(maces),simon's whip *88 → abolishing mace,abolishing mace *60 → demon worshipper;abolishing mace *96 → deathbringer
+1156,biomace,14,附魔師(enchanter),luxurious table v,95000,steel mace:1;moon stone:1;elfwood sticks:2;oil:2;,中,錘(maces),crushing fist x52 → biomace;biomace,0
+1157,club,1,店長(shopkeeper),work table i,25,wood:1;,快速,錘(maces),dark paladin hammer x 68 → crushing fist,club *12 → wooden buckler
+1158,crushing bludgeon,1,木匠(carpenter),sawbench i,60,wood:2;,快速,錘(maces),dark paladin hammer x 68 → crushing fist,crushing bludgeon x 12 → iron spear;crushing bludgeon x 20 → hammer
+1159,crushing fist,11,木匠(carpenter),sturdy sawbench v,5800,wood:10;elfwood sticks:10;iron ore:5;steel rods:4;,中,錘(maces),dark paladin hammer x 68 → crushing fist,crushing fist *52 → biomace;crushing fist *80 → war priest's mace
+1160,crushing sledgehammer,6,木匠(carpenter),sturdy sawbench i,6000,sledgehammer:1;volcanic rock:1;elfwood sticks:4;,中,錘(maces),flail x 32 → crushing sledgehammer;crushing sledgehammer,0
+1161,dark paladin hammer,10,木匠(carpenter),sturdy sawbench iv,4600,wood:8;elfwood sticks:6;steel rods:3;oil:3;,中,錘(maces),skull crusher x 68 → dark paladin hammer,dark paladin hammer x 68 → crushing fist
+1162,deathbringer,16,木匠(carpenter),quality sawbench iv,22000,elfwood sticks:8;ironwood:6;mithril lumps:5;gems:5;wood:8;iron ore:8;,長,錘(maces),abolishing mace *96 → deathbringer,deathbringer *96 → planet smasher
+1163,demon worshipper,15,木匠(carpenter),quality sawbench iii,170000,skull crusher:1;rage token:1;demon horn:1;ironwood:6;gems:4;,中,錘(maces),abolishing mace *60 → demon worshipper;demon worshipper,dragon tooth *120 → dragon skull
+1164,dragon skull,20,木匠(carpenter),quality sawbench v,1250000,dragon tooth:1;crushing bludgeon:5;dragon scale:3;ironwood:12;mithril lumps:8;gems:4;,中,錘(maces),dragon tooth *120 → dragon skull;dragon skull,dragon tooth *120 → dragon skull
+1165,dragon tooth,19,木匠(carpenter),quality sawbench v,240000,sledgehammer:5;dragon scale:1;ironwood:4;mithril lumps:3;gems:3;,超長,錘(maces),planet smasher *112 → dragon tooth,dragon tooth *120 → dragon skull
+1166,flail,6,木匠(carpenter),sawbench v,790,wood:8;elfwood sticks:3;iron ore:2;,短,錘(maces),thorn mace x 60 → flail,flail x 32 → crushing sledgehammer;flail x 68 → steel mace
+1167,great mace,7,店長(shopkeeper),spacious table ii,9600,wood:15;elfwood sticks:10;steel rods:8;soldier's mace:5;,長,錘(maces),成就：learned 3(獲得100個配方);great mace,0
+1168,hammer,2,木匠(carpenter),sawbench ii,105,wood:3;iron ore:1;,快速,錘(maces),crushing bludgeon x 20 → hammer,hammer x 32 → sledgehammer
+1169,orange hammer,9,木匠(carpenter),sturdy sawbench iii,1900,wood:6;elfwood sticks:5;steel rods:2;,短,錘(maces),steel mace x 60 → orange hammer,orange hammer x 60 → skull crusher
+1170,planet smasher,18,木匠(carpenter),quality sawbench v,27000,thorn mace:2;elfwood sticks:9;ironwood:8;steel rods:6;gems:5;iron ore:12;,超長,錘(maces),deathbringer *96 → planet smasher,planet smasher *112 → dragon tooth
+1171,post maul,3,木匠(carpenter),sawbench iii,1600,wood:3;iron ore:3;acid:1;,快速,錘(maces),sledgehammer x 15 → post maul;post maul,0
+1172,simon's whip,14,木匠(carpenter),quality sawbench ii,14000,ironwood:6;steel rods:5;gems:4;wood:10;elfwood sticks:8;,中,錘(maces),transmundane hammer *80 → simon's whip,simon's whip *88 → abolishing mace
+1173,skull crusher,9,木匠(carpenter),sturdy sawbench iii,2800,wood:6;elfwood sticks:5;steel rods:2;oil:2;,中,錘(maces),orange hammer x 60 → skull crusher,skull crusher x 68 → dark paladin hammer
+1174,sledgehammer,3,木匠(carpenter),sawbench iii,190,wood:5;iron ore:2;,快速,錘(maces),hammer x 32 → sledgehammer,sledgehammer x 15 → post maul;sledgehammer x 32 → soldier's mace
+1175,soldier's mace,4,木匠(carpenter),sawbench iii,290,wood:7;iron ore:2;,短,錘(maces),sledgehammer x 32 → soldier's mace,soldier's mace x 48 → thorn mace
+1176,spiked mace,2,店長(shopkeeper),work table iii,370,wood:6;iron ore:4;,快速,錘(maces),購買elite membership,spiked mace x 35 → elfwood pole-axe
+1177,steel mace,7,木匠(carpenter),sturdy sawbench ii,1200,wood:4;elfwood sticks:3;steel rods:2;,短,錘(maces),flail x 68 → steel mace,steel mace x 60 → orange hammer
+1178,thorn mace,5,木匠(carpenter),sawbench iv,415,wood:5;elfwood sticks:2;iron ore:1;,短,錘(maces),soldier's mace x 48 → thorn mace,thorn mace x 60 → flail
+1179,transmundane hammer,14,木匠(carpenter),quality sawbench ii,11000,elfwood sticks:6;ironwood:4;mithril lumps:3;oil:6;,長,錘(maces),war priest's mace *68 → transmundane hammer,transmundane hammer *80 → simon's whip
+1180,war priest's mace,12,木匠(carpenter),quality sawbench i,6800,dark paladin hammer:1;elfwood sticks:4;ironwood:2;,快速,錘(maces),0,war priest's mace *68 → transmundane hammer
+1181,barbarian chief armor,5,皮甲師(leather-worker),cutting table iv,770,*fur armor:1;iron ore:3;dyes:3;,中,中型護甲(medium armor),*gambeson x60 → *barbarian chief armor,*barbarian chief armor x72 → cow leather armor
+1182,comfortable vest,15,皮甲師(leather-worker),fine cutting table iii,23000,*scholar's mark:2;fabric:10;oil:6;gems:4;raw leather:1;,中,中型護甲(medium armor),reign coat x112 → comfortable vest,comfortable vest x120 → *samurai's armor
+1183,cow leather armor,6,皮甲師(leather-worker),cutting table v,940,*gambeson:1;raw leather:1;,短,中型護甲(medium armor),*barbarian chief armor x72 → cow leather armor,cow leather armor x100 → *perfect leather
+1184,divine leather,14,店長(shopkeeper),luxurios table i,230000,raw leather:10;fabric:6;gems:3;divine leaf:1;,長,中型護甲(medium armor),成就：tanner 3(獲得30個皮甲師配方);divine leather,0
+1185,dragon leather,14,皮甲師(leather-worker),good cutting table v,430000,raw leather:5;dragon scale:2;,長,中型護甲(medium armor),yeti armor x32 → dragon leather;dragon leather,0
+1186,elven brigandine,12,皮甲師(leather-worker),cutting table i,11000,*gambeson:3;raw leather:8;crystals:3;mithril lumps:3;,中,中型護甲(medium armor),*plated leather armor x80 → elven brigandine,elven brigandine x96 → reign coat
+1187,evasive armor,10,皮甲師(leather-worker),good cutting table iv,82000,*perfect leather:1;golden silk:1;,快速,中型護甲(medium armor),*plated leather armor x40 → evasive armor,evasive armor x32 → yeti armor
+1188,fur armor,1,皮甲師(leather-worker),cutting table i,110,raw leather:3;iron ore:2;,快速,中型護甲(medium armor),*fur boots x12 → *fur armor,*fur armor x20 → *leather cuirass
+1189,gambeson,5,皮甲師(leather-worker),cutting table iv,610,raw leather:6;wood:4;dyes:2;,快速,中型護甲(medium armor),padded leather armor x60 → *gambeson,*gambeson x60 → *barbarian chief armor
+1190,leather cuirass,2,皮甲師(leather-worker),cutting table ii,210,raw leather:4;wood:2;fabric:1;,快速,中型護甲(medium armor),*fur armor x20 → *leather cuirass,*leather cuirass x32 → *studded leather armor
+1191,noble leather,8,皮甲師(leather-worker),good cutting table ii,1500,*leather cuirass:2;fabric:3;dyes:2;,中,中型護甲(medium armor),*perfect leather x100 → noble leather,noble leather x128 → *plated leather armor
+1192,padded leather armor,4,皮甲師(leather-worker),cutting table iii,465,raw leather:8;wood:5;,短,中型護甲(medium armor),*studded leather armor x48 → padded leather armor,padded leather armor x28 → soft leather armor;padded leather armor x60 → *gambeson
+1193,perfect leather,7,皮甲師(leather-worker),good cutting table ii,1300,raw leather:5;fabric:4;dyes:3;,短,中型護甲(medium armor),cow leather armor x100 → *perfect leather,*perfect leather x100 → noble leather
+1194,plated leather armor,9,皮甲師(leather-worker),good cutting table iii,2600,*studded leather armor:1;steel rods:1;fabric:1;iron ore:1;,短,中型護甲(medium armor),noble leather x128 → *plated leather armor,*plated leather armor x40 → evasive armor;*plated leather armor x80 → elven brigandine
+1195,reign coat,14,皮甲師(leather-worker),fine cutting table ii,15000,*lord's robe:1;fabric:8;gems:3;mithril lumps:2;raw leather:6;,中,中型護甲(medium armor),elven brigandine x96 → reign coat,reign coat x112 → comfortable vest
+1196,samurai's armor,18,皮甲師(leather-worker),fine cutting table iv,330000,*plated leather armor:4;fabric:10;raw leather:10;steel rods:8;mithril lumps:6;golden silk:2;,中,中型護甲(medium armor),comfortable vest x120 → *samurai's armor,*samurai's armor x128 → warrior's omen
+1197,soft leather armor,4,皮甲師(leather-worker),cutting table iv,4000,raw leather:5;wood:5;faery's tear:1;,中,中型護甲(medium armor),padded leather armor x28 → soft leather armor;soft leather armor,*studded leather armor x48 → padded leather armor
+1198,studded leather armor,3,皮甲師(leather-worker),cutting table ii,325,raw leather:5;iron ore:5;,中,中型護甲(medium armor),*leather cuirass x32 → *studded leather armor,*studded leather armor x48 → padded leather armor
+1199,warrior's omen,20,皮甲師(leather-worker),fine cutting table v,690000,samurai's armor:1;perfect leather:5;shadow essence:1;steel rods:10;mithril lumps:6;raw leather:4;,長,中型護甲(medium armor),*samurai's armor x128 → warrior's omen;warrior's omen,0
+1200,yeti armor,9,附魔師(enchanter),spacious table iv,130000,barbarian chief armor:3;eternal ice:1;roaring powder:1;,短,中型護甲(medium armor),evasive armor x32 → yeti armor,yeti armor x32 → dragon leather
+1201,angelic tiara,16,裁縫師(tailor),fine cutting table iv,20000,*circlet:2;iron ore:10;steel rods:6;mithril lumps:4;crystals:5;glass:8;,長,帽子(hats),streamlined conscience x96 → *angelic tiara,*angelic tiara x112 → demonic tiara
+1202,apprentice's hat,2,裁縫師(tailor),cutting table ii,245,fabric:3;raw leather:1;,快速,帽子(hats),circlet x 20 → apprentice's hat,apprentice's hat x 32 → monk hat
+1203,blazing hat,10,裁縫師(tailor),good cutting table iv,3800,fabric:8;raw leather:8;dyes:7;,中,帽子(hats),elemental top x 48 → blazing hat,blazing hat x 52 → frozen feather;blazing hat x 76 → siren hat
+1204,circlet,1,裁縫師(tailor),cutting table i,60,wood:3;,快速,帽子(hats),sandals x 12 → circlet,circlet x 20 → apprentice's hat
+1205,cleric's hat,4,裁縫師(tailor),cutting table iii,750,fabric:5;dyes:2;,短,帽子(hats),monk hat x 48 → cleric's hat,cleric's hat x 32 → noble tiara;cleric's hat x 60 → feathered hat
+1206,demonic tiara,15,裁縫師(tailor),fine cutting table v,68000,demon horn:1;*circlet:10;*talisman of fear:1;mithril lumps:4;crystals:4;,長,帽子(hats),angelic tiara x112 → demonic tiara,demonic tiara x128 → electrifying tiara
+1207,electrifying tiara,19,裁縫師(tailor),fine cutting table v,360000,angelic tiara:2;rising sun:1;steel rods:8;mithril lumps:4;crystals:4;,超長,帽子(hats),demonic tiara x128 → electrifying tiara;electrifying tiara,elemental top x 48 → blazing hat;elemental top
+1208,elemental top,7,裁縫師(tailor),good cutting table ii,1400,fabric:6;raw leather:2;dyes:3;,短,帽子(hats),feathered hat x 60 → elemental top,elemental top x 48 → blazing hat
+1209,feathered hat,6,裁縫師(tailor),good cutting table i,1100,fabric:5;dyes:3;,中,帽子(hats),cleric's hat x 60 → feathered hat,feathered hat x 60 → elemental top
+1210,frozen feather,9,附魔師(enchanter),spacious table v,85000,feathered hat:1;eternal ice:2;dyes:8;glass:3;,中,布甲(clothes),blazing hat x52 → frozen feather;frozen feather,0
+1211,master's hat,17,店長(shopkeeper),luxurious table v,110000,apprentice's hat:5;fabric:6;steel rods:4;dyes:4;crystals:3;golden silk:1;,快速,帽子(hats),成就：customer service 5(服務25;000個客人);master's hat,monk hat x 48 → cleric's hat;monk hat
+1212,monk hat,3,裁縫師(tailor),cutting table iii,395,fabric:4;raw leather:2;,快速,帽子(hats),apprentice's hat x 32 → monk hat,monk hat x 48 → cleric's hat
+1213,noble tiara,5,裁縫師(tailor),cutting table iv,9600,circlet:1;phoenix feather:1;,短,帽子(hats),cleric's hat x 32 → noble tiara;noble tiara,0
+1214,siren hat,12,裁縫師(tailor),fine cutting table i,10000,fabric:8;steel rods:4;dyes:9;crystals:4;,中,帽子(hats),blazing hat x76 → siren hat,siren hat x80 → streamlined conscience
+1215,streamlined conscience,15,裁縫師(tailor),fine cutting table iii,13000,*cleric's hat:1;fabric:10;crystals:4;dyes:8;glass:6;,短,帽子(hats),siren hat x80 → streamlined conscience,streamlined conscience x96 → angelic tiara
+1216,combat boots,13,皮甲師(leather-worker),fine cutting table ii,9700,*soft boots:1;crystals:4;dyes:6;fabric:6;,短,靴子(boots),insulated fur boots x84 → combat boots,combat boots x40 → sasquatch wear;combat boots x96 → traveling boots
+1217,courier's boots,9,皮甲師(leather-worker),good cutting table iv,15000,riding boots:1;elfwood sticks:1;phoenix feather:1;,短,靴子(boots),loose boots x 40 → courier's boots;courier's boots,0
+1218,explorer boots,19,皮甲師(leather-worker),fine cutting table v,390000,*traveling boots:3;*riding boots:5;rising sun:1;mithril lumps:8;crystals:5;dyes:6;,長,靴子(boots),*traveling boots x128 → explorer boots;explorer boots,0
+1219,floating boots,5,皮甲師(leather-worker),cutting table v,4700,fabric:5;elfwood sticks:1;faery's tear:1;,長,靴子(boots),floating boots,fur boots x 12 → soft gloves;fur boots x 12 → fur armor;fur boots x 36 → riding boots
+1220,fur boots,1,皮甲師(leather-worker),cutting table i,40,raw leather:2;,快速,靴子(boots),0,fur boots x 12 → soft gloves;fur boots x 12 → fur armor;fur boots x 36 → riding boots
+1221,insulated fur boots,10,皮甲師(leather-worker),fine cutting table ii,2000,fur boots:2;crystals:1;dyes:4;,短,靴子(boots),loose boots x 84 → insulated fur boots,insulated fur boots x 84 → combat boots
+1222,loose boots,6,皮甲師(leather-worker),good cutting table i,480,raw leather:5;dyes:2;,快速,靴子(boots),riding boots x 60 → loose boots,loose boots x 40 → courier's boots;loose boots x 84 → insulated fur boots
+1223,riding boots,3,皮甲師(leather-worker),cutting table iii,315,fabric:3;wood:2;,快速,靴子(boots),fur boots x 36 → riding boots,riding boots x 60 → loose boots
+1224,sasquatch wear,13,附魔師(enchanter),luxurious table iii,90000,*fur boots:3;crystals:1;dyes:5;eternal ice:2;,長,靴子(boots),combat boots x40 → sasquatch wear;sasquatch wear,0
+1225,soft boots,7,店長(shopkeeper),spacious table ii,1500,raw leather:10;dyes:4;,中,靴子(boots),成就：tanner 2(獲得15個皮甲師配方),0
+1226,traveling boots,16,皮甲師(leather-worker),fine cutting table iv,15000,fabric:6;ironwood:5;mithril lumps:3;crystals:4;dyes:4;,長,靴子(boots),combat boots x96 → *traveling boots,*traveling boots x128 → explorer boots
+1227,abyssal tranquility,20,樂器工匠(luthier),quality sawbench v,520000,divine leaf:1;abyss shell:2;elfwood sticks:4;ironwood:6;raw leather:10;mithril lumps:3;,中,樂器(musical instruments),horn of ages *160 → abyssal tranquility;abyssal tranquility,0
+1228,bagpipes,11,樂器工匠(luthier),sturdy sawbench v,7400,elfwood sticks:6;*drums:1;dyes:4;ironwood:3;raw leather:8;,短,樂器(musical instruments),flute of wonder x88 → bagpipes,bagpipes x80 → bard's lute
+1229,bard's lute,12,樂器工匠(luthier),quality sawbench i,10000,ironwood:6;elfwood sticks:8;raw leather:8;fabric:8;,短,樂器(musical instruments),bagpipes x80 → bard's lute,bard's lute x88 → celestial pipes
+1230,bugle,8,樂器工匠(luthier),sturdy sawbench ii,3400,iron ore:8;*flute:1;raw leather:5;glass:6;,長,樂器(musical instruments),*twin flute x72 → *bugle,*bugle x72 → celestial flute
+1231,celestial flute,8,樂器工匠(luthier),sturdy sawbench ii,4000,iron ore:4;*celestial harp:1;raw leather:3;glass:3;,長,樂器(musical instruments),*bugle x72 → celestial flute,celestial flute x80 → double flute
+1232,celestial harp,5,店長(shopkeeper),spacious table i,2100,elfwood sticks:5;raw leather:5;glass:2;,短,樂器(musical instruments),成就：musical 2(獲得8個樂器工匠配方),celestial pipes x100 → silence of the deep;celestial pipes
+1233,celestial pipes,13,樂器工匠(luthier),quality sawbench ii,14000,mithril lumps:5;fabric:5;glass:5;*celestial harp:1;wood:8;,快速,樂器(musical instruments),bard's lute x88 → celestial pipes,celestial pipes x100 → silence of the deep
+1234,charmer's flute,3,樂器工匠(luthier),sawbench ii,6200,flute:3;elfwood sticks:1;faery's tear:1;,中,樂器(musical instruments),harp x20 → *charmer's flute;*charmer's flute,0
+1235,double flute,9,樂器工匠(luthier),sturdy sawbench iii,4600,*elven flute:1;wood:3;elfwood sticks:5;glass:3;,短,樂器(musical instruments),celestial flute x80 → double flute,double flute x80 → flute of wonder
+1236,dragon pipes,10,店長(shopkeeper),spacious table v,78000,elfwood sticks:2;ironwood:2;roaring powder:1;,短,樂器(musical instruments),成就：musical 3(獲得15個樂器工匠配方);dragon pipes,*drums x64 → performer's lute
+1237,drums,5,樂器工匠(luthier),sawbench iv,950,elfwood sticks:3;raw leather:3;dyes:1;,短,樂器(musical instruments),*lute x60 → *drums,*drums x64 → performer's lute
+1238,elven flute,3,樂器工匠(luthier),sawbench iii,520,elfwood sticks:2;glass:1;,快速,樂器(musical instruments),harp x32 → *elven flute,*elven flute x48 → *lute
+1239,everlasting flute,10,店長(shopkeeper),luxurious table i,7900,ironwood:4;mithril lumps:3;glass:6;elfwood sticks:5;,中,樂器(musical instruments),grand bow x 80 → everlasting flute,everlasting flute x 92 → bishop's staff
+1240,flute,1,樂器工匠(luthier),sawbench i,170,wood:4;,快速,樂器(musical instruments),double flute x80 → flute of wonder,*flute x12 → harp
+1241,flute of wonder,10,樂器工匠(luthier),sturdy sawbench iv,5900,elfwood sticks:5;ironwood:5;wood:6;raw leather:6;,中,樂器(musical instruments),double flute x80 → flute of wonder,flute of wonder x60 → war drums;flute of wonder x88 → bagpipes
+1242,harmonious flute,6,樂器工匠(luthier),sturdy sawbench i,27000,elfwood sticks:6;eternal ice:1;,中,樂器(musical instruments),performer's lute x48 → harmonious flute;harmonious flute,harp x20 → *charmer's flute;harp x32 → *elven flute;harp
+1243,harmonious harp,4,樂器工匠(luthier),sawbench iii,16000,elfwood sticks:2;raw leather:2;glass:1;phoenix feather:1;,短,樂器(musical instruments),*lute x40 → harmonious harp;harmonious harp,harp x20 → *charmer's flute;harp x32 → *elven flute;harp
+1244,harp,2,樂器工匠(luthier),sawbench ii,380,elfwood sticks:2;raw leather:1;,短,樂器(musical instruments),*flute x12 → harp,harp x20 → *charmer's flute;harp x32 → *elven flute
+1245,horn of ages,18,樂器工匠(luthier),quality sawbench v,54000,*performer's lute:2;mithril lumps:6;gems:5;crystals:5;ironwood:8;elfwood sticks:10;,超長,樂器(musical instruments),ripieno x120 → horn of ages,horn of ages x108 → eternal flute;horn of ages x160 → abyssal tranquility
+1246,lute,4,樂器工匠(luthier),sawbench iii,740,wood:5;elfwood sticks:2;raw leather:3;,短,樂器(musical instruments),*elven flute x48 → *lute,*lute x40 → harmonious harp;*lute x60 → *drums
+1247,performer's lute,6,樂器工匠(luthier),sawbench v,1300,*lute:1;elfwood sticks:2;,中,樂器(musical instruments),*drums x64 → performer's lute,performer's lute x48 → harmonious flute;performer's lute x80 → *twin flute
+1248,phoenix flute,17,樂器工匠(luthier),quality sawbench v,94000,phoenix feather:1;twin flute:3;crystals:8;elfwood sticks:8;ironwood:8;,中,樂器(musical instruments),成就：employer 3(同時雇用4個工匠);phoenix flute,0
+1249,ripieno,16,樂器工匠(luthier),quality sawbench iv,26000,*bugle:2;ironwood:7;mithril lumps:1;crystals:1;glass:8;,短,樂器(musical instruments),silence of the deep x100 → ripieno,ripieno x120 → horn of ages
+1250,silence of the deep,15,樂器工匠(luthier),quality sawbench iii,19000,elfwood sticks:8;ironwood:6;mithril lumps:5;wood:10;raw leather:8;,長,樂器(musical instruments),celestial pipes x100 → silence of the deep,silence of the deep x100 → ripieno
+1251,twin flute,7,樂器工匠(luthier),sturdy sawbench ii,2800,*flute:1;elfwood sticks:5;glass:4;,快速,樂器(musical instruments),performer's lute x80 → *twin flute,*twin flute x72 → *bugle
+1252,war drums,10,附魔師(enchanter),spacious table v,140000,*drums:1;golden silk:1;,快速,樂器(musical instruments),flute of wonder x60 → war drums;war drums,0
+1253,artisan's gloves,16,皮甲師(leather-worker),fine cutting table iv,49000,smith's gloves:2;raw leather:10;gems:8;crystals:8;dyes:10;fabric:8;,長,手套(gloves),dual wielder's gloves x96 → artisan's gloves,artisan's gloves x128 → soft griffon gloves
+1254,dual wielder's gloves,14,皮甲師(leather-worker),fine cutting table ii,15000,*leather gloves:2;fabric:6;mithril lumps:3;gems:3;crystals:3;dyes:8;,長,手套(gloves),*noble's gloves x96 → dual wielder's gloves,dual wielder's gloves x96 → artisan's gloves
+1255,heat gloves,5,皮甲師(leather-worker),cutting table iv,5800,raw leather:4;fabric:3;dyes:3;volcanic rock:1;,中,手套(gloves),leather gloves x 36 → heat gloves;heat gloves,0
+1256,leather gloves,2,皮甲師(leather-worker),cutting table ii,190,raw leather:6;,快速,手套(gloves),soft gloves x 32 → leather gloves,leather gloves x 36 → heat gloves;leather gloves x 60 → long gloves
+1257,long gloves,4,皮甲師(leather-worker),cutting table iii,650,raw leather:6;fabric:2;dyes:2;,短,手套(gloves),leather gloves x 60 → long gloves,long gloves x 68 → noble's gloves
+1258,noble's gloves,8,皮甲師(leather-worker),good cutting table ii,1700,fabric:4;gems:1;dyes:3;,中,手套(gloves),long gloves x 68 → noble's gloves,noble's gloves x 60 → resistance gloves;noble's gloves x 96 → dual wielder's gloves
+1259,resistance gloves,10,皮甲師(leather-worker),good cutting table iv,130000,long gloves:1;moon stone:2;,長,手套(gloves),noble's gloves x 60 → resistance gloves;resistance gloves,0
+1260,smith's gloves,6,店長(shopkeeper),spacious table i,1100,raw leather:4;fabric:4;dyes:4;,長,手套(gloves),成就：customer service 2(服務500個客人),soft gloves x 16 → leather helmet;soft gloves x 32 → leather gloves
+1261,soft gloves,1,皮甲師(leather-worker),cutting table i,70,raw leather:3;,快速,手套(gloves),fur boots x 12 → soft gloves,soft gloves x 16 → leather helmet;soft gloves x 32 → leather gloves
+1262,soft griffon gloves,19,皮甲師(leather-worker),fine cutting table v,350000,noble's gloves:5;soft gloves:5;golden silk:2;mithril lumps:5;gems:5;dyes:8;,中,手套(gloves),artisan's gloves x128 → soft griffon gloves;soft griffon gloves,0
+1263,fine gauntlets,3,鎧甲師(armorer),iron anvil iii,385,iron ore:4;raw leather:4;fabric:2;,快速,護手(gauntlets),iron gauntlets x 32 → fine gauntlets,fine gauntlets x 48 → shell gauntlets;fine gauntlets x 64 → war gauntlets
+1264,grand gauntlets,10,鎧甲師(armorer),steel anvil iv,5800,steel rods:3;glass:5;oil:5;,中,護手(gauntlets),spectacular gauntlets x64 → grand gauntlets,grand gauntlets x80 → man handlers
+1265,ice gauntlets,19,鎧甲師(armorer),mithril anvil v,290000,spectacular gauntlets:8;eternal ice:4;mithril lumps:6;steel rods:7;gems:4;,超長,護手(gauntlets),stalagmite gloves x128 → ice gauntlets;ice gauntlets,iron gauntlets x 12 → metal cap;iron gauntlets x 12 → copper shield;iron gauntlets x 20 → iron boots;iron gauntlets x 32 → fine gauntlets
+1266,iron gauntlets,1,鎧甲師(armorer),iron anvil i,120,iron ore:4;raw leather:1;,快速,護手(gauntlets),scale mail x 12 → iron gauntlets,iron gauntlets x 12 → metal cap;iron gauntlets x 12 → copper shield;iron gauntlets x 20 → iron boots;iron gauntlets x 32 → fine gauntlets
+1267,knight's gauntlets,17,店長(shopkeeper),luxurious table v,31000,*war gauntlets:3;oil:6;steel rods:5;mithril lumps:8;iron ore:8;,長,護手(gauntlets),成就：armor 3(獲得30個鎧甲師配方);knight's gauntlets,0
+1268,man handlers,14,鎧甲師(armorer),mithril anvil ii,9200,*war gauntlets:1;oil:5;steel rods:5;raw leather:7;iron ore:7;,長,護手(gauntlets),grand gauntlets x80 → man handlers,man handlers x80 → paladin's gauntlets;
+1269,paladin's gauntlets,16,附魔師(enchanter),luxurious table iv,24000,*fine gauntlets:1;mithril lumps:5;gems+:5;steel rods:5;iron ore:8;,中,護手(gauntlets),man handlers x80 → paladin's gauntlets,paladin's gauntlets x112 → *stalagmite gloves
+1270,shell gauntlets,5,鎧甲師(armorer),iron anvil v,12000,steel rods:2;raw leather:2;phoenix feather:1;,短,護手(gauntlets),fine gauntlets x 48 → shell gauntlets;shell gauntlets,spectacular gauntlets x 64 → grand gauntlets
+1271,spectacular gauntlets,7,鎧甲師(armorer),steel anvil ii,2000,fine gauntlets:2;glass:3;,短,護手(gauntlets),war gauntlets x 64 → spectacular gauntlets,spectacular gauntlets x 64 → grand gauntlets
+1272,stalagmite gloves,15,鎧甲師(armorer),mithril anvil iv,49000,*iron gauntlets:5;crystals:4;gems:2;mithril lumps:3;abyss shell:2;,長,護手(gauntlets),paladin's gauntlets x112 → *stalagmite gloves,stalagmite gloves x128 → ice gauntlets
+1273,war gauntlets,6,鎧甲師(armorer),iron anvil v,1100,steel rods:3;raw leather:4;,短,護手(gauntlets),fine gauntlets x 64 → war gauntlets,war gauntlets x 64 → spectacular gauntlets
+1274,alert dust,5,德魯伊(druid),small cauldron iv,580,suple dust:1;wild herbs:2;wood:1;,中,藥草(herbs),regen herbs x 32 → alert dust,alert dust x 36 → elemental dust
+1275,attribute seed,20,德魯伊(druid),mystical cauldron v,620000,skill seedling:8;divine leaf:1;elfwood sticks:10;wood:15;crystals:4;,超長,藥草(herbs),dragon powder * 120 → attribute seed;attribute seed,0
+1276,cleansing herbs,11,德魯伊(druid),magic cauldron v,4700,*healing herbs:1;*regen herbs:1;powder:8;wild herbs:6;,長,藥草(herbs),restoration powder x 68 → cleansing herbs,cleansing herbs x 72 → skill seedling
+1277,dragon powder,17,德魯伊(druid),mystical cauldron iv,250000,strength seed:1;powder:10;elfwood sticks:6;ironwood:4;gems:2;dragon scale:1;,長,藥草(herbs),panacea * 112 → dragon powder,dragon powder * 120 → attribute seed
+1278,dust triad,5,店長(shopkeeper),spacious table i,2500,alert dust:3;wild herbs:5;wood:5;,短,藥草(herbs),成就：herbalist 2(獲得12個德魯伊配方);dust triad,0
+1279,elemental dust,6,德魯伊(druid),magic cauldron i,1000,regen herbs:1;wild herbs:2;wood:2;,短,藥草(herbs),alert dust x 36 → elemental dust,elemental dust x 48 → soothing herbs;elemental dust x 64 → salve of protection
+1280,healing herbs,1,店長(shopkeeper),work table i,35,wild herbs:1;,快速,藥草(herbs),0,healing herbs *12 → antidote
+1281,herbs bundle,1,德魯伊(druid),small cauldron i,95,wild herbs:2;,快速,藥草(herbs),0,herbs bundle *12 → oaken staff;herbs bundle *20 → suple dust
+1282,magic dust,9,德魯伊(druid),magic cauldron iii,2200,*strong herbs:1;wild herbs:5;powder:2;elfwood sticks:5;,中,藥草(herbs),salve of protection x 64 → magic dust,magic dust x 45 → restoration powder
+1283,magic leaves,5,德魯伊(druid),small cauldron iv,2300,wild herbs:5;raw leather:2;acid:1;,長,藥草(herbs),suple dust x 16 → magic leaves;magic leaves,0
+1284,panacea,16,德魯伊(druid),mystical cauldron iv,22000,wild herbs:10;elfwood sticks:8;ironwood:8;gems:5;powder:8;,長,藥草(herbs),skill seedling * 112 → panacea,panacea * 112 → dragon powder
+1285,regen herbs,4,德魯伊(druid),small cauldron iii,330,wild herbs:4;raw leather:2;,短,藥草(herbs),suple dust x 24 → regen herbs,regen herbs x 32 → alert dust
+1286,restoration powder,10,德魯伊(druid),magic cauldron iv,3300,wild herbs:7;powder:7;,短,藥草(herbs),magic dust x 45 → restoration powder,restoration powder x 68 → cleansing herbs
+1287,salve of protection,9,德魯伊(druid),magic cauldron iii,1800,wild herbs:3;powder:3;elfwood sticks:4;,中,藥草(herbs),elemental dust x 64 → salve of protection,salve of protection x 64 → magic dust
+1288,seed of skill,14,德魯伊(druid),mystical cauldron ii,190000,skill seedling:3;elfwood sticks:4;gems:4;wood:4;crystals:4;shadow essence:1;,中,藥草(herbs),skill seedling * 64 → seed of skill;seed of skill,skill seedling * 64 → seed of skill;skill seedling * 112 → panacea
+1289,skill seedling,12,德魯伊(druid),mystical cauldron i,7500,wood:8;wild herbs:8;elfwood sticks:8;gems:3;ironwood:3;,短,藥草(herbs),cleansing herbs x 72 → skill seedling,skill seedling * 64 → seed of skill;skill seedling * 112 → panacea
+1290,soothing herbs,8,德魯伊(druid),magic cauldron ii,17000,regen herbs:5;phoenix feather:1;,中,藥草(herbs),elemental dust x 48 → soothing herbs;,0
+1291,strength seed,12,店長(shopkeeper),luxurious table i,23000,wood:10;wild herbs:10;elfwood sticks:10;*magic dust:4;,快速,藥草(herbs),成就：herbalist 3(獲得25個德魯伊配方),suple dust x 16 → magic leaves;suple dust x 24 → regen herbs
+1292,strong herbs,3,店長(shopkeeper),work table iii,125,wild herbs:2;,短,藥草(herbs),成就：apprentice merchant(賺取5;000),suple dust x 16 → magic leaves;suple dust x 24 → regen herbs
+1293,suple dust,2,德魯伊(druid),small cauldron ii,185,wild herbs:3;,短,藥草(herbs),herbs bundle x 20 → suple dust,suple dust x 16 → magic leaves;suple dust x 24 → regen herbs
+1294,acid vial,10,店長(shopkeeper),spacious table v,32000,acid:5;powder:10;glass:10;,長,藥水(potions),成就：sorcery 3(獲得25個女法師配方);acid vial,antivenom x120 → swift iron boots;antivenom
+1295,antidote,1,店長(shopkeeper),work table ii,85,wild herbs:2;,短,藥水(potions),healing herbs *12 → antidote,antivenom x120 → swift iron boots;antivenom
+1296,antivenom,7,附魔師(enchanter),spacious table iii,5700,wild herbs:4;powder:4;oil:4;glass:2;,快速,藥水(potions),0,antivenom x120 → swift iron boots
+1297,bile jar,7,女法師(sorceress),magic cauldron ii,3600,wild herbs:5;glass:4;oil:4;,短,藥水(potions),cooling aid x68 → *bile jar,*bile jar x70 → potion of return
+1298,brisk beverage,5,女法師(sorceress),small cauldron iv,760,wild herbs:5;glass:2;,快速,藥水(potions),*vial of mana x32 → *brisk beverage,*brisk beverage x48 → mana potion
+1299,cooling aid,6,女法師(sorceress),small cauldron v,2600,antidote:1;oil:3;glass:4;wild herbs:4;,快速,藥水(potions),mana potion x48 → cooling aid,cooling aid x36 → revive potion;cooling aid x68 → *bile jar
+1300,demon blood,16,女法師(sorceress),mystical cauldron iv,140000,*bile jar:4;demon horn:2;crystals:3;gems:3;dyes:8;,長,藥水(potions),holy spray x112 → *demon blood,0
+1301,energy drink,9,店長(shopkeeper),spacious table iv,8700,wild herbs:15;glass:8;brisk beverage:3;,短,藥水(potions),成就：sorcery 2(獲得12個女法師配方);energy drink,0
+1302,heal potion,1,女法師(sorceress),small cauldron i,115,wild herbs:2;,快速,藥水(potions),magic drink x80 → health drink,*heal potion x12 → *magic scroll;*heal potion x16 → health vial
+1303,health drink,12,女法師(sorceress),mystical cauldron i,17000,brisk beverage:2;oil:10;crystals:3;glass:3;wild herbs:6;,中,藥水(potions),magic drink x80 → health drink,health drink x80 → soft potion
+1304,health vial,2,女法師(sorceress),small cauldron ii,325,heal potion:1;wild herbs:2;,快速,藥水(potions),*heal potion x16 → health vial,health vial x20 → *vial of mana
+1305,holy spray,10,女法師(sorceress),magic cauldron iv,61000,moon stone:1;wild herbs:3;glass:6;,超長,藥水(potions),*rebirth potion x40 → holy spray,holy spray x112 → *demon blood
+1306,magic drink,11,女法師(sorceress),magic cauldron v,12000,vial of mana:1;oil:5;powder:6;crystals:3;glass:6;,長,藥水(potions),*rebirth potion x72 → magic drink,magic drink x80 → health drink
+1307,mana potion,6,女法師(sorceress),small cauldron v,2000,vial of mana:1;oil:2;glass:4;,短,藥水(potions),*brisk beverage x48 → mana potion,mana potion x48 → cooling aid
+1308,megalixir,20,女法師(sorceress),mystical cauldron v,570000,*super potion:2;divine leaf:1;crystals:8;glass:8;dyes:8;,超長,藥水(potions),*super potion x128 → megalixir;megalixir,0
+1309,potion of return,8,女法師(sorceress),magic cauldron ii,4800,brisk beverage:1;powder:6;dyes:5;,超長,藥水(potions),*bile jar x70 → potion of return,potion of return x68 → *rebirth potion
+1310,rebirth potion,9,女法師(sorceress),magic cauldron iii,6200,*brisk beverage:1;oil:2;powder:6;glass:6;,長,藥水(potions),potion of return x68 → *rebirth potion,*rebirth potion x40 → holy spray;*rebirth potion x72 → magic drink
+1311,revive potion,7,女法師(sorceress),magic cauldron i,14000,vial of mana:1;oil:1;phoenix feather:1;,長,藥水(potions),cooling aid x36 → revive potion;revive potion,0
+1312,soft potion,14,女法師(sorceress),mystical cauldron ii,20000,brisk beverage:2;wild herbs:8;oil:8;powder:6;crystals:3;glass:5;,長,藥水(potions),health drink x80 → soft potion,soft potion x96 → *super potion
+1313,super potion,15,女法師(sorceress),mystical cauldron iii,38000,*rebirth potion:1;oil:10;crystals:5;glass:8;wild herbs:8;dyes:9;,超長,藥水(potions),*soft potion x96 → *super potion,*super potion x128 → megalixir
+1314,vial of mana,4,女法師(sorceress),small cauldron iii,345,wild herbs:3;dyes:1;,短,藥水(potions),health vial x20 → *vial of mana,*vial of mana x32 → *brisk beverage
+1315,blue bird shield,20,鎧甲師(armorer),mithril anvil v,480000,*heater shield:5;mithril lumps:8;crystals:8;ironwood:10;elfwood sticks:6;divine leaf:1;,超長,盾(shields),*defender x128 → blue bird shield;blue bird shield,bone shield x 60 → spider shield;bone shield x 128 → medusa shield
+1316,bone shield,8,木匠(carpenter),sturdy sawbench ii,2500,elfwood sticks:3;ironwood:2;dyes:5;,長,盾(shields),dolphin buckler x 60 → bone shield,bone shield x 60 → spider shield;bone shield x 128 → medusa shield
+1317,copper shield,2,鎧甲師(armorer),iron anvil ii,170,iron ore:4;raw leather:2;,快速,盾(shields),iron gauntlets x 12 → copper shield,copper shield x 32 → kite shield
+1318,defender,15,鎧甲師(armorer),mithril anvil iii,25000,mithril lumps:5;gems:5;crystals:5;raw leather:8;ironwood:5;,中,盾(shields),paladin's heater shield x40 → *defender,*defender x128 → blue bird shield
+1319,dolphin buckler,5,木匠(carpenter),sawbench iv,790,elfwood sticks:4;wood:2;iron ore:3;,中,盾(shields),hard wood buckler x 48 → dolphin buckler,dolphin buckler x 60 → bone shield
+1320,epic defender,18,附魔師(enchanter),mithril anvil v,400000,*defender:3;mithril lumps:5;gems:5;crystals:5;raw leather:20;ironwood:10;,超長,盾(shields),成就：warrior 5(40點勝利點數);epic defender,0
+1321,guardian tall shield,20,附魔師(enchanter),luxurious table v,1000000,shielding scroll:1;kite shield:5;mithril lumps:8;steel rods:8;iron ore:20;rising sun:2;,超長,盾(shields),vengeful entity x144 → guardian tall shield;guardian tall shield,0
+1322,hard wood buckler,3,木匠(carpenter),sawbench iii,470,wooden buckler:1;elfwood sticks:2;wood:5;iron ore:2;,快速,盾(shields),leather shield x 32 → hard wood buckler,hard wood buckler x 48 → dolphin buckler
+1323,heater shield,6,鎧甲師(armorer),steel anvil i,1800,steel rods:4;dyes:1;,短,盾(shields),kite shield x 60 → heater shield,heater shield x 72 → scutum
+1324,kite shield,5,鎧甲師(armorer),iron anvil iv,850,iron ore:8;steel rods:1;wood:6;,中,盾(shields),copper shield x 32 → kite shield,kite shield x 60 → heater shield
+1325,leather shield,2,木匠(carpenter),sawbench ii,150,raw leather:3;wood:3;,快速,盾(shields),iron spear x 20 → leather shield,leather shield x 32 → hard wood buckler
+1326,medusa shield,13,木匠(carpenter),quality sawbench ii,11000,ironwood:10;gems:2;mithril lumps:2;wood:6;,短,盾(shields),bone shield * 128 → medusa shield,medusa shield *128 → seven seas shield
+1327,mind saver,16,附魔師(enchanter),mystical cauldron iv,41000,scutum:3;ironwood:5;wood:10;gems:3;raw leather:8;,長,盾(shields),mirror shield x96 → mind saver;mind saver,mirror shield x80 → vengeful entity;mirror shield x96 → mind saver;mirror shield
+1328,mirror shield,13,附魔師(enchanter),luxurious table i,34000,heater shield:2;clairvoyance amulet:2;glass:10;,長,盾(shields),scutum *96 → mirror shield,mirror shield x80 → vengeful entity;mirror shield x96 → mind saver
+1329,paladin's heater shield,11,鎧甲師(armorer),steel anvil v,19000,*heater shield:1;phoenix feather:1;,中,盾(shields),*scutum x80 → paladin's heater shield,paladin's heater shield x40 → *defender
+1330,scutum,9,鎧甲師(armorer),steel anvil iii,3100,steel rods:5;raw leather:6;iron ore:6;,短,盾(shields),heater shield x 72 → scutum,scutum x 80 → paladin's heater shield;scutum x 96 → mirror shield
+1331,seven seas shield,17,木匠(carpenter),quality sawbench v,66000,copper shield:5;abyss shell:2;ironwood:12;wood:20;gems:7;,中,盾(shields),medusa shield *128 → seven seas shield;seven seas shield,0
+1332,spider shield,10,附魔師(enchanter),magic cauldron iv,42000,*bone shield:1;demon horn:1;,長,盾(shields),*bone shield x60 → spider shield;spider shield,0
+1333,vengeful entity,19,附魔師(enchanter),mystical cauldron iii,820000,*kite shield:5;roaring powder:2;shadow essence:2;,長,盾(shields),mirror shield x80 → vengeful entity,vengeful entity x144 → guardian tall shield
+1334,wooden buckler,1,店長(shopkeeper),work table i,55,wood:1;,快速,盾(shields),club *12 → wooden buckler,0
+1335,adamant spear,18,木匠(carpenter),quality sawbench v,37000,iron spear:2;abyss shell:1;ironwood:8;mithril lumps:6;crystals:4;,超長,矛(spears),0,riviera * 48 → adamant spear
+1336,corrosive trident,4,木匠(carpenter),sawbench iii,1800,wood:6;iron ore:3;acid:1;,中,矛(spears),trident x 20 → corrosive trident;corrosive trident,0
+1337,fiery partisan,12,附魔師(enchanter),luxurious table i,37000,flying partisan:2;volcanic rock:2;ironwood:6;steel rods:4;gems:2;,中,矛(spears),fine lance of the wolf x40 → fiery partisan;fiery partisan,fine lance of the wolf *40 → fiery partisan;fine lance of the wolf *76 → transmundane pike;fine lance of the wolf
+1338,fine lance of the wolf,11,木匠(carpenter),sturdy sawbench v,3900,wood:7;elfwood sticks:5;steel rods:4;mithril lumps:1;,中,矛(spears),knight's ranseur x 72 → fine lance of the wolf,fine lance of the wolf *40 → fiery partisan;fine lance of the wolf *76 → transmundane pike
+1339,floating lance,9,木匠(carpenter),sturdy sawbench iii,1800,wood:6;elfwood sticks:6;iron ore:2;steel rods:1;,中,矛(spears),gladiator's trident x 68 → floating lance,floating lance x 30 → moon lance;floating lance x 72 → knight's ranseur
+1340,flying partisan,6,木匠(carpenter),sawbench v,990,elfwood sticks:5;steel rods:1;,短,矛(spears),seeking tip x 60 → flying partisan,flying partisan x 68 → voulge
+1341,gaia's spine,15,木匠(carpenter),quality sawbench iii,8500,wood:9;elfwood sticks:8;ironwood:5;mithril lumps:2;crystals:1;,長,矛(spears),voulge x68 → gladiator's trident,gaia's spine * 80 → reinforced voulge
+1342,gladiator's trident,8,木匠(carpenter),sturdy sawbench ii,1600,*trident:1;elfwood sticks:4;steel rods:2;,中,矛(spears),voulge x68 → gladiator's trident,gladiator's trident x68 → floating lance
+1343,gungnir,20,木匠(carpenter),quality sawbench v,480000,seeking tip:5;moon stone:1;atmosring:1;ironwood:2;gems:2;crystals:1;,超長,矛(spears),0,adamant spear * 64 → gungnir
+1344,iron spear,1,木匠(carpenter),sawbench i,50,wood:2;iron ore:1;,快速,矛(spears),crushing bludgeon x 12 → iron spear,iron spear x 20 → slicer;iron spear x 20 → leather shield
+1345,knight's ranseur,10,木匠(carpenter),sturdy sawbench iv,3000,*ranseur:2;wood:12;iron ore:6;steel rods:2;,短,矛(spears),*floating lance x72 → knight's ranseur,knight's ranseur x72 → fine lance of the wolf
+1346,mithril rivera,18,木匠(carpenter),quality sawbench v,64000,riviera:1;mithril lumps:8;,超長,矛(spears),成就：woodland 3(獲得30個木匠配方);mithril rivera,0
+1347,moon lance,9,木匠(carpenter),sturdy sawbench iii,45000,wood:4;elfwood sticks:4;steel rods:2;moon stone:1;,中,矛(spears),floating lance x 30 → moon lance;moon lance,0
+1348,poseidon,15,木匠(carpenter),quality sawbench iii,6200,elfwood sticks:6;ironwood:4;mithril lumps:1;crystals:1;wood:8;,長,矛(spears),transmundane pike x80 → *poseidon,poseidon x80 → gaia's spine
+1349,ranseur,4,木匠(carpenter),sawbench iii,360,wood:8;iron ore:3;,中,矛(spears),trident x 40 → ranseur,ranseur x 60 → seeking tip
+1350,reinforced voulge,15,木匠(carpenter),quality sawbench iii,12000,trusty lance:1;wood:10;elfwood sticks:7;ironwood:6;mithril lumps:3;crystals:2;,長,矛(spears),0,gaia's spine * 80 → reinforced voulge
+1351,riviera,16,木匠(carpenter),quality sawbench iv,26000,floating lance:1;elfwood sticks:8;ironwood:8;steel rods:5;mithril lumps:4;gems:4;,超長,矛(spears),0,reinforced voulge * 112 → riviera
+1352,seeking tip,5,木匠(carpenter),sawbench iv,520,wood:10;iron ore:4;,中,矛(spears),ranseur x 60 → seeking tip,seeking tip x 60 → flying partisan
+1353,slicer,2,木匠(carpenter),sawbench ii,135,wood:4;iron ore:2;,快速,矛(spears),iron spear x 20 → slicer,slicer x 32 → trident
+1354,sharp spear,1,店長(shopkeeper),work table i,40,iron ore:1;wood:1;,快速,矛(spears),knife *12 → sharp spear;sharp spear,0
+1355,sky partisan,17,店長(shopkeeper),luxurious table v,150000,demon horn:3;ironwood:8;steel rods:6;gems:6;,中,矛(spears),成就：employer 2(同時雇用3個工匠);sky partisan,0
+1356,transmundane pike,13,木匠(carpenter),quality sawbench ii,5800,*floating lance:1;mithril lumps:2;ironwood:3;,短,矛(spears),fine lance of the wolf x76 → transmundane pike,transmundane pike x80 → *poseidon
+1357,trident,3,木匠(carpenter),sawbench ii,225,wood:6;iron ore:2;,中,矛(spears),slicer x32 → *trident,*trident x20 → corrosive trident;*trident x40 → ranseur
+1358,trusty lance,10,店長(shopkeeper),spacious table v,1000,elfwood sticks:3;iron ore:2;raw leather:2;,快速,矛(spears),成就：woodland 2(獲得15個木匠配方),gungnir * 80 → twilight;twilight
+1359,twilight,20,木匠(carpenter),quality sawbench v,1180000,flying partisan:5;rising sun:3;mithril lumps:8;gems:8;crystals:8;,長,矛(spears),0,gungnir * 80 → twilight
+1360,voulge,7,木匠(carpenter),sturdy sawbench i,1100,elfwood sticks:5;steel rods:1;,長,矛(spears),flying partisan x68 → voulge,voulge x68 → gladiator's trident
+1361,warrior's trident,6,店長(shopkeeper),spacious table iii,2900,elfwood sticks:3;steel rods:5;iron ore:8;,短,矛(spears),elfwood pole-axe x 55 → warrior's trident,warrior's trident x 65 → grand bow
+1362,waterdancer,14,木匠(carpenter),quality sawbench iii,35000,poseidon:1;eternal ice:1;faery's tear:1;,快速,矛(spears),reinforced voulge * 48 → waterdancer;waterdancer,0
+1363,apocalypscion,20,附魔師(enchanter),luxurious table v,700000,lava scroll:1;darkness scroll:1;earthquake scroll:1;fortune scroll:1;shielding scroll:1;rising sun:1;,超長,卷軸(scrolls),darkness scroll x160 → apocalypscion;apocalypscion,0
+1364,blaze scroll,11,女法師(sorceress),magic cauldron v,12000,*fireball scroll:2;ironwood:6;gems:2;crystals:2;,中,卷軸(scrolls),*fortune scroll x96 → blaze scroll,blaze scroll x112 → *shielding scroll
+1365,darkness scroll,17,女法師(sorceress),mystical cauldron v,110000,oil:10;gems:5;ironwood:6;crystals:5;demon horn:1;,長,卷軸(scrolls),fireshield scroll x128 → *darkness scroll,*darkness scroll x160 → apocalypscion
+1366,earth scroll,3,女法師(sorceress),small cauldron ii,405,*magic scroll:1;powder:1;,中,卷軸(scrolls),*fireball scroll x32 → *earth scroll,*earth scroll x32 → *luck scroll
+1367,earthquake scroll,8,女法師(sorceress),magic cauldron ii,2900,*earth scroll:2;elfwood sticks:2;dyes:3;,中,卷軸(scrolls),*protect scroll x68 → *earthquake scroll,*earthquake scroll x60 → *evil scroll;*earthquake scroll x96 → *fortune scroll
+1368,evil scroll,6,女法師(sorceress),magic cauldron i,42000,*magic scroll:5;elfwood sticks:6;dyes:8;demon horn:1;,短,卷軸(scrolls),*earthquake scroll x60 → *evil scroll,0
+1369,fireball scroll,2,女法師(sorceress),small cauldron ii,330,*magic scroll:1;elfwood sticks:1;,短,卷軸(scrolls),*magic scroll x20 → *fireball scroll,*fireball scroll x32 → *earth scroll
+1370,fireshield scroll,16,女法師(sorceress),mystical cauldron iv,37000,*firestorm scroll:1;ironwood:6;crystals:6;gems:3;dyes:8;,長,卷軸(scrolls),*shielding scroll x112 → fireshield scroll,fireshield scroll x128 → *darkness scroll
+1371,firestorm scroll,9,女法師(sorceress),magic cauldron iii,4500,*fireball scroll:2;elfwood sticks:4;dyes:4;,短,卷軸(scrolls),成就：wizardry 2(獲得12個附魔師配方),*fortune scroll x96 → blaze scroll
+1372,fortune scroll,8,女法師(sorceress),magic cauldron iii,7000,*luck scroll:3;ironwood:2;gems:1;crystals:1;,中,卷軸(scrolls),*earthquake scroll x96 → *fortune scroll,*fortune scroll x96 → blaze scroll
+1373,lava scroll,7,女法師(sorceress),magic cauldron i,12000,*fireball scroll:1;elfwood sticks:3;dyes:3;volcanic rock:1;,長,卷軸(scrolls),*protect scroll x40 → *lava scroll,*luck scroll x48 → *protect scroll
+1374,luck scroll,5,女法師(sorceress),small cauldron iv,710,*magic scroll:1;dyes:2;,短,卷軸(scrolls),*earth scroll x32 → *luck scroll,*luck scroll x48 → *protect scroll
+1375,magic scroll,1,女法師(sorceress),small cauldron i,140,raw leather:3;,快速,卷軸(scrolls),*heal potion x12 → *magic scroll,*magic scroll x20 → *fireball scroll
+1376,protect scroll,6,女法師(sorceress),small cauldron v,1400,*magic scroll:1;powder:2;dyes:2;,短,卷軸(scrolls),*luck scroll x48 → *protect scroll,*protect scroll x40 → *lava scroll;*protect scroll x68 → *earthquake scroll
+1377,shell scroll,12,附魔師(enchanter),spacious table v,65000,*protect scroll:5;ironwood:6;crystals:6;abyss shell:1;,長,卷軸(scrolls),成就：wizardry 3(獲得25個附魔師配方);shell scroll,shielding scroll x112 → fireshield scroll
+1378,shielding scroll,14,女法師(sorceress),mystical cauldron iii,20000,*protect scroll:3;ironwood:4;crystals:4;,快速,卷軸(scrolls),blaze scroll x112 → *shielding scroll,shielding scroll x112 → fireshield scroll
+1379,anubis,19,店長(shopkeeper),luxurious table v,360000,elfwood sticks:5;ironwood:5;shadow essence:2;,長,法杖(staves),成就：builder 8(建造或升級1000次);anubis,0
+1380,apocalyptic staff,20,附魔師(enchanter),mystical cauldron v,1010000,dreadstick:3;crystals:8;ironwood:15;gems:8;,超長,法杖(staves),成就：warrior 9(200點勝利點數);apocalyptic staff,0
+1381,bishop's staff,12,店長(shopkeeper),luxurious table ii,15000,elfwood sticks:7;ironwood:4;steel rods:4;gems:4;crystals:4;,中,法杖(staves),everlasting flute x92 → bishop's staff,bishop's staff x130 → rising dragon
+1382,breath of frost,15,附魔師(enchanter),mystical cauldron iv,110000,mithril lumps:5;ironwood:5;eternal ice:2;,長,法杖(staves),moon stone staff x32 → breath of frost,breath of frost x60 → power of oceans
+1383,brightest rod,6,德魯伊(druid),magic cauldron i,4800,ebonystaff:1;volcanic rock:1;,短,法杖(staves),combat staff x 36 → brightest rod;brightest rod,0
+1384,cleansing staff,12,德魯伊(druid),mystical cauldron i,7900,ironwood:5;glass:6;gems:3;wood:6;elfwood sticks:4;,中,法杖(staves),elemental rod x 80 → cleansing staff,cleansing staff x 96 → sapphire staff
+1385,combat staff,5,德魯伊(druid),small cauldron iv,670,oaken staff:2;elfwood sticks:3;iron ore:3;,短,法杖(staves),wood elf staff x 48 → combat staff,combat staff x 36 → brightest rod;combat staff x 60 → enchanted staff
+1386,dark staff,11,德魯伊(druid),magic cauldron v,27000,skeleton staff:1;demon horn:1;,中,法杖(staves),healerstaff x 40 → dark staff,*dominus x32 → moon stone staff
+1387,devilish rod,14,德魯伊(druid),mystical cauldron iv,180000,*dreadstick:1;demon horn:1;,長,法杖(staves),*dreadstick x64 → devilish rod;devilish rod,*dominus x32 → moon stone staff
+1388,dominus,14,附魔師(enchanter),mystical cauldron iii,12000,*elemental rod:1;*ring of the dice:1;,快速,法杖(staves),sapphire staff x100 → *dominus,*dominus x32 → moon stone staff
+1389,dreadstick,16,德魯伊(druid),mystical cauldron iv,110000,*dark staff:2;,中,法杖(staves),*healer's companion x64 → *dreadstick,*dreadstick x64 → devilish rod;*dreadstick x96 → phoenix baton
+1390,dryad staff,3,德魯伊(druid),small cauldron iii,350,oaken staff:1;wood:4;wild herbs:3;,快速,法杖(staves),ebonystaff x 32 → dryad staff,dryad staff x 32 → wood elf staff
+1391,earth staff,8,德魯伊(druid),magic cauldron ii,1600,enchanted staff:1;powder:2;,中,法杖(staves),enchanted staff x 64 → earth staff,earth staff x 68 → skeleton staff
+1392,ebonystaff,2,德魯伊(druid),small cauldron ii,175,oaken staff:1;wild herbs:2;,短,法杖(staves),oaken staff x 20 → ebonystaff,ebonystaff x 32 → dryad staff
+1393,elemental rod,12,德魯伊(druid),magic cauldron v,4100,*enchanted staff:1;*salve of protection:1;,超長,法杖(staves),healerstaff x 68 → elemental rod,elemental rod x 80 → cleansing staff
+1394,enchanted staff,7,德魯伊(druid),magic cauldron ii,990,elfwood sticks:3;glass:3;,短,法杖(staves),combat staff x 60 → enchanted staff,enchanted staff x 64 → earth staff
+1395,healer's companion,15,德魯伊(druid),mystical cauldron iii,25000,*healerstaff:2;faery's tear:2;,中,法杖(staves),*sapphire staff x68 → *healer's companion,*healer's companion x64 → *dreadstick
+1396,healerstaff,10,德魯伊(druid),magic cauldron iv,2900,*enchanted staff:1;elfwood sticks:5;*regen herbs:1;,短,法杖(staves),*skeleton staff x68 → *healerstaff,*healerstaff x40 → *dark staff;*healerstaff x 68 → *elemental rod
+1397,mindful staff,19,德魯伊(druid),mystical cauldron v,290000,dryad staff:8;serpent band:8;ironwood:5;gems:5;crystals:5;,長,法杖(staves),phoenix baton x60 → mindful staff,mindful staff x160 → staff of power
+1398,moon stone staff,14,附魔師(enchanter),mystical cauldron iii,220000,*sapphire staff:1;moon stone:2;,中,法杖(staves),*dominus x32 → moon stone staff,moon stone staff x32 → breath of frost
+1399,nexus,17,德魯伊(druid),mystical cauldron v,110000,dominus:3;ironwood:8;gems:8;crystals:8;,長,法杖(staves),成就：learned 5(獲得400個配方);nexus,0
+1400,oaken staff,1,德魯伊(druid),small cauldron i,95,wood:3;,快速,法杖(staves),herbs bundle x 12 → oaken staff,oaken staff x 20 → ebonystaff
+1401,phoenix baton,17,德魯伊(druid),mystical cauldron v,140000,*healer's companion:2;phoenix feather:2;,中,法杖(staves),dreadstick x96 → phoenix baton,phoenix baton x60 → mindful staff
+1402,power of oceans,14,附魔師(enchanter),mystical cauldron v,110000,mithril lumps:6;ironwood:5;gems:5;abyss shell:3;,長,法杖(staves),breath of frost x60 → power of oceans,power of oceans x48 → staff of destruction
+1403,retribution,19,德魯伊(druid),mystical cauldron v,400000,elfwood sticks:12;ironwood:12;gems:12;crystals:5;divine leaf:1;,中,法杖(staves),成就：adventurer 5(完成40個事件);retribution,0
+1404,sapphire staff,13,德魯伊(druid),mystical cauldron ii,9900,elfwood sticks:6;ironwood:4;steel rods:2;gems:5;,短,法杖(staves),cleansing staff * 96 → sapphire staff,sapphire staff * 68 → healer's companion;sapphire staff * 100 → dominus
+1405,skeleton staff,9,德魯伊(druid),magic cauldron iii,2300,wood elf staff:2;,中,法杖(staves),earth staff x 68 → skeleton staff,skeleton staff x 68 → healerstaff
+1406,staff of destruction,20,附魔師(enchanter),mystical cauldron v,400000,*ebonystaff:20;rising sun:1;ironwood:8;gems:3;,超長,法杖(staves),power of oceans x48 → staff of destruction;staff of destruction,0
+1407,staff of power,20,附魔師(enchanter),mystical cauldron v,640000,enchanted staff:15;divine leaf:1;ironwood:8;gems:8;crystals:8;,超長,法杖(staves),mindful staff x160 → staff of power;staff of power,0
+1408,wood elf staff,4,德魯伊(druid),small cauldron iii,550,wood:1;elfwood sticks:4;,短,法杖(staves),dryad staff x 32 → wood elf staff,wood elf staff x 48 → combat staff
+1409,claymore,5,鐵匠(blacksmith),iron anvil iv,395,iron ore:8;raw leather:4;,短,劍(swords),*long sword x48→claymore,claymore x20→fire sword;claymore x48→*highlander
+1410,demonsbane,15,鐵匠(blacksmith),mithril anvil iii,11000,steel rods:6;oil:6;mithril lumps:2;,超長,劍(swords),murasame x60 → demonsbane,demonsbane x60 → paladin sword
+1411,excalibur,19,鐵匠(blacksmith),mithril anvil v,390000,mithril lumps:4;long sword:10;divine leaf:1;,超長,劍(swords),the one sword x100 → excalibur,excalibur x160 → hell sword
+1412,fire sword,5,鐵匠(blacksmith),iron anvil iv,4400,*short sword:2;volcanic rock:1;,短,劍(swords),claymore x20 → fire sword,fire sword x40 → ice brand
+1413,hell sword,20,附魔師(enchanter),luxurious table v,920000,excalibur:1;sacrificial blade:1;shadow essence:1;steel rods:8;mithril lumps:5;,超長,劍(swords),excalibur x160 → hell sword;hell sword,*highlander x60→soldier's sword
+1414,highlander,6,鐵匠(blacksmith),iron anvil v,740,steel rods:2;iron ore:5;raw leather:2;,中,劍(swords),claymore x48→*highlander,*highlander x60→soldier's sword
+1415,ice brand,12,附魔師(enchanter),luxurious table i,38000,*frost protector:2;steel rods:5;eternal ice:1;,中,劍(swords),fire sword x40 → ice brand;ice brand,0
+1416,lonewolf,15,鐵匠(blacksmith),mithril anvil iii,86000,mithril lumps:1;steel rods:5;roaring powder:1;long sword:5;,長,劍(swords),paladin sword x20 → lonewolf;lonewolf,*long sword x48→claymore
+1417,long sword,4,鐵匠(blacksmith),iron anvil iii,280,iron ore:7;raw leather:2;,中,劍(swords),rapier x20→*long sword,*long sword x48→claymore
+1418,murasame,14,鐵匠(blacksmith),mithril anvil ii,8000,mithril lumps:2;steel rods:5;oil:5;raw leather:7;,長,劍(swords),white great sword x60 → murasame,murasame x60 → demonsbane
+1419,paladin sword,15,鐵匠(blacksmith),mithril anvil iii,25000,templar blade:1;steel rods:3;oil:4;mithril lumps:2;,超長,劍(swords),demonsbane x60 → paladin sword,paladin sword x20 → lonewolf;paladin sword x80 → the one sword
+1420,plain sword,1,鐵匠(blacksmith),iron anvil i,35,iron ore:2;,快速,劍(swords),0,plain sword x20→*short sword
+1421,rapier,3,鐵匠(blacksmith),iron anvil ii,160,iron ore:5;raw leather:1;,中,劍(swords),*short sword x20→rapier,rapier x32→*long sword
+1422,short sword,2,鐵匠(blacksmith),iron anvil ii,90,iron ore:3;,快速,劍(swords),plain sword x20→*short sword,*short sword x20→rapier
+1423,soldier's sword,7,鐵匠(blacksmith),steel anvil ii,1100,steel rods:3;iron ore:5;,快速,劍(swords),*highlander x60→soldier's sword,soldier's sword x60→wakizashi
+1424,templar blade,5,店長(shopkeeper),spacious table i,7000,steel rods:10;iron ore:8;*highlander:3;,快速,劍(swords),成就：smithy 2(獲得15個鐵匠配方);*templar blade,the one sword x100 → excalibur;the one sword
+1425,the one sword,16,鐵匠(blacksmith),mithril anvil iv,32000,white great sword:2;mithril lumps:6;crystals:4;steel rods:5;oil:4;,長,劍(swords),paladin sword x80 → the one sword,the one sword x100 → excalibur
+1426,wakizashi,8,鐵匠(blacksmith),steel anvil ii,1500,steel rods:4;,中,劍(swords),soldier's sword x60→wakizashi,wakizashi x60→zhanmadao
+1427,white great sword,11,鐵匠(blacksmith),steel anvil v,3100,mithril lumps:2;steel rods:3;iron ore:8;,短,劍(swords),zhanmadao x60→white great sword,white great sword x60→murasame
+1428,zhanmadao,9,鐵匠(blacksmith),steel anvil iii,2000,steel rods:4;iron ore:6;raw leather:3;,中,劍(swords),wakizashi x60→zhanmadao,zhanmadao x60→white great sword
+1429,black bombs,10,發明家(tinkerer),spacious table v,6500,wood:8;elfwood sticks:7;steel rods:4;powder:4;,快速,投擲武器(thrown),wounding knives x60 → *black bombs,*black bombs x68 → circus knives
+1430,blackout,19,發明家(tinkerer),mystical cauldron v,340000,steel rods:8;mithril lumps:8;powder:15;shadow essence:1;darkness scroll:1;,短,投擲武器(thrown),成就：inventor 3(獲得25個發明家配方);blackout,*boomerang x48 → fine boomerang
+1431,boomerang,5,發明家(tinkerer),spacious table i,630,wood:6;elfwood sticks:2;,短,投擲武器(thrown),breeze sling x60 → *boomerang,*boomerang x48 → fine boomerang
+1432,boomshaka,18,附魔師(enchanter),luxurious table v,210000,depth charge:1;fireball scroll:5;roaring powder:1;powder:5;mithril lumps:5;glass:6;,長,投擲武器(thrown),depth charge x100 → boomshaka;boomshaka,breeze sling x60 → *boomerang;breeze sling
+1433,breeze sling,4,發明家(tinkerer),work table iv,500,wood:6;fabric:2;,短,投擲武器(thrown),*throwing knives x48 → breeze sling,breeze sling x60 → *boomerang
+1434,circus knives,12,發明家(tinkerer),luxurious table i,9300,iron ore:8;steel rods:5;mithril lumps:2;oil:5;,中,投擲武器(thrown),*black bombs x68 → circus knives,circus knives x72 → *shuriken
+1435,darts,1,發明家(tinkerer),work table ii,100,iron ore:3;,快速,投擲武器(thrown),pistol x8 → *darts,*darts x20 → sling
+1436,depth charge,10,發明家(tinkerer),magic cauldron iv,28000,steel rods:6;mithril lumps:10;powder:10;glass:6;iron ore:10;,短,投擲武器(thrown),short fuses x96 → *depth charge,*depth charge x100 → boomshaka
+1437,double infinity,13,發明家(tinkerer),specious table v,590000,shuriken:4;shadow essence:2;demon horn:2;mithril lumps:4;gems:2;steel rods:8;,中,投擲武器(thrown),mithril shuriken x160 → double infinity;double infinity,0
+1438,fine boomerang,7,發明家(tinkerer),spacious table ii,1300,boomerang:1;elfwood sticks:2;wood:3;,中,投擲武器(thrown),*boomerang x48 → fine boomerang,fine boomerang x48 → storm knives
+1439,flux shuriken,10,發明家(tinkerer),steel anvil iv,15000,steel rods:6;mithril lumps:4;oil:7;iron ore:8;,中,投擲武器(thrown),*shuriken x72 → flux shuriken,flux shuriken x80 → short fuses;flux shuriken x96 → golden shuriken
+1440,frost shuriken,10,店長(shopkeeper),spacious table v,100000,steel rods:6;mithril lumps:5;oil:5;eternal ice:3;,短,投擲武器(thrown),成就：hoarder 3(當日總收入達250;000);frost shuriken,0
+1441,golden shuriken,15,發明家(tinkerer),mithril anvil iii,33000,*shuriken:1;mithril lumps:5;gems:4;iron ore:10;,中,投擲武器(thrown),flux shuriken x96 → golden shuriken,golden shuriken x128 → mithril shuriken
+1442,lightning bolts,8,發明家(tinkerer),spacious table iii,19000,darts:3;abyss shell:1;steel rods:8;iron ore:8;,長,投擲武器(thrown),storm knives x40 → lightning bolts;lightning bolts,0
+1443,mithril shuriken,17,發明家(tinkerer),mithril anvil v,51000,shuriken:1;mithril lumps:8;iron ore:12;gems:6;,長,投擲武器(thrown),golden shuriken x128 → mithril shuriken,mithril shuriken| x160 → double infinity
+1444,sling,2,發明家(tinkerer),work table ii,185,wood:3;fabric:1;,快速,投擲武器(thrown),*darts x20 → sling,sling x32 → *throwing knives
+1445,shock darts,2,店長(shopkeeper),work table iii,200,iron ore:2;wild herbs:2;,快速,投擲武器(thrown),成就：employer 1(同時雇用2個工匠),short fuses x96 → *depth charge;short fuses
+1446,short fuses,9,發明家(tinkerer),magic cauldron iii,19000,*black bombs:1;steel rods:6;mithril lumps:4;powder:4;glass:4;,長,投擲武器(thrown),flux shuriken x80 → short fuses,short fuses x96 → *depth charge
+1447,shuriken,8,發明家(tinkerer),steel anvil ii,12000,steel rods:5;mithril lumps:5;oil:5;,中,投擲武器(thrown),circus knives x72 → *shuriken,*shuriken x72 → flux shuriken
+1448,storm knives,7,發明家(tinkerer),spacious table ii,3000,shock darts:1;iron ore:6;steel rods:3;oil:2;,中,投擲武器(thrown),fine boomerang x48 → storm knives,storm knives x40 → lightning bolts;storm knives x68 → wounding knives
+1449,throwing knives,3,發明家(tinkerer),work table iii,270,iron ore:6;,短,投擲武器(thrown),sling x32 → *throwing knives,*throwing knives x48 → breeze sling
+1450,wounding knives,9,發明家(tinkerer),spacious table iv,5100,*throwing knives:1;iron ore:8;steel rods:4;oil:3;,中,投擲武器(thrown),storm knives x68 → wounding knives,wounding knives x60 → *black bombs
+1451,anti-elements band,10,附魔師(enchanter),spacious table v,50000,volcanic rock:1;eternal ice:1;gems:1;,長,戒指(rings),*band of light x48 → anti-elements band;anti-elements band,archmage's mark x64 → atmosring;archmage's mark x96 → foundation ring;archmage's mark
+1452,archmage's mark,15,珠寶師(jeweler),mithril anvil iii,30000,*ring of sorcery:2;mithril lumps:5;gems:4;crystals:5;,中,戒指(rings),majestic ring x88 → archmage's mark,archmage's mark x64 → atmosring;archmage's mark x96 → foundation ring
+1453,atmosring,19,珠寶師(jeweler),mithril anvil v,380000,reactive ring:5;rising sun:1;faery's tear:1;mithril lumps:2;gems:6;crystals:6;,長,戒指(rings),archmage's mark x64 → atmosring,0
+1454,band of light,10,珠寶師(jeweler),steel anvil iv,5500,iron ore:8;steel rods:4;gems:2;,中,戒指(rings),*scholar's mark x72 → *band of light,*band of light x48 → anti-elements band;*band of light x80 → banker's mark
+1455,banker's mark,11,珠寶師(jeweler),steel anvil v,9500,mithril lumps:3;gems:2;glass:4;steel rods:3;,中,戒指(rings),*band of light x80 → banker's mark,banker's mark x80 → serpent band
+1456,iron ring,2,珠寶師(jeweler),iron anvil ii,175,iron ore:4;,快速,戒指(rings),*ring of dexterity x12 → iron ring,iron ring x32 → *reactive ring
+1457,majestic ring,15,珠寶師(jeweler),mithril anvil iii,17000,*thief's mark:3;mithril lumps:3;gems:4;crystals:2;,中,戒指(rings),serpent band x88 → majestic ring,majestic ring x88 → archmage's mark
+1458,reactive ring,3,珠寶師(jeweler),iron anvil iii,245,iron ore:5;,快速,戒指(rings),iron ring x32 → *reactive ring,*reactive ring x48 → thief's mark
+1459,ring of conservation,15,附魔師(enchanter),mystical cauldron ii,310000,dragon scale:1;gems:3;crystals:3;mithril lumps:6;,長,戒指(rings),serpent band x 60 → ring of conservation;ring of conservation,*ring of dexterity x12 → iron ring
+1460,ring of dexterity,1,珠寶師(jeweler),iron anvil i,115,wood:3;,快速,戒指(rings),珠寶師擁有30個配方成就達成後獲得;ring of kings,*ring of dexterity x12 → iron ring
+1461,ring of kings,19,珠寶師(jeweler),mithril anvil v,440000,*majestic ring:2;mithril lumps:5;gems:5;crystals:4;rising sun:1;,中,戒指(rings),珠寶師擁有30個配方成就達成後獲得;ring of kings,ring of might x68 → *scholar's mark
+1462,ring of might,6,珠寶師(jeweler),steel anvil i,2700,steel rods:4;glass:2;,短,戒指(rings),warrior's ring x60 → *ring of might,ring of might x68 → *scholar's mark
+1463,ring of sorcery,10,店長(shopkeeper),spacious table v,1800,iron ore:5;glass:4;,快速,戒指(rings),成就：explorer 2(獲得5個地城的全部戰利品),*ring of wizardry x32 → *ring of the dice;*ring of wizardry x60 → warrior's ring
+1464,ring of the dice,5,珠寶師(jeweler),iron anvil iv,3300,steel rods:2;acid:1;,快速,戒指(rings),*ring of wizardry x32 → *ring of the dice,*ring of wizardry x32 → *ring of the dice;*ring of wizardry x60 → warrior's ring
+1465,ring of wizardry,5,珠寶師(jeweler),iron anvil iv,960,iron ore:4;steel rods:1;glass:2;,短,戒指(rings),*thief's mark x48 → *ring of wizardry,*ring of wizardry x32 → *ring of the dice;*ring of wizardry x60 → warrior's ring
+1466,serpent band,12,珠寶師(jeweler),mithril anvil i,13000,iron ore:10;steel rods:4;mithril lumps:3;gems:4;,短,戒指(rings),banker's mark x 80 → serpent band,serpent band x 60 → ring of conservation;serpent band x 88 → majestic ring
+1467,scholar's mark,8,珠寶師(jeweler),steel anvil iii,3500,*ring of wizardry:1;glass:6;,快速,戒指(rings),ring of might x68 → *scholar's mark,*scholar's mark x72 → *band of light
+1468,the one ring,20,珠寶師(jeweler),mithril anvil v,630000,*foundation ring:1;divine leaf:1;mithril lumps:10;gems:10;crystals:10;,超長,戒指(rings),*foundation ring x120 → the one ring;the one ring,*thief's mark x48 → *ring of wizardry
+1469,thief's mark,4,珠寶師(jeweler),iron anvil iii,485,iron ore:8;,中,戒指(rings),*reactive ring x48 → *thief's mark,*thief's mark x48 → *ring of wizardry
+1470,viper band,17,店長(shopkeeper),luxurious table v,110000,iron ore:5;steel rods:5;mithril lumps:3;gems:3;roaring powder:1;,短,戒指(rings),成就：citizen 7(捐獻達7500次);viper band,0
+1471,warrior's ring,6,珠寶師(jeweler),iron anvil v,2200,iron ore:6;steel rods:3;glass:2;,快速,戒指(rings),*ring of wizardry x60 → warrior's ring,warrior's ring x60 → *ring of might
+1472,bow of precision,4,製弓師(bowyer),sawbench iii,760,*hunting bow:1;wood:4;fabric:3;,短,弓(bows),*crossbow x48 → bow of precision,bow of precision x64 → *piercer
+1473,calamitous bow,11,製弓師(bowyer),sturdy sawbench v,11000,*piercer:2;wood:8;elfwood sticks:6;ironwood:3;steel rods:2;fabric:4;,短,弓(bows),civil bow x96 → calamitous bow,calamitous bow x96 → *hunting crossbow
+1474,civil bow,10,製弓師(bowyer),sturdy sawbench iv,8300,*small bow:1;ironwood:6;elfwood sticks:5;fabric:8;wood:6;,快速,弓(bows),*gemini x35 → civil bow,civil bow x64 → double shot;civil bow x96 → calamitous bow
+1475,composite bow,6,製弓師(bowyer),sturdy sawbench i,1800,wood:5;elfwood sticks:4;fabric:3;,中,弓(bows),*piercer x68 → composite bow,composite bow x80 → ebony bow
+1476,compound crossbow,17,製弓師(bowyer),quality sawbench v,68000,*hunting crossbow:1;elfwood sticks:8;ironwood:10;mithril lumps:6;fabric:8;,長,弓(bows),成就：explorer 5(獲得20個地城的全部戰利品);compound crossbow,*crossbow x48 → bow of precision
+1477,crossbow,2,製弓師(bowyer),sawbench ii,385,wood:5;iron ore:2;raw leather:2;,短,弓(bows),*long bow x40 → *crossbow,*crossbow x48 → bow of precision
+1478,double shot,12,製弓師(bowyer),quality sawbench i,110000,*gemini:1;elfwood sticks:10;ironwood:8;mithril lumps:2;fabric:4;roaring powder:1;,短,弓(bows),civil bow x64 → double shot;double shot,0
+1479,ebony bow,7,製弓師(bowyer),sturdy sawbench ii,2100,elfwood sticks:5;iron ore:3;fabric:3;,短,弓(bows),composite bow x80 → ebony bow,ebony bow x80 → elf bow
+1480,elf bow,9,製弓師(bowyer),sturdy sawbench iii,3100,*piercer:1;elfwood sticks:5;,中,弓(bows),ebony bow x80 → elf bow,elf bow x40 → *gemini
+1481,fairy bow,7,製弓師(bowyer),sturdy sawbench ii,6300,long bow:1;faery's tear:1;,中,弓(bows),*piercer x48 → *fairy bow,*fairy bow x25 → moonlight fairy bow
+1482,fast loading arbalest,16,製弓師(bowyer),quality sawbench iv,34000,*crossbow:2;elfwood sticks:10;ironwood:10;mithril lumps:6;fabric:10;wood:10;,長,弓(bows),heavy crossbow x112 → *fast loading arbalest,0
+1483,gemini,10,製弓師(bowyer),sturdy sawbench iv,6900,*long bow:3;ironwood:4;elfwood sticks:6;fabric:4;,中,弓(bows),elf bow x40 → *gemini,*gemini x35 → civil bow
+1484,grand bow,8,店長(shopkeeper),spacious table iv,3700,elfwood sticks:3;iron ore:6;fabric:5;steel rods:3;,短,弓(bows),warrior's trident x 65 → grand bow,grand bow x 80 → everlasting flute
+1485,heavy crossbow,14,製弓師(bowyer),quality sawbench ii,23000,*crossbow:2;elfwood sticks:6;ironwood:8;steel rods:4;mithril lumps:4;fabric:10;,長,弓(bows),*hunting crossbow x112 → heavy crossbow,heavy crossbow x80 → scorpion;heavy crossbow x112 → fast loading arbalest;heavy crossbow x120 → the hurricane;heavy crossbow x140 → vicious crossbow
+1486,hunting bow,1,製弓師(bowyer),sawbench i,115,wood:1;fabric:1;,快速,弓(bows),calamitous bow x96 → *hunting crossbow,*hunting bow x28 → *long bow
+1487,hunting crossbow,13,製弓師(bowyer),quality sawbench i,15000,*crossbow:1;ironwood:8;mithril lumps:2;fabric:7;elfwood sticks:7;wood:7;,長,弓(bows),calamitous bow x96 → *hunting crossbow,*hunting crossbow x112 → heavy crossbow
+1488,leaf bow,10,店長(shopkeeper),spacious table v,100000,wood:10;elfwood sticks:5;golden silk:1;,中,弓(bows),成就：fletcher 3(獲得15個製弓師配方);leaf bow,*long bow x40 → *crossbow
+1489,long bow,2,製弓師(bowyer),sawbench ii,210,wood:3;fabric:1;,快速,弓(bows),*hunting bow x28 → *long bow,*long bow x40 → *crossbow
+1490,moonlight fairy bow,12,附魔師(enchanter),luxurious table ii,120000,*fairy bow:1;elfwood sticks:8;ironwood:6;fabric:6;moon stone:1;crystals:4;,長,弓(bows),*fairy bow x25 → moonlight fairy bow;資訊提供者：yiao;moonlight fairy bow,0
+1491,piercer,5,製弓師(bowyer),sawbench iv,1200,wood:7;elfwood sticks:3;raw leather:2;,中,弓(bows),bow of precision x64 → *piercer,*piercer x48 → *fairy bow;*piercer x68 → composite bow
+1492,scorpion,16,製弓師(bowyer),quality sawbench iv,71000,elfwood sticks:10;ironwood:12;mithril lumps:4;fabric:10;demon horn:1;,長,弓(bows),heavy crossbow x80 → scorpion;資訊提供者：shalone88;scorpion,0
+1493,silk bow,6,製弓師(bowyer),sturdy sawbench i,20000,wood:7;fabric:1;phoenix feather:1;,短,弓(bows),成就：fletcher 2(獲得8個製弓師配方);silk bow,0
+1494,small bow,1,店長(shopkeeper),work table ii,40,wood:1;iron ore:1;,中,弓(bows),iron bracers *12 → small bow,0
+1495,the hurricane,20,製弓師(bowyer),quality sawbench v,640000,*fast loading arbalest:2;*crossbow:5;ironwood:8;mithril lumps:5;gems:5;divine leaf:1;,超長,弓(bows),heavy crossbow x120 → the hurricane;the hurricane,0
+1496,vicious crossbow,19,製弓師(bowyer),quality sawbench v,480000,*hunting crossbow:3;rising sun:1;elfwood sticks:12;ironwood:8;fabric:12;wood:12;,超長,弓(bows),heavy crossbow x140 → vicious crossbow;vicious crossbow,0
+1497,amulet of evil protection,13,珠寶師(jeweler),luxurious table i,190000,steel rods:6;gems:3;glass:6;moon stone:2;,長,護身符(amulets),sage amulet x40 → *amulet of evil protection,*amulet of life x72 → *amulet of light
+1498,amulet of life,10,珠寶師(jeweler),spacious table v,2600,*lucky amulet:1;steel rods:2;glass:4;,短,護身符(amulets),amulet of darkness x68 → *amulet of life,*amulet of life x72 → *amulet of light
+1499,amulet of darkness,9,珠寶師(jeweler),spacious table iv,2400,*lucky amulet:1;iron ore:5;glass:5;,中,護身符(amulets),*frost protector x68 → *amulet of darkness,*amulet of darkness x68 → *amulet of life
+1500,clairvoyance amulet,11,珠寶師(jeweler),spacious table v,6600,iron ore:6;steel rods:2;gems:2;glass:5;wood:5;,超長,護身符(amulets),*amulet of light x76 → *clairvoyance amulet,*clairvoyance amulet x76 → sage amulet
+1501,clerical mark,3,店長(shopkeeper),spacious table i,160,iron ore:2;wood:2;,快速,護身符(amulets),成就：builder 2(建造或升級35次),0
+1502,death token,20,珠寶師(jeweler),luxurious table v,650000,amulet of darkness:3;talisman of fear:2;shadow essence:2;ironwood:6;crystals:4;gems:6;,長,護身符(amulets),symbol of the gods x120 → death token;death token,0
+1503,elemental pendant,12,珠寶師(jeweler),luxurious table i,11000,ironwood:6;gems:3;crystals:1;elfwood sticks:5;,中,護身符(amulets),sage amulet x 60 → *elemental pendant,*elemental pendant x80 → pendant of thunder immunity
+1504,elemental talisman,9,珠寶師(jeweler),spacious table iv,130000,iron ore:8;elfwood sticks:6;moon stone:1;,快速,護身符(amulets),red charm x32 → elemental talisman;elemental talisman,0
+1505,frost protector,9,珠寶師(jeweler),spacious table iv,1900,iron ore:4;steel rods:2;glass:2;,超長,護身符(amulets),perfect jade x56 → *frost protector,*frost protector x68 → amulet of darkness
+1506,holy talisman,15,珠寶師(jeweler),luxurious table iii,25000,*amulet of life:2;gems:4;crystals:4;elfwood sticks:6;,長,護身符(amulets),talisman of fear x100 → *holy talisman,*holy talisman x100 → pyramid lace
+1507,lucky amulet,1,珠寶師(jeweler),spacious table i,105,iron ore:2;wood:1;,快速,護身符(amulets),0,*lucky amulet x12 → *priest's mark
+1508,pendant of ice immunity,14,附魔師(enchanter),luxurious table ii,180000,ironwood:6;gems:6;crystals:2;golden silk:1;,超長,護身符(amulets),pendant of thunder immunity x 60 → pendant of ice immunity;pendant of ice immunity,*pendant of safety x32 → *zazen amulet
+1509,pendant of safety,5,珠寶師(jeweler),spacious table i,530,iron ore:4;wood:3;glass:1;,中,護身符(amulets),*priest's mark x20 → *pendant of safety,*pendant of safety x32 → *zazen amulet
+1510,pendant of thunder immunity,13,珠寶師(jeweler),luxurious table ii,16000,*pendant of safety:2;gems:3;crystals:3;ironwood:6;elfwood sticks:4;,短,護身符(amulets),*elemental pendant x80 → pendant of thunder immunity,pendant of thunder immunity x60 → pendant of ice immunity;pendant of thunder immunity x96 → talisman of fear
+1511,perfect jade,8,珠寶師(jeweler),spacious table iii,1500,iron ore:3;glass:4;,中,護身符(amulets),red charm x48 → perfect jade,perfect jade x56 → *frost protector
+1512,priest's mark,4,珠寶師(jeweler),spacious table i,440,iron ore:3;wood:3;glass:1;,快速,護身符(amulets),*lucky amulet x12 → *priest's mark,*priest's mark x20 → *pendant of safety
+1513,pyramid lace,17,珠寶師(jeweler),luxurious table v,37000,gems:6;crystals:4;mithril lumps:4;ironwood:7;elfwood sticks:7;,中,護身符(amulets),*holy talisman x 100 → pyramid lace,pyramid lace x68 → unholy talisman;pyramid lace x112 → symbol of the gods
+1514,rage token,15,珠寶師(jeweler),luxurious table iii,130000,steel rods:8;mithril lumps:4;gems:6;roaring powder:1;,中,護身符(amulets),talisman of fear x68 → rage token,red charm x32 → elemental talisman;red charm x48 → perfect jade;red charm
+1515,red charm,7,珠寶師(jeweler),spacious table ii,990,iron ore:5;glass:2;dyes:1;,中,護身符(amulets),*zazen amulet x32 → red charm,red charm x32 → elemental talisman;red charm x48 → perfect jade
+1516,sage amulet,11,珠寶師(jeweler),spacious table v,8200,clerical mark:1;iron ore:7;steel rods:3;gems:3;glass:3;,超長,護身符(amulets),*clairvoyance amulet x76 → sage amulet,sage amulet x 40 → amulet of evil protection;sage amulet x 60 → *elemental pendant
+1517,storm pendant,13,店長(shopkeeper),luxurious table ii,18000,steel rods:3;gems:4;glass:6;crystals:2;*elemental rod:1;,短,護身符(amulets),成就：quest giver 3(客人等級達10等);storm pendant,symbol of the gods x120 → death token;symbol of the gods
+1518,symbol of the gods,17,珠寶師(jeweler),luxurious table v,61000,*priest's mark:5;gems:8;crystals:8;ironwood:8;mithril lumps:4;,長,護身符(amulets),pyramid lace x112 → symbol of the gods,symbol of the gods x120 → death token
+1519,talisman of fear,15,珠寶師(jeweler),luxurious table iii,19000,ironwood:6;gems:4;elfwood sticks:8;wood:10;glass:6;,長,護身符(amulets),pendant of thunder immunity x 96 → talisman of fear,talisman of fear x68 → rage token;talisman of fear x100 → holy talisman
+1520,zazen amulet,6,珠寶師(jeweler),spacious table ii,620,iron ore:6;wood:2;glass:1;,快速,護身符(amulets),*pendant of safety x32 → *zazen amulet,*zazen amulet x32 → red charm
+1521,courier's sandals,10,裁縫師(tailor),good cutting table iv,82000,fabric:4;dyes:2;golden silk:1;,長,布鞋(shoes),questing shoes x 36 → courier's sandals,courier's sandals *112 → exhilarating shoes
+1522,exhilarating shoes,19,裁縫師(tailor),good cutting table v,380000,shiny shoes:10;golden silk:2;fabric:10;ironwood:10;crystals:6;gems:6;,快速,布鞋(shoes),courier's sandals *112 → exhilarating shoes;exhilarating-shoes,0
+1523,flying shoes,16,裁縫師(tailor),fine cutting table iv,270000,*heavenly sandals:5;*band of light:2;mithril lumps:2;rising sun:1;,長,布鞋(shoes),grounded shoes x64 → flying shoes;flying shoes,fur shoes x 48 → heavenly sandals;fur shoes
+1524,fur shoes,5,裁縫師(tailor),cutting table iv,520,raw leather:6;fabric:1;dyes:2;,短,布鞋(shoes),sturdy shoes x 32 → fur shoes,fur shoes x 48 → heavenly sandals
+1525,grounded shoes,14,裁縫師(tailor),fine cutting table ii,13000,*sturdy shoes:2;crystals:5;dyes:8;glass:8;wood:10;,中,布鞋(shoes),questing shoes x80 → grounded shoes,grounded shoes x64 → flying shoes
+1526,heavenly sandals,6,裁縫師(tailor),cutting table v,900,elfwood sticks:2;fabric:2;dyes:3;,中,布鞋(shoes),fur shoes x 48 → heavenly sandals,heavenly sandals x 60 → shiny shoes
+1527,leather shoes,2,裁縫師(tailor),cutting table ii,105,raw leather:3;wood:2;,快速,布鞋(shoes),sandals x 20 → leather shoes,leather shoes x 16 → wrist-guard;leather shoes x 28 → sturdy shoes
+1528,questing shoes,9,裁縫師(tailor),good cutting table iii,3000,fabric:4;ironwood:3;dyes:5;raw leather:5;,中,布鞋(shoes),shiny shoes x 60 → questing shoes,questing shoes x 36 → courier's sandals;questing shoes x 80 → grounded shoes
+1529,sandals,1,裁縫師(tailor),cutting table i,30,raw leather:1;wood:1;,快速,布鞋(shoes),heavenly sandals x 60 → shiny shoes,sandals x 12 → basic tunic;sandals x 12 → circlet;sandals x 20 → leather shoes
+1530,shiny shoes,7,裁縫師(tailor),good cutting table ii,2000,raw leather:3;wood:2;dyes:4;glass:2;,短,布鞋(shoes),heavenly sandals x 60 → shiny shoes,shiny shoes x 60 → questing shoes
+1531,sturdy shoes,3,裁縫師(tailor),cutting table iii,215,raw leather:5;elfwood sticks:1;,快速,布鞋(shoes),leather shoes x 28 → sturdy shoes,sturdy shoes x 32 → fur shoes
+1532,amulet of light,10,珠寶師(jeweler),spacious table v,4600,*lucky amulet:2;steel rods:3;glass:5;iron ore:6,中,護身符(amulets),amulet of life x72 → *amulet of light,*amulet of light x76 → *clairvoyance amulet
+1533,foundation ring,16,珠寶師(jeweler),mithril anvil iv,52000,*ring of dexterity:5;ring of the dice:2;mithril lumps:5;gems:10;,長,戒指(rings),archmage's mark x120 → *foundation ring,*foundation ring x120 → *the one ring
+1534,unholy talisman,1,珠寶師(jeweler),spacious table iv,350000,zazen amulet:8;gems:4;crystals:2;dragon scale:1;,中,護身符(amulets),0,pyramid lace x68 → unholy talisman
+1535,eternal flute,19,樂器工匠(luthier),quality sawbench v,350000,*flute of wonder:1;elven flute:1;rising sun:1;crystals:1;ironwood:4;,超長,樂器(musical instruments),ripieno x120 → horn of ages,horn of ages x108 → eternal flute;horn of ages x160 → abyssal tranquility

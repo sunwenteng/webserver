@@ -1,0 +1,164 @@
+#!/usr/bin/env node
+'use strict';
+
+var ArgumentParser = require('argparse').ArgumentParser;
+var pm2 = require('pm2');
+var async = require('async');
+var exec = require('child_process').exec;
+
+function pm2Action(cb) {
+    pm2.connect(function (err) {
+        if (err) throw err;
+        cb(function (callback) {
+            pm2.disconnect(function () {
+                process.exit(0)
+            });
+            callback();
+        });
+    });
+}
+
+function getServerStart(processName, cb) {
+    pm2.list(function (err, process_list) {
+        var idx = -1;
+        for (var i = 0; i < process_list.length; i++) {
+            var obj = process_list[i];
+            if (obj.name === processName) {
+                idx = i;
+                break;
+            }
+        }
+
+        if (idx === -1) {
+            cb(0);
+        }
+        else if (process_list[idx].pid === 0) {
+            cb(1);
+        }
+        else {
+            cb(2);
+        }
+    });
+}
+
+function checkServerShutDown(processName, cb) {
+    pm2.list(function (err, process_list) {
+        var idx = -1;
+        for (var i = 0; i < process_list.length; i++) {
+            var obj = process_list[i];
+            if (obj.name === processName) {
+                idx = i;
+                break;
+            }
+        }
+
+        if (idx === -1) {
+            console.error(processName + ' not found!');
+            cb();
+        }
+        else if (process_list[idx].pid === 0) {
+            console.info(processName + ' shut down success!');
+            cb();
+        }
+        else {
+            console.info(processName + ' shutting down...');
+            setTimeout(function () {
+                checkServerShutDown(processName, cb);
+            }, 1000);
+        }
+    });
+}
+
+function stopServer(processName, cb) {
+    pm2.sendSignalToProcessName('SIGINT', processName, function (err, ret) {
+        if (err) {
+            console.log(processName + ' not start');
+            return cb();
+        }
+
+        if (ret && ret.length > 0 && ret[0].pid === 0) {
+            console.info(processName + ' already shut down');
+            cb();
+        }
+        else {
+            console.info(processName + ' receive signal, process shut down works');
+            checkServerShutDown(processName, function () {
+                console.info(processName + ' shut down success');
+                cb();
+            });
+        }
+    });
+}
+
+function startServer(serverName, cb) {
+    var config = require('../config/untrack/' + serverName + '.json');
+    var processName = serverName + config['server']['id'];
+    pm2Action(function (next) {
+        getServerStart(processName, function(state) {
+            if(state === 0) {
+                console.info(processName + ' start for the first time');
+                pm2.start({
+                    "name": processName,
+                    "script": "../" + serverName + '/' + serverName.substring(0, serverName.indexOf('server')) + "_app.js",
+                    "log_date_format": "YYYY-MM-DD HH:mm:ss Z",
+                    "autorestart": false
+                }, function (err, ret) {
+                    if (err) throw err;
+                    console.info(processName + ' start success');
+                    next(cb);
+                });
+            }
+            else if(state === 1) {
+                restartServer(processName, cb);
+            }
+            else {
+                console.info(processName + ' starting, shut down first');
+                stopServer(processName, function(){
+                    restartServer(processName, cb);
+                });
+            }
+        });
+    });
+}
+
+function restartServer(processName, cb) {
+    pm2.restart(processName, function (err, ret) {
+        if (err) throw err;
+        console.info(processName + ' restart success');
+        cb();
+    });
+}
+
+var parser = new ArgumentParser({
+    version: '0.0.1',
+    addHelp: true,
+    description: 'Start/Restart server'
+});
+
+parser.addArgument(
+    ['-g'],
+    {
+        action: 'storeTrue',
+        dest: 'gameserver',
+        help: 'start gameserver'
+    }
+);
+
+var args = parser.parseArgs();
+
+async.forEachOf(args, function (value, key, callback) {
+    if (value) {
+        startServer(key, callback);
+    }else {
+        callback();
+    }
+}, function (err) {
+    console.log('start finish then quit');
+    setTimeout(function(){
+        exec("pm2 ls", function (error, stdout, stderr) {
+            console.log(stdout === '' ? stderr : stdout);
+            process.exit(0);
+        });
+    }, 1000);
+});
+
